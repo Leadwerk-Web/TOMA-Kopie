@@ -1,0 +1,98 @@
+/* =====================================================================
+   TOMA · Doypack Landingpage — Design Tokens
+   Designsprache adaptiert von der London-Webflow-Vorlage
+   (hell, luftig, Manrope, große Radien, weiche Schatten, Pastellflächen)
+   — jedoch mit TOMA-Markenfarben: Orange #ef7b10 als Akzent statt Lila.
+   ===================================================================== */
+
+:root {
+  /* --- Marke / Aktion --- */
+  --color-primary: #ef7b10;
+  --color-primary-hover: #d96c0e;
+  --color-primary-soft: #ffe9d6;
+  --color-primary-tint: #fff4ea;
+
+  /* --- Sekundär (aus Marke ableitbar), für dezente Duo-Verläufe --- */
+  --color-secondary: #2f7fc4;      /* aus Bestand-Blau #0170b9 aufgehellt */
+  --color-secondary-soft: #e7f1fb;
+
+  /* --- Text --- */
+  --color-ink: #111726;            /* dunkle Headline-Farbe */
+  --color-text: #48505e;
+  --color-text-muted: #808a9d;     /* aus London */
+  --color-text-invert: #f4f6fb;
+
+  /* --- Flächen (hell & luftig, London-Pastelle warm/kühl gemischt) --- */
+  --color-bg: #ffffff;
+  --color-bg-soft: #f6f8fc;        /* kühl-neutral */
+  --color-bg-tint: #eef4fb;        /* zartes Blau */
+  --color-bg-warm: #fdf7f1;        /* warmer TOMA-Ton */
+  --color-dark: #111726;
+  --color-dark-soft: #1b2233;
+
+  /* --- Linien / Rahmen --- */
+  --color-border: #e8ecf3;
+  --color-border-strong: #dbe1ea;
+
+  /* --- Glas --- */
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.9);
+
+  /* --- Status --- */
+  --color-success: #2f8f5b;
+
+  /* --- Verläufe (diagonale Duo-Verläufe wie im Vorbild) --- */
+  --grad-primary: linear-gradient(135deg, #ef7b10, #f9a24a);
+  --grad-hero: linear-gradient(150deg, #fff6ec 0%, #eef4fb 60%, #f6f8fc 100%);
+  /* Seiten-Abschnitte (wie Direkt verglichen) – Hero behält eigenen Look inkl. Silhouetten */
+  --grad-section: linear-gradient(150deg, #fff6ec 0%, #eef4fb 60%, #f6f8fc 100%);
+  --grad-cta: linear-gradient(135deg, #ef7b10, #d9600a 55%, #b74e06);
+  --grad-blob: radial-gradient(closest-side, rgba(239,123,16,.35), rgba(239,123,16,0));
+  --grad-blob-blue: radial-gradient(closest-side, rgba(47,127,196,.22), rgba(47,127,196,0));
+
+  /* --- Typografie: Headlines Manrope, Fließtext Montserrat 18px --- */
+  --font-heading: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --fs-h1: clamp(2.8rem, 5.4vw, 5.4rem);
+  --fs-h2: clamp(2rem, 3.6vw, 3.6rem);
+  --fs-h3: clamp(1.3rem, 2vw, 1.75rem);
+  --fs-lead: 18px;
+  --fs-body: 18px;
+  --fs-label: 0.78rem;
+
+  --lh-tight: 1.06;
+  --lh-heading: 1.14;
+  --lh-body: 1.7;
+
+  --measure: 66ch;
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-wide: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-pad: clamp(4.5rem, 9vw, 8rem);
+
+  /* --- Radien (London: 20 / 30 / 100px Pills) --- */
+  --radius-small: 12px;
+  --radius-medium: 20px;
+  --radius-large: 30px;
+  --radius-pill: 100px;
+
+  /* --- Schatten (sehr weich, luftig) --- */
+  --shadow-soft: 0 20px 60px -34px rgba(17, 23, 38, 0.35);
+  --shadow-card: 0 24px 60px -30px rgba(17, 23, 38, 0.18);
+  --shadow-float: 0 30px 70px -28px rgba(17, 23, 38, 0.28);
+  --shadow-hover: 0 34px 80px -30px rgba(239, 123, 16, 0.35);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.3s;
+  --dur-mid: 0.5s;
+  --dur-slow: 0.8s;
+
+  /* --- z-index --- */
+  --z-nav: 100;
+  --z-overlay: 200;
+}
