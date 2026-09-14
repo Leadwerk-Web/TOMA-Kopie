@@ -7,7 +7,7 @@
 import { features } from "./data.js";
 import { prefersReducedMotion, isMobile } from "./motion-config.js";
 
-const SVG_URL = "assets/Bauteile.svg";
+const SVG_URL = new URL("../assets/Bauteile.svg", import.meta.url).href;
 
 export function initFeatureExplorer() {
   buildNav();

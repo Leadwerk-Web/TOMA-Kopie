@@ -6,6 +6,11 @@
 
 import { prefersReducedMotion } from "./motion-config.js";
 
+function resolveProjectAsset(src) {
+  if (!src || !src.startsWith("assets/")) return src || "";
+  return new URL(`../${src}`, import.meta.url).href;
+}
+
 /** Kreisbahn: Zentrum links vom Ruhepunkt → Exit unten rechts, Enter von oben. */
 function orbitXY(angleDeg, radius) {
   const a = (angleDeg * Math.PI) / 180;
@@ -58,7 +63,7 @@ export function initHeroBadges() {
   let busy = false;
 
   badges.forEach((badge) => {
-    const src = badge.getAttribute("data-image");
+    const src = resolveProjectAsset(badge.getAttribute("data-image"));
     if (src) preload(src);
   });
 
@@ -229,7 +234,7 @@ export function initHeroBadges() {
   };
 
   const onBadgeActivate = (badge) => {
-    const src = badge.getAttribute("data-image");
+    const src = resolveProjectAsset(badge.getAttribute("data-image"));
     const alt = badge.getAttribute("data-alt") || "";
     if (!src || busy) return;
     if (sameImage(src, currentSrc)) {

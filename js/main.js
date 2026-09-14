@@ -307,14 +307,32 @@ function setupNav() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") openMenu(false); });
 
   // Aktiven Menüpunkt anhand sichtbarer Section setzen
-  const sectionIds = desktopLinks.map((a) => a.getAttribute("href")).filter(Boolean);
+  const sectionIds = desktopLinks
+    .map((a) => {
+      const href = a.getAttribute("href") || "";
+      try {
+        const url = new URL(href, window.location.href);
+        return url.origin === window.location.origin && url.pathname === window.location.pathname
+          ? url.hash
+          : "";
+      } catch {
+        return href.startsWith("#") ? href : "";
+      }
+    })
+    .filter((id) => id.length > 1);
   const sections = sectionIds
     .map((id) => document.querySelector(id))
     .filter(Boolean);
   if (sections.length && "IntersectionObserver" in window) {
     const setActive = (id) => {
       desktopLinks.forEach((a) => {
-        a.classList.toggle("is-active", a.getAttribute("href") === id);
+        let hash = "";
+        try {
+          hash = new URL(a.getAttribute("href") || "", window.location.href).hash;
+        } catch {
+          hash = a.getAttribute("href") || "";
+        }
+        a.classList.toggle("is-active", hash === id);
       });
     };
     const io = new IntersectionObserver((entries) => {

@@ -249,7 +249,7 @@ function applyRules() {
 
 /* ---- Live-Vorschau ---- */
 const CONFIG_PHOTOS = {
-  default: "assets/doypack.webp"
+  default: new URL("../assets/doypack.webp", import.meta.url).href
 };
 
 function resolveConfigPhoto() {
