@@ -257,7 +257,7 @@ html.is-stack-scroll .hero.stack-panel {
   height: 100dvh;
   max-height: 100dvh;
   padding: 6.5rem 0 2rem;
-  overflow: visible;
+  overflow: hidden;
 }
 html.is-stack-scroll .hero__float {
   max-height: min(58dvh, 640px);
@@ -339,7 +339,7 @@ html.is-stack-scroll .explorer__stage {
   border-radius: 0;
   border-bottom-left-radius: var(--radius-medium);
   place-items: end start;
-  background: transparent;
+  background: transparent url("../assets/bauteile-basis.webp") left bottom / contain no-repeat;
 }
 html.is-stack-scroll .explorer__bauteile {
   width: 100%;
@@ -389,7 +389,7 @@ html.is-stack-scroll .footer {
   position: relative;
   z-index: 20;
 }
-.hero__layout { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(1.75rem, 3.5vw, 2.75rem); width: 100%; min-width: 0; overflow: hidden; }
+.hero__layout { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(1.75rem, 3.5vw, 2.75rem); width: 100%; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 65fr) minmax(0, 35fr); align-items: center; gap: clamp(1rem, 3vw, 2rem); }
 .hero__copy { align-self: center; }
 .hero__eyebrow { margin-bottom: 1.6rem; }
@@ -440,7 +440,7 @@ html.is-stack-scroll .footer {
   perspective: 900px;
   transform-style: flat;
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 .hero__visual .media {
   box-shadow: none; border-radius: 0; background: transparent;
@@ -1706,7 +1706,7 @@ html.is-stack-scroll .config__steps { padding-bottom: 0; }
   min-height: min(62dvh, 560px);
   max-height: min(62dvh, 560px);
   padding-bottom: 0;
-  overflow: hidden;
+  overflow: visible;
   align-self: stretch;
 }
 .config__step {
@@ -2504,7 +2504,13 @@ html.is-stack-scroll .faq__layout {
    identical to the static form without relying on WPForms theme presets. */
 .leadwerk-wpforms .wpforms-container,
 .leadwerk-wpforms .wpforms-container-full {
-  margin: 0;
+  margin: 0 !important;
+}
+.leadwerk-wpforms {
+  --wpforms-field-size-input-height: 42px;
+  --wpforms-field-size-input-spacing: 0;
+  --wpforms-field-size-font-size: 0.92rem;
+  --wpforms-field-size-line-height: 1.35;
 }
 .leadwerk-wpforms .wpforms-field-container {
   display: grid;
@@ -2513,7 +2519,8 @@ html.is-stack-scroll .faq__layout {
 }
 .leadwerk-wpforms .wpforms-field {
   min-width: 0;
-  padding: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .leadwerk-wpforms .wpforms-field-textarea,
 .leadwerk-wpforms .wpforms-field-checkbox,
@@ -2564,6 +2571,13 @@ html.is-stack-scroll .faq__layout {
   color: var(--color-text-muted);
   font-size: 0.84rem !important;
   line-height: 1.45;
+}
+.leadwerk-wpforms .wpforms-field-checkbox fieldset {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.leadwerk-wpforms .wpforms-field-checkbox legend {
+  margin-bottom: 0.3rem !important;
 }
 .leadwerk-wpforms .wpforms-field-checkbox a {
   color: var(--color-primary-hover);
