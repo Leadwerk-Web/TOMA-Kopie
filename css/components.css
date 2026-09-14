@@ -391,7 +391,7 @@ html.is-stack-scroll .footer {
 }
 .hero__layout { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(1.75rem, 3.5vw, 2.75rem); width: 100%; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 65fr) minmax(0, 35fr); align-items: center; gap: clamp(1rem, 3vw, 2rem); }
-.hero__copy { align-self: center; }
+.hero__copy { align-self: center; min-width: 0; max-width: 100%; }
 .hero__eyebrow { margin-bottom: 1.6rem; }
 .hero h1 { margin-bottom: 1.5rem; }
 .hero h1 em { font-style: normal; color: var(--color-primary); }
@@ -2695,6 +2695,7 @@ html.is-stack-scroll .faq__layout {
 }
 
 @media (max-width: 1199px) {
+  .hero { align-items: flex-start; }
   .hero__grid, .material__layout, .spout__layout, .apps__stage, .explorer__grid, .config__grid { grid-template-columns: 1fr; }
   html.is-stack-scroll .spout__layout,
   html.is-stack-scroll .material__layout {
@@ -2732,14 +2733,17 @@ html.is-stack-scroll .faq__layout {
 }
 
 @media (max-width: 768px) {
+  :root { --fs-h1: clamp(2.1rem, 9.5vw, 2.5rem); --fs-h2: clamp(1.8rem, 8vw, 2.25rem); }
   .nav__links { display: none; }
   .nav__cta > .nav__cta-btn { display: none; }
   .nav__burger { display: flex; }
   .nav__inner { padding: 0.4rem 0.4rem 0.4rem 0.5rem; }
   .hero { padding-top: 7.5rem; }
   .hero__scroll { display: none; }
-  .hero__visual { order: -1; max-width: min(640px, 96vw); justify-self: center; margin-right: 0; }
-  .hero__float { max-height: min(56svh, 520px); }
+  .hero__grid { gap: 2rem; }
+  .hero h1 { overflow-wrap: anywhere; hyphens: auto; }
+  .hero__visual { order: initial; max-width: min(360px, 84vw); justify-self: center; margin-right: 0; }
+  .hero__float { max-height: min(46svh, 420px); }
   .hero__badge { display: none; }
   .values-carousel__track .value-card { width: min(380px, 90vw); }
   .value-card__media { height: 200px; }
