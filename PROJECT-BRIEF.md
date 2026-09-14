@@ -12,7 +12,7 @@
 
 ## Sayfalar ve içerik
 
-- Sayfalar: Ana sayfa, Danke, Impressum, Datenschutz ve gerçek 404.
+- Sayfalar: Ana sayfa, Danke, Impressum, Datenschutz, AGB ve gerçek 404.
 - Ana CTA: Doypack gereksinimini form üzerinden iletmek.
 - Kaynak: Bu deponun mevcut tasarımı ve TOMA'nın yayımlanmış şirket/legal bilgileri.
 - İnteraktif alanlar: avantaj karuseli, özellik keşfi, uygulama sekmeleri, ürün yapılandırıcı, FAQ ve galeri.
@@ -34,6 +34,7 @@
 - Form sağlayıcı: WPForms; ziyaretçi e-postası Reply-To olarak kullanılır; başarı sonrası Danke sayfasına yönlenir.
 - Form: şirket, ad, e-posta, ürün, miktar ve hacim zorunlu; telefon, malzeme, özellik, teslim tarihi, mesaj ve dosya isteğe bağlı; Datenschutz onayı zorunlu.
 - Impressum resmi yayımlanmış şirket bilgilerinden seed edilmiştir.
+- AGB, TOMA'nın yayımlanmış koşullarından yerel ve düzenlenebilir bir sayfa olarak seed edilmiştir.
 - Datenschutz, kurulumdaki gerçek hosting/WPForms/analytics/consent servisleriyle yayın öncesi hukuk sorumlusu tarafından doğrulanmalıdır.
 
 ## Yayın kabulü
