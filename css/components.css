@@ -257,7 +257,7 @@ html.is-stack-scroll .hero.stack-panel {
   height: 100dvh;
   max-height: 100dvh;
   padding: 6.5rem 0 2rem;
-  overflow: hidden;
+  overflow: visible;
 }
 html.is-stack-scroll .hero__float {
   max-height: min(58dvh, 640px);
@@ -389,7 +389,7 @@ html.is-stack-scroll .footer {
   position: relative;
   z-index: 20;
 }
-.hero__layout { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(1.75rem, 3.5vw, 2.75rem); width: 100%; }
+.hero__layout { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(1.75rem, 3.5vw, 2.75rem); width: 100%; min-width: 0; overflow: hidden; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 65fr) minmax(0, 35fr); align-items: center; gap: clamp(1rem, 3vw, 2rem); }
 .hero__copy { align-self: center; }
 .hero__eyebrow { margin-bottom: 1.6rem; }
@@ -399,7 +399,7 @@ html.is-stack-scroll .footer {
 .hero__sub { max-width: 42ch; margin-bottom: 2.25rem; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
-.hero__strip { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
+.hero__strip { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; min-width: 0; }
 .hero__strip-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); }
 .hero__branches {
   display: flex; flex-wrap: nowrap; gap: 0.5rem 0.65rem;
@@ -440,7 +440,7 @@ html.is-stack-scroll .footer {
   perspective: 900px;
   transform-style: flat;
   display: flex; align-items: center; justify-content: center;
-  overflow: visible;
+  overflow: hidden;
 }
 .hero__visual .media {
   box-shadow: none; border-radius: 0; background: transparent;
@@ -1495,8 +1495,8 @@ html.is-stack-scroll .spout__text .eyebrow { margin-bottom: 0.35rem; }
   background:
     linear-gradient(90deg, rgba(246, 248, 252, 0.12) 0%, rgba(246, 248, 252, 0.45) 55%, rgba(246, 248, 252, 0.82) 100%),
     linear-gradient(180deg, rgba(246, 248, 252, 0.08) 0%, rgba(246, 248, 252, 0.28) 70%, rgba(246, 248, 252, 0.75) 100%);
-  -webkit-mask-image: url("../assets/Material.png");
-  mask-image: url("../assets/Material.png");
+  -webkit-mask-image: url("../assets/material.webp");
+  mask-image: url("../assets/material.webp");
   -webkit-mask-size: 100% auto;
   mask-size: 100% auto;
   -webkit-mask-repeat: no-repeat;
@@ -1706,7 +1706,7 @@ html.is-stack-scroll .config__steps { padding-bottom: 0; }
   min-height: min(62dvh, 560px);
   max-height: min(62dvh, 560px);
   padding-bottom: 0;
-  overflow: visible;
+  overflow: hidden;
   align-self: stretch;
 }
 .config__step {

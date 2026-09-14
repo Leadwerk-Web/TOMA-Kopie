@@ -249,7 +249,7 @@ function applyRules() {
 
 /* ---- Live-Vorschau ---- */
 const CONFIG_PHOTOS = {
-  default: "assets/doypack.png"
+  default: "assets/doypack.webp"
 };
 
 function resolveConfigPhoto() {

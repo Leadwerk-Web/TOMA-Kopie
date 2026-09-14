@@ -6,13 +6,13 @@ $bak = Join-Path $assets "_bak_blackbg"
 if (-not (Test-Path $bak)) { New-Item -ItemType Directory -Path $bak | Out-Null }
 
 $targets = @(
-  "Doypack_hero.png",
-  "Attribute-Doypack.png",
-  "doypack-1.png",
-  "Standbodenbeutel-Doypack-e1696408989978.png",
-  "Logo_TOMA.png",
-  "Logo_123pack.png",
-  "Sillhouette_orange.png"
+  "doypack-hero.webp",
+  "attribute-doypack.webp",
+  "doypack-1.webp",
+  "standbodenbeutel-doypack-e1696408989978.webp",
+  "logo-toma.webp",
+  "logo-123pack.webp",
+  "sillhouette-orange.webp"
 )
 
 $threshold = 32

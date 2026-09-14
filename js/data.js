@@ -29,31 +29,31 @@ export const applications = [
   { id: "food", icon: "food", label: "Lebensmittel & Snacks",
     text: "Vom knusprigen Snack bis zu Trockenprodukten: Doypacks kombinieren Standfestigkeit, Regalwirkung und passenden Produktschutz.",
     meta: ["Zipper", "Sichtfenster", "Einreißkerbe"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-09.png", alt: "Oranger Doypack für Müsli in Küchenumgebung" },
+    image: "assets/doypack-09.webp", alt: "Oranger Doypack für Müsli in Küchenumgebung" },
   { id: "coffee", icon: "coffee", label: "Kaffee & Aromatisches",
     text: "Aromatische Produkte profitieren von Aromaschutz und – bei frisch geröstetem Kaffee – von einem Entgasungsventil.",
     meta: ["Aromaventil", "Zipper", "Hochbarriere"], link: "https://www.toma-gmbh.de/kaffeeverpackung/",
-    image: "assets/doypack-1.png", alt: "Bedruckte Kaffee-Doypacks in Kraft- und Anthrazitoptik" },
+    image: "assets/doypack-1.webp", alt: "Bedruckte Kaffee-Doypacks in Kraft- und Anthrazitoptik" },
   { id: "powder", icon: "powder", label: "Pulver & Nahrungsergänzung",
     text: "Für Pulver und Supplements zählen Dosierbarkeit, Wiederverschluss und ein Materialaufbau, der das Produkt schützt.",
     meta: ["Zipper", "Barriere", "Standfest"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-13.png", alt: "Doypack für Zucker und pulverförmige Produkte" },
+    image: "assets/doypack-13.webp", alt: "Doypack für Zucker und pulverförmige Produkte" },
   { id: "pet", icon: "pet", label: "Tierfutter",
     text: "Größere Füllvolumen, robustes Handling und Wiederverschluss – Doypacks eignen sich gut für den Tiernahrungsbereich.",
     meta: ["Großformat", "Zipper", "Euroloch"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/Attribute-Doypack.png", alt: "Standbodenbeutel in verschiedenen Größen und Materialien" },
+    image: "assets/attribute-doypack.webp", alt: "Standbodenbeutel in verschiedenen Größen und Materialien" },
   { id: "cosmetic", icon: "cosmetic", label: "Kosmetik & Pflege",
     text: "Hochwertige Oberflächen und feine Veredelungen unterstützen eine Premium-Anmutung für Pflege- und Kosmetikprodukte.",
     meta: ["Soft-Touch", "Ausgießer", "Sichtfenster"], link: "https://www.toma-gmbh.de/verpackungsloesungen/",
-    image: "assets/doypack-05.png", alt: "Premium-Doypack für Badebomben und Pflegeprodukte" },
+    image: "assets/doypack-05.webp", alt: "Premium-Doypack für Badebomben und Pflegeprodukte" },
   { id: "liquid", icon: "liquid", label: "Flüssigkeiten & Nachfüllen",
     text: "Mit Ausgießer werden fließfähige Produkte dosierbar und wiederverschließbar – ideal für ressourcenschonende Nachfülllösungen.",
     meta: ["Ausgießer", "Standfest", "Nachfüllen"], link: "#ausgiesser",
-    image: "assets/doypack-nachfuellbeutel.png", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
+    image: "assets/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
   { id: "nonfood", icon: "nonfood", label: "Non-Food",
     text: "Auch außerhalb des Lebensmittelbereichs überzeugen Doypacks durch Handling, Präsentation und flexible Ausstattung.",
     meta: ["Robust", "Individuell", "Wiederverschluss"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-tee.png", alt: "Individuell bedruckter TOMA-Doypack" }
+    image: "assets/doypack-tee.webp", alt: "Individuell bedruckter TOMA-Doypack" }
 ];
 
 /* ---- Konfigurator: Schritte ---- */
@@ -117,70 +117,70 @@ export const values = [
   {
     title: "Standfeste Regalwirkung",
     text: "Steht stabil im Regal und bietet großzügige Markenflächen für einen starken Auftritt am Point of Sale.",
-    image: "assets/doypack-1.png",
+    image: "assets/doypack-1.webp",
     alt: "Zwei bedruckte Kaffee-Doypacks in Kraft- und Anthrazitoptik",
     accent: false
   },
   {
     title: "Individuell konfigurierbar",
     text: "Material, Barriere, Format und Ausstattung werden auf Füllgut und Prozess abgestimmt – von der Beratung bis zur Spezifikation.",
-    image: "assets/doypack-09.png",
+    image: "assets/doypack-09.webp",
     alt: "Oranger Doypack für Müsli mit TOMA-Logo in Küchenumgebung",
     accent: true
   },
   {
     title: "Komfort & Wiederverschluss",
     text: "Mit passendem Verschluss bleibt das Produkt geschützt und komfortabel nutzbar – ein klarer Mehrwert für Endkunden.",
-    image: "assets/doypack-Druckverschluss.png",
+    image: "assets/doypack-druckverschluss.webp",
     alt: "Doypacks mit wiederverschließbarem Druckverschluss",
     accent: false
   },
   {
     title: "Produktschutz & Barriere",
     text: "Der Materialaufbau wird auf Ihr Füllgut abgestimmt – für den Schutz, den Aroma, Feuchte oder Haltbarkeit erfordern.",
-    image: "assets/doypack-aromaventil.png",
+    image: "assets/doypack-aromaventil.webp",
     alt: "Doypack mit Aromaventil für produktschützende Barriere",
     accent: false
   },
   {
     title: "Individuelle Bedruckung",
     text: "Großzügige Druckflächen machen Marke und Produktversprechen am Regal sofort sichtbar.",
-    image: "assets/doypack-tee.png",
+    image: "assets/doypack-tee.webp",
     alt: "Individuell bedruckter TOMA-Doypack umgeben von Tee",
     accent: true
   },
   {
     title: "Flexible Ausstattung",
     text: "Zipper, Ventil, Ausgießer, Sichtfenster, Einreißkerbe und weitere Optionen – passend zu Handling und Anwendung.",
-    image: "assets/Attribute-Doypack.png",
+    image: "assets/attribute-doypack.webp",
     alt: "Standbodenbeutel mit verschiedenen Ausstattungsmerkmalen",
     accent: false
   },
   {
     title: "Breites Einsatzspektrum",
     text: "Von Food und Kaffee über Pulver und Pet Food bis Care, Non-Food und Nachfülllösungen.",
-    image: "assets/doypack-05.png",
+    image: "assets/doypack-05.webp",
     alt: "Premium-Doypack für Pflegeprodukte",
     accent: false
   },
   {
     title: "Dosierbarkeit & Nachfüllen",
     text: "Mit Ausgießer werden fließfähige Produkte dosierbar und wiederverschließbar – ideal für ressourcenschonende Nachfüllkonzepte.",
-    image: "assets/doypack-nachfuellbeutel.png",
+    image: "assets/doypack-nachfuellbeutel.webp",
     alt: "Nachfüllbeutel mit Ausgießer",
     accent: true
   },
   {
     title: "Recyclingorientiert prüfen",
     text: "Je nach Anforderung können recyclingorientierte Aufbauten oder Monomateriallösungen geprüft werden – abgestimmt auf Produkt und Anwendungsfall.",
-    image: "assets/Standbodenbeutel-Doypack-e1696408989978.png",
+    image: "assets/standbodenbeutel-doypack-e1696408989978.webp",
     alt: "Weißer Standbodenbeutel als Beispiel für Materialoptionen",
     accent: false
   },
   {
     title: "Beratung bis Spezifikation",
     text: "Anforderungen aufnehmen, Material und Format abstimmen, Muster bzw. Freigabe – persönlich begleitet bis zur Produktion.",
-    image: "assets/doypack-13.png",
+    image: "assets/doypack-13.webp",
     alt: "Doypack in Anwendungsumgebung",
     accent: false
   }
@@ -189,28 +189,28 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack-05.png",
+    src: "assets/doypack-05.webp",
     alt: "Matt-schwarzer Doypack für Badebomben",
     title: "Kosmetik & Care",
     desc: "Matt-schwarzer Doypack in spa-ähnlicher Umgebung – hochwertige Optik für Pflege- und Wellnessprodukte.",
     size: "tall"
   },
   {
-    src: "assets/doypack-13.png",
+    src: "assets/doypack-13.webp",
     alt: "Doypack für Zucker mit Erdbeeren",
     title: "Lebensmittel",
     desc: "Doypack in der Küche – ideal für Zucker, Gewürze und trockene Lebensmittel mit klarer Produktpräsentation.",
     size: "normal"
   },
   {
-    src: "assets/doypack-nachfuellbeutel.png",
+    src: "assets/doypack-nachfuellbeutel.webp",
     alt: "Spoutbag Nachfüllbeutel für Duschbad",
     title: "Nachfüllbeutel",
     desc: "Weißer Spoutbag für Duschbad und Pflege – sauberes Nachfüllen mit integriertem Ausgießer.",
     size: "normal"
   },
   {
-    src: "assets/doypack-tee.png",
+    src: "assets/doypack-tee.webp",
     alt: "TOMA-Doypack mit Tee und Kräutern",
     title: "Tee & Genuss",
     desc: "Individuell bedruckter TOMA-Doypack umgeben von Tee und Kräutern – Aromaschutz trifft Markenauftritt.",
