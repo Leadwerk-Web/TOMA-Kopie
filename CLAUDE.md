@@ -11,6 +11,7 @@ Pages (same design, CSS and JS; only content differs):
 - `flachbodenbeutel.html` — Flachbodenbeutel / Box Pouch, canonical `https://www.toma-gmbh.de/flachbodenbeutel-box-pouch/`. Images are still doypack placeholders (alt texts prefixed `Platzhalter:`) until real box-pouch visuals arrive.
 - `seitenfaltenbeutel.html` — Seitenfaltenbeutel / Quad Seal Pouch, canonical `https://www.toma-gmbh.de/seitenfaltenbeutel/`. Extra static section `#varianten` (three variant cards, `.variants*` in `components.css`). Images are doypack placeholders like on the Flachbodenbeutel page.
 - `siegelrandbeutel.html` — Siegelrandbeutel / Flachbeutel, source `https://www.toma-gmbh.de/siegelrandbeutel/`. Reuses the `#varianten` section (cards: Optik, nachhaltige Varianten, Ausgießer & Zusätze). Images are doypack placeholders.
+- `rollenware.html` — Rollenware / Folien auf Rolle, source `https://www.toma-gmbh.de/rollenware-folien-auf-rolle-flexible-verpackungsloesungen/`. No feature explorer (`features = []`, the Bauteile.svg pouch doesn't fit film), no Dose/Flasche and TOMA-vs-123pack sections; instead `#varianten` plus a second `.variants` section `#beratung` (Füllgut, Maschine, Druck & Zubehör). Config steps set `summaryLabel` so summary/HUD/message read "Barriere", "Zubehör" etc. instead of the pouch defaults. Images are doypack placeholders.
 
 ## Running
 

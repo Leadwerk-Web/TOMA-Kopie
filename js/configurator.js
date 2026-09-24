@@ -18,6 +18,7 @@ export const configuration = {
   print: ""
 };
 
+// Standard-Beschriftungen; je Seite überschreibbar per summaryLabel in configSteps (bzw. step.input)
 const stepLabels = {
   application: "Anwendung",
   materialGoal: "Materialziel",
@@ -28,6 +29,10 @@ const stepLabels = {
   recyclingGoal: "Recycling / PPWR",
   finish: "Oberfläche"
 };
+configSteps.forEach((step) => {
+  if (step.summaryLabel) stepLabels[step.key] = step.summaryLabel;
+  if (step.input?.summaryLabel) stepLabels[step.input.key] = step.input.summaryLabel;
+});
 
 let currentStep = 0;
 let animating = false;
@@ -322,23 +327,23 @@ function updateHud() {
   if (!hud) return;
   const parts = [];
   if (configuration.application) parts.push(`<span><b>Füllgut:</b> ${configuration.application}</span>`);
-  if (configuration.sizeClass) parts.push(`<span><b>Format:</b> ${configuration.sizeClass}</span>`);
-  if (configuration.closure) parts.push(`<span><b>Verschluss:</b> ${configuration.closure}</span>`);
-  if (configuration.features.length) parts.push(`<span><b>Ausstattung:</b> ${configuration.features.length}</span>`);
+  if (configuration.sizeClass) parts.push(`<span><b>${stepLabels.sizeClass}:</b> ${configuration.sizeClass}</span>`);
+  if (configuration.closure) parts.push(`<span><b>${stepLabels.closure}:</b> ${configuration.closure}</span>`);
+  if (configuration.features.length) parts.push(`<span><b>${stepLabels.features}:</b> ${configuration.features.length}</span>`);
   hud.innerHTML = parts.length ? parts.join("") : `<span class="muted">Noch keine Auswahl getroffen.</span>`;
 }
 
 function updateSummary() {
   const dl = document.getElementById("configSummary");
   const rows = [
-    ["Anwendung", configuration.application],
-    ["Materialziel", configuration.materialGoal],
-    ["Format", configuration.sizeClass],
-    ["Füllvolumen", configuration.fillVolume],
-    ["Verschluss", configuration.closure],
-    ["Ausstattung", configuration.features.join(", ")],
-    ["Recycling / PPWR", configuration.recyclingGoal],
-    ["Oberfläche", configuration.finish]
+    [stepLabels.application, configuration.application],
+    [stepLabels.materialGoal, configuration.materialGoal],
+    [stepLabels.sizeClass, configuration.sizeClass],
+    [stepLabels.fillVolume, configuration.fillVolume],
+    [stepLabels.closure, configuration.closure],
+    [stepLabels.features, configuration.features.join(", ")],
+    [stepLabels.recyclingGoal, configuration.recyclingGoal],
+    [stepLabels.finish, configuration.finish]
   ];
   const open = [];
   if (!configuration.materialGoal || configuration.materialGoal.includes("offen") || configuration.materialGoal.includes("Beratung"))
@@ -388,12 +393,12 @@ function syncToForm(open) {
     const lines = [];
     if (configuration.application) lines.push(`Füllgut: ${configuration.application}`);
     if (configuration.materialGoal) lines.push(`Material: ${configuration.materialGoal}`);
-    if (configuration.sizeClass) lines.push(`Format: ${configuration.sizeClass}`);
-    if (configuration.fillVolume) lines.push(`Füllvolumen: ${configuration.fillVolume}`);
-    if (configuration.closure) lines.push(`Verschluss: ${configuration.closure}`);
-    if (configuration.features.length) lines.push(`Ausstattung: ${configuration.features.join(", ")}`);
-    if (configuration.recyclingGoal) lines.push(`Recycling/PPWR: ${configuration.recyclingGoal}`);
-    if (configuration.finish) lines.push(`Oberfläche: ${configuration.finish}`);
+    if (configuration.sizeClass) lines.push(`${stepLabels.sizeClass}: ${configuration.sizeClass}`);
+    if (configuration.fillVolume) lines.push(`${stepLabels.fillVolume}: ${configuration.fillVolume}`);
+    if (configuration.closure) lines.push(`${stepLabels.closure}: ${configuration.closure}`);
+    if (configuration.features.length) lines.push(`${stepLabels.features}: ${configuration.features.join(", ")}`);
+    if (configuration.recyclingGoal) lines.push(`${stepLabels.recyclingGoal}: ${configuration.recyclingGoal}`);
+    if (configuration.finish) lines.push(`${stepLabels.finish}: ${configuration.finish}`);
     if (open && open.length) lines.push(`Offene Punkte: ${open.join("; ")}`);
 
     const block = lines.length ? `${marker}\n${lines.join("\n")}` : "";
