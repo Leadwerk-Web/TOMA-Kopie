@@ -14,6 +14,7 @@ import { iconSvg } from "./icons.js";
 import { initValuesCarousel } from "./values-carousel.js";
 import { initGallery } from "./gallery.js";
 import { initHeroBadges } from "./hero-badges.js";
+import { initNavMenu } from "./nav-menu.js";
 
 /* Stack-Scroll früh setzen, damit Sticky schon beim ersten Paint greift.
    js-motion erst setzen, wenn GSAP bereit ist – sonst bleiben Inhalte unsichtbar. */
@@ -124,6 +125,7 @@ function init() {
   };
 
   run(setupNav, "nav");
+  run(initNavMenu, "nav-menu");
   run(setupStackScroll, "stack-scroll");
   run(hydrateDoypacks, "hydrate");
 
@@ -298,7 +300,6 @@ function setupNav() {
   const burger = document.getElementById("navBurger");
   const mobile = document.getElementById("navMobile");
   const close = document.getElementById("navClose");
-  const desktopLinks = [...document.querySelectorAll(".nav__links a")];
 
   updateNavProgress();
   window.addEventListener("scroll", updateNavProgress, { passive: true });
@@ -318,44 +319,6 @@ function setupNav() {
   });
   mobile.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => openMenu(false)));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") openMenu(false); });
-
-  // Aktiven Menüpunkt anhand sichtbarer Section setzen
-  const sectionIds = desktopLinks
-    .map((a) => {
-      const href = a.getAttribute("href") || "";
-      try {
-        const url = new URL(href, window.location.href);
-        return url.origin === window.location.origin && url.pathname === window.location.pathname
-          ? url.hash
-          : "";
-      } catch {
-        return href.startsWith("#") ? href : "";
-      }
-    })
-    .filter((id) => id.length > 1);
-  const sections = sectionIds
-    .map((id) => document.querySelector(id))
-    .filter(Boolean);
-  if (sections.length && "IntersectionObserver" in window) {
-    const setActive = (id) => {
-      desktopLinks.forEach((a) => {
-        let hash = "";
-        try {
-          hash = new URL(a.getAttribute("href") || "", window.location.href).hash;
-        } catch {
-          hash = a.getAttribute("href") || "";
-        }
-        a.classList.toggle("is-active", hash === id);
-      });
-    };
-    const io = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible[0]) setActive(`#${visible[0].target.id}`);
-    }, { rootMargin: "-35% 0px -45% 0px", threshold: [0.1, 0.25, 0.5] });
-    sections.forEach((s) => io.observe(s));
-  }
 }
 
 /* ---------------- ANKER-LINKS (sanft via Lenis) ---------------- */

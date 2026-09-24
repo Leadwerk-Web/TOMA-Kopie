@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Static product landing pages (German) for TOMA GmbH flexible packaging. Plain HTML + CSS + native ES modules — no framework, no build step, no package.json, no tests, no linter. Designed to be dropped into the existing WordPress/Astra site. All user-facing copy is German.
 
 Pages (same design, CSS and JS; only content differs):
+- `index.html` — Startseite / hub (`data-product="home"`, data in `js/data/home.js`). Distributes to the six product pages: `#produkte` grid (`.products*`), values carousel, `#branchen` (application-explorer tabs; `linkLabel` overrides the "… ansehen" link text), `#material`, `#optionen` (`.variants`), `#ablauf` (`.process*`), `#standard` (TOMA vs 123pack), testimonials, FAQ, lead form with Ansprechpartner (`.lead__person`). No feature explorer, no configurator (`configSteps = []`; `initConfigurator()` returns early without `#configSteps`). Box-pouch/Seitenfalten/Siegelrand card images are `Platzhalter:`.
 - `doypack.html` — Doypacks / Standbodenbeutel, canonical `https://www.toma-gmbh.de/doypack-standbodenbeutel-hersteller/`
 - `flachbodenbeutel.html` — Flachbodenbeutel / Box Pouch, canonical `https://www.toma-gmbh.de/flachbodenbeutel-box-pouch/`. Images are still doypack placeholders (alt texts prefixed `Platzhalter:`) until real box-pouch visuals arrive.
 - `seitenfaltenbeutel.html` — Seitenfaltenbeutel / Quad Seal Pouch, canonical `https://www.toma-gmbh.de/seitenfaltenbeutel/`. Extra static section `#varianten` (three variant cards, `.variants*` in `components.css`). Images are doypack placeholders like on the Flachbodenbeutel page.
@@ -19,7 +20,7 @@ Pages (same design, CSS and JS; only content differs):
 ES modules require HTTP (not `file://`):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\serve.ps1   # http://localhost:8000 (/ → doypack.html), optional -Port <n>
+powershell -ExecutionPolicy Bypass -File .\serve.ps1   # http://localhost:8000 (/ → index.html), optional -Port <n>
 ```
 
 Alternatives: `npx serve .` or `python -m http.server 8000`.
@@ -31,6 +32,8 @@ Libraries are self-hosted in `js/vendor/` (GSAP 3.12.5, ScrollTrigger, Lenis 1.0
 **Boot sequence (`js/main.js`)** — two phases, deliberately decoupled so the page never ends up blank:
 1. `init()` (started at the end of `main.js`, on `DOMContentLoaded` or immediately if the DOM is already parsed — `data.js` uses top-level await, so the event may already have fired) runs every module's `init*()` immediately, each wrapped in `run()` (try/catch + console error), so one failing module doesn't break the others. Content is built regardless of whether GSAP loaded.
 2. `whenReady()` polls for `window.gsap`/`window.ScrollTrigger` (~3 s max). Only then is `html.js-motion` added (CSS in `base.css` hides `[data-reveal]` / `[data-hero=…]` only under that class), `window.__tomaAnimated = true` is set, and Lenis + `initScrollScenes()` start. A 1.8 s safety timeout calls `revealAll()` if animation never started. Keep this invariant: never hide content in CSS unless `js-motion` is present.
+
+**Main navigation** — same static markup in all seven pages with `header.nav` (structure of www.toma-gmbh.de: TOMA GmbH, Verpackungsbeutel, Verpackungslösungen as mega menu, Webshop 123pack.de, Kontakt, Blog). Only pages that exist in this repo are links; everything else is `<span class="nav__text">` until the page exists — when adding a page, turn its entry into a link on every page (desktop dropdown, mega "Beutelformen" pills, mobile accordion). The current product page gets `aria-current="page"` on its links and `is-current` on the Verpackungsbeutel trigger. Behavior in `js/nav-menu.js` (disclosure buttons, hover on fine pointers, Escape/focus-out close); burger below 1200 px. The Verpackungsbeutel dropdown has a decorative preview image (`.nav__preview`) that follows hover/focus via each link's `data-preview-src` and falls back to the current page's bag (Doypack on the homepage). `doypack`, `flachbodenbeutel` and `seitenfaltenbeutel` have CRLF line endings — keep them when editing with scripts.
 
 **Stacked-panel scroll** — on ≥1024 px without reduced motion, `html.is-stack-scroll` is set (early at module load, re-synced on media-query change). Sections with `.stack-panel` and inline `--stack-z` become sticky overlays that cover each other. Consequences:
 - Don't put `filter`/blur on elements inside sticky panels (breaks stacking; see comment in `scroll-scenes.js` hero intro).

@@ -36,6 +36,7 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <!-- ============================ NAV ============================ -->
+  <!-- Struktur wie www.toma-gmbh.de. Verlinkt sind nur bereits angelegte Seiten; alle übrigen Punkte bleiben vorerst Text. -->
   <header class="nav" id="nav">
     <div class="nav__progress" aria-hidden="true">
       <div class="nav__progress-bar" id="navProgress"></div>
@@ -44,14 +45,100 @@
       <a class="nav__logo" href="index.html" data-lw-page-ref="toma-kopie-home-v1" aria-label="TOMA GmbH – Startseite">
         <span class="nav__logo-mark"><img src="assets/logo-toma.webp" width="52" height="52" alt="TOMA GmbH" data-lw-global="brand.logo" data-lw-type="image" /></span>
       </a>
-      <nav class="nav__links" aria-label="Sektionen">
-        <a href="#warum">Vorteile</a>
-        <a href="#varianten">Varianten</a>
-        <a href="#ausgiesser">Ausgießer</a>
-        <a href="#material">Material</a>
-        <a href="#konfigurator">Konfigurator</a>
-        <a href="#alternativen">Vergleich</a>
-        <a href="#faq">FAQ</a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <ul class="nav__menu">
+          <li class="nav__item" data-nav-item>
+            <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubToma">TOMA GmbH<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+            <div class="nav__dropdown" id="navSubToma">
+              <ul class="nav__sublist">
+                <li><span class="nav__text">Team</span></li>
+                <li><span class="nav__text">Mission und Kompetenzen</span></li>
+                <li><span class="nav__text">PPWR &amp; Verpackung</span></li>
+                <li><span class="nav__text">Nachhaltig und biologisch verpacken</span></li>
+                <li><span class="nav__text">Konformitätserklärungen</span></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item" data-nav-item>
+            <button type="button" class="nav__trigger is-current" aria-expanded="false" aria-controls="navSubBeutel">Verpackungsbeutel<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+            <div class="nav__dropdown nav__dropdown--wide" id="navSubBeutel">
+              <div class="nav__beutel">
+                <figure class="nav__preview" aria-hidden="true">
+                  <img src="assets/doypack-tee.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async" data-nav-preview-img />
+                  <figcaption><b data-nav-preview-title>Doypack</b><span data-nav-preview-sub>Standbodenbeutel</span></figcaption>
+                </figure>
+                <ul class="nav__sublist nav__sublist--grid">
+                  <li><a class="nav__sublink" href="doypack.html" data-preview-src="assets/doypack-tee.webp"><b>Doypack</b><span>Standbodenbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="flachbodenbeutel.html" data-preview-src="assets/doypack-05.webp"><b>Box Pouch</b><span>Flachbodenbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="seitenfaltenbeutel.html" data-preview-src="assets/aromaventil.webp"><b>Quadro-Seal-Pouch</b><span>Seitenfaltenbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="siegelrandbeutel.html" data-preview-src="assets/doypack-13.webp"><b>Siegelrandbeutel</b><span>Flachbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="rollenware.html" data-preview-src="assets/material.webp"><b>Rollenware</b><span>Folien auf Rolle</span></a></li>
+                  <li><a class="nav__sublink" href="spoutbag.html" data-preview-src="assets/standbodenbeutel-ausgiesser.webp" aria-current="page"><b>Spoutbag</b><span>Nachfüllbeutel</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item nav__item--mega" data-nav-item>
+            <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubLoesungen">Verpackungslösungen<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+            <div class="nav__dropdown nav__mega" id="navSubLoesungen">
+              <div class="nav__mega-grid">
+                <div class="nav__mega-intro">
+                  <span class="eyebrow">Verpackungslösungen</span>
+                  <p class="nav__mega-title">Die passende Lösung für <em>Ihr Produkt</em></p>
+                  <p class="nav__mega-copy">Material, Ausstattung und Branche bestimmen, welche Verpackung passt. Wir beraten Sie persönlich.</p>
+                  <a class="btn btn--primary nav__mega-cta" href="#anfrage">Beratung anfragen</a>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaMaterial">Materialanwendungen</p>
+                  <p class="nav__mega-sub">Nach Füllgut und Schutzbedarf</p>
+                  <ul class="nav__mega-list" aria-labelledby="navMegaMaterial">
+                    <li><span class="nav__text">Hochbarrierefolien</span></li>
+                    <li><span class="nav__text">Recyclebare Verpackung</span></li>
+                    <li><span class="nav__text">Biologisch verpacken</span></li>
+                    <li><span class="nav__text">Sterilisierfähige Beutel</span></li>
+                    <li><span class="nav__text">Monomaterial</span></li>
+                    <li><span class="nav__text">Mikrowellenbeutel</span></li>
+                  </ul>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaAttribute">Attribute</p>
+                  <p class="nav__mega-sub">Funktionen und Veredelung</p>
+                  <ul class="nav__mega-list" aria-labelledby="navMegaAttribute">
+                    <li><span class="nav__text">Kindersichere Zipperbeutel</span></li>
+                    <li><span class="nav__text">Perforationen</span></li>
+                    <li><span class="nav__text">Aufdruck</span></li>
+                  </ul>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaBranchen">Branchen</p>
+                  <p class="nav__mega-sub">Lösungen nach Einsatzbereich</p>
+                  <ul class="nav__mega-list" aria-labelledby="navMegaBranchen">
+                    <li><span class="nav__text">Food – Lebensmittelverpackung</span></li>
+                    <li><span class="nav__text">Non-Food Verpackungsbeutel</span></li>
+                    <li><span class="nav__text">Kaffeeverpackung</span></li>
+                    <li><span class="nav__text">Tierfutterverpackung</span></li>
+                    <li><span class="nav__text">Chemie</span></li>
+                    <li><span class="nav__text">Pharma</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nav__mega-foot">
+                <span class="nav__mega-foot-label" id="navMegaFormen">Beutelformen</span>
+                <ul class="nav__mega-pills" aria-labelledby="navMegaFormen">
+                  <li><a href="doypack.html">Doypack</a></li>
+                  <li><a href="flachbodenbeutel.html">Box Pouch</a></li>
+                  <li><a href="seitenfaltenbeutel.html">Seitenfaltenbeutel</a></li>
+                  <li><a href="siegelrandbeutel.html">Siegelrandbeutel</a></li>
+                  <li><a href="rollenware.html">Rollenware</a></li>
+                  <li><a href="spoutbag.html" aria-current="page">Spoutbag</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item"><span class="nav__text nav__text--top">Webshop 123pack.de</span></li>
+          <li class="nav__item"><span class="nav__text nav__text--top">Kontakt</span></li>
+          <li class="nav__item"><span class="nav__text nav__text--top">Blog</span></li>
+        </ul>
       </nav>
       <div class="nav__cta">
         <a class="nav__cta-btn" href="#anfrage">Angebot anfragen</a>
@@ -71,13 +158,59 @@
         </button>
       </div>
       <nav class="nav__mobile-links" aria-label="Mobile Navigation">
-        <a href="#warum"><span>01</span>Vorteile</a>
-        <a href="#varianten"><span>02</span>Varianten</a>
-        <a href="#ausgiesser"><span>03</span>Ausgießer</a>
-        <a href="#material"><span>04</span>Material</a>
-        <a href="#konfigurator"><span>05</span>Konfigurator</a>
-        <a href="#alternativen"><span>06</span>Vergleich</a>
-        <a href="#faq"><span>07</span>FAQ</a>
+        <div class="nav__mgroup" data-nav-mgroup>
+          <button type="button" class="nav__mtrigger" aria-expanded="false" aria-controls="navMSubToma"><span class="nav__mnum">01</span>TOMA GmbH<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+          <ul class="nav__msub" id="navMSubToma" hidden>
+            <li><span class="nav__text">Team</span></li>
+            <li><span class="nav__text">Mission und Kompetenzen</span></li>
+            <li><span class="nav__text">PPWR &amp; Verpackung</span></li>
+            <li><span class="nav__text">Nachhaltig und biologisch verpacken</span></li>
+            <li><span class="nav__text">Konformitätserklärungen</span></li>
+          </ul>
+        </div>
+        <div class="nav__mgroup" data-nav-mgroup>
+          <button type="button" class="nav__mtrigger is-current" aria-expanded="false" aria-controls="navMSubBeutel"><span class="nav__mnum">02</span>Verpackungsbeutel<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+          <ul class="nav__msub" id="navMSubBeutel" hidden>
+            <li><a href="doypack.html">Doypack | Standbodenbeutel</a></li>
+            <li><a href="flachbodenbeutel.html">Box Pouch | Flachbodenbeutel</a></li>
+            <li><a href="seitenfaltenbeutel.html">Quadro-Seal-Pouch | Seitenfaltenbeutel</a></li>
+            <li><a href="siegelrandbeutel.html">Siegelrandbeutel | Flachbeutel</a></li>
+            <li><a href="rollenware.html">Rollenware | Folien auf Rolle</a></li>
+            <li><a href="spoutbag.html" aria-current="page">Spoutbag / Nachfüllbeutel</a></li>
+          </ul>
+        </div>
+        <div class="nav__mgroup" data-nav-mgroup>
+          <button type="button" class="nav__mtrigger" aria-expanded="false" aria-controls="navMSubLoesungen"><span class="nav__mnum">03</span>Verpackungslösungen<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+          <div class="nav__msub" id="navMSubLoesungen" hidden>
+            <p class="nav__mheading">Materialanwendungen</p>
+            <ul>
+              <li><span class="nav__text">Hochbarrierefolien</span></li>
+              <li><span class="nav__text">Recyclebare Verpackung</span></li>
+              <li><span class="nav__text">Biologisch verpacken</span></li>
+              <li><span class="nav__text">Sterilisierfähige Beutel</span></li>
+              <li><span class="nav__text">Monomaterial</span></li>
+              <li><span class="nav__text">Mikrowellenbeutel</span></li>
+            </ul>
+            <p class="nav__mheading">Attribute</p>
+            <ul>
+              <li><span class="nav__text">Kindersichere Zipperbeutel</span></li>
+              <li><span class="nav__text">Perforationen</span></li>
+              <li><span class="nav__text">Aufdruck</span></li>
+            </ul>
+            <p class="nav__mheading">Branchen</p>
+            <ul>
+              <li><span class="nav__text">Food – Lebensmittelverpackung</span></li>
+              <li><span class="nav__text">Non-Food Verpackungsbeutel</span></li>
+              <li><span class="nav__text">Kaffeeverpackung</span></li>
+              <li><span class="nav__text">Tierfutterverpackung</span></li>
+              <li><span class="nav__text">Chemie</span></li>
+              <li><span class="nav__text">Pharma</span></li>
+            </ul>
+          </div>
+        </div>
+        <span class="nav__mtext"><span class="nav__mnum">04</span>Webshop 123pack.de</span>
+        <span class="nav__mtext"><span class="nav__mnum">05</span>Kontakt</span>
+        <span class="nav__mtext"><span class="nav__mnum">06</span>Blog</span>
       </nav>
       <a class="nav__cta-btn nav__cta-btn--block" href="#anfrage">Angebot anfragen</a>
     </div>

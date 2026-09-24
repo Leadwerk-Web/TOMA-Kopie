@@ -1,52 +1,740 @@
-<!doctype html>
-<html lang="de-DE">
+<!DOCTYPE html>
+<html lang="de-DE" data-product="home">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- Vorläufige Startseite: leitet auf die Doypack-Seite weiter, bis die echte Startseite nachgereicht wird -->
-<meta http-equiv="refresh" content="0; url=doypack.html">
-<title>Flexible Verpackungen individuell gefertigt | TOMA GmbH</title>
-<meta name="description" content="TOMA GmbH fertigt flexible Verpackungen individuell – Doypacks, Flachbodenbeutel, Seitenfaltenbeutel, Siegelrandbeutel, Rollenware und Spoutbags.">
-<meta name="robots" content="noindex,follow">
-<meta name="leadwerk:focus-keyphrase" content="Flexible Verpackungen individuell gefertigt">
-<meta property="og:image" content="assets/doypack-scaled.webp">
-<link rel="icon" href="assets/logo-toma.webp" type="image/webp">
-<link rel="stylesheet" href="css/fonts-local.css">
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/special-pages.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexible Verpackungen individuell gefertigt | TOMA GmbH</title>
+  <meta name="description" content="TOMA GmbH fertigt flexible Verpackungen individuell – Doypacks, Box Pouches, Seitenfaltenbeutel, Siegelrandbeutel, Spoutbags und Rollenware. Persönliche Beratung, Angebot in 2 Arbeitstagen." />
+  <meta name="leadwerk:focus-keyphrase" content="Flexible Verpackungen individuell gefertigt" />
+  <meta name="theme-color" content="#ef7b10" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Flexible Verpackungen individuell gefertigt | TOMA GmbH" />
+  <meta property="og:description" content="Doypacks, Box Pouches, Seitenfaltenbeutel, Siegelrandbeutel, Spoutbags und Rollenware – abgestimmt auf Ihr Füllgut, Ihren Prozess und Ihre Marke." />
+  <meta property="og:image" content="assets/doypack-scaled.webp" />
+  <meta property="og:locale" content="de_DE" />
+  <link rel="icon" href="assets/logo-toma.webp" type="image/webp" />
+
+  <link rel="stylesheet" href="css/fonts-local.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TOMA GmbH",
+    "url": "https://www.toma-gmbh.de/",
+    "logo": "assets/logo-toma.webp",
+    "description": "Individuell gefertigte flexible Verpackungen: Doypacks, Flachbodenbeutel, Seitenfaltenbeutel, Siegelrandbeutel, Spoutbags und Rollenware.",
+    "telephone": "+49-2157-128475",
+    "email": "info@toma-gmbh.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Heidweg 37",
+      "postalCode": "41334",
+      "addressLocality": "Nettetal",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
 </head>
-<body class="special-page">
-<header class="special-header">
-<div class="container special-header__inner">
-<a href="doypack.html" aria-label="TOMA – Doypacks und Standbodenbeutel">
-<img src="assets/logo-toma.webp" alt="TOMA GmbH" data-lw-global="brand.logo" data-lw-type="image">
-</a>
-</div>
-</header>
-<main class="special-main">
-<div class="container">
-<article class="special-card" data-lw-section="home">
-<h1 data-lw-field="home.title" data-lw-type="text">Flexible Verpackungen von TOMA</h1>
-<p data-lw-field="home.copy" data-lw-type="textarea">Sie werden zu unseren Doypacks und Standbodenbeuteln weitergeleitet. Falls nicht, wählen Sie direkt ein Produkt.</p>
-<div class="special-actions">
-<a class="btn btn--primary" href="doypack.html">Doypacks &amp; Standbodenbeutel</a>
-<a class="btn btn--ghost" href="flachbodenbeutel.html">Flachbodenbeutel</a>
-<a class="btn btn--ghost" href="seitenfaltenbeutel.html">Seitenfaltenbeutel</a>
-<a class="btn btn--ghost" href="siegelrandbeutel.html">Siegelrandbeutel</a>
-<a class="btn btn--ghost" href="rollenware.html">Rollenware</a>
-<a class="btn btn--ghost" href="spoutbag.html">Spoutbag / Nachfüllbeutel</a>
-</div>
-</article>
-</div>
-</main>
-<footer class="special-footer">
-<div class="container special-footer__inner">
-<span>© TOMA GmbH</span>
-<span>
-<a href="impressum.html" data-lw-page-ref="toma-kopie-impressum-v1">Impressum</a> · <a href="datenschutz.html" data-lw-page-ref="toma-kopie-datenschutz-v1">Datenschutz</a> · <a href="agb.html" data-lw-page-ref="toma-kopie-agb-v1">AGB</a>
-</span>
-</div>
-</footer>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ============================ NAV ============================ -->
+  <!-- Struktur wie www.toma-gmbh.de. Verlinkt sind nur bereits angelegte Seiten; alle übrigen Punkte bleiben vorerst Text. -->
+  <header class="nav" id="nav">
+    <div class="nav__progress" aria-hidden="true">
+      <div class="nav__progress-bar" id="navProgress"></div>
+    </div>
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" data-lw-page-ref="toma-kopie-home-v1" aria-label="TOMA GmbH – Startseite">
+        <span class="nav__logo-mark"><img src="assets/logo-toma.webp" width="52" height="52" alt="TOMA GmbH" data-lw-global="brand.logo" data-lw-type="image" /></span>
+      </a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <ul class="nav__menu">
+          <li class="nav__item" data-nav-item>
+            <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubToma">TOMA GmbH<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+            <div class="nav__dropdown" id="navSubToma">
+              <ul class="nav__sublist">
+                <li><span class="nav__text">Team</span></li>
+                <li><span class="nav__text">Mission und Kompetenzen</span></li>
+                <li><span class="nav__text">PPWR &amp; Verpackung</span></li>
+                <li><span class="nav__text">Nachhaltig und biologisch verpacken</span></li>
+                <li><span class="nav__text">Konformitätserklärungen</span></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item" data-nav-item>
+            <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubBeutel">Verpackungsbeutel<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+            <div class="nav__dropdown nav__dropdown--wide" id="navSubBeutel">
+              <div class="nav__beutel">
+                <figure class="nav__preview" aria-hidden="true">
+                  <img src="assets/doypack-tee.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async" data-nav-preview-img />
+                  <figcaption><b data-nav-preview-title>Doypack</b><span data-nav-preview-sub>Standbodenbeutel</span></figcaption>
+                </figure>
+                <ul class="nav__sublist nav__sublist--grid">
+                  <li><a class="nav__sublink" href="doypack.html" data-preview-src="assets/doypack-tee.webp"><b>Doypack</b><span>Standbodenbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="flachbodenbeutel.html" data-preview-src="assets/doypack-05.webp"><b>Box Pouch</b><span>Flachbodenbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="seitenfaltenbeutel.html" data-preview-src="assets/aromaventil.webp"><b>Quadro-Seal-Pouch</b><span>Seitenfaltenbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="siegelrandbeutel.html" data-preview-src="assets/doypack-13.webp"><b>Siegelrandbeutel</b><span>Flachbeutel</span></a></li>
+                  <li><a class="nav__sublink" href="rollenware.html" data-preview-src="assets/material.webp"><b>Rollenware</b><span>Folien auf Rolle</span></a></li>
+                  <li><a class="nav__sublink" href="spoutbag.html" data-preview-src="assets/standbodenbeutel-ausgiesser.webp"><b>Spoutbag</b><span>Nachfüllbeutel</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item nav__item--mega" data-nav-item>
+            <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubLoesungen">Verpackungslösungen<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+            <div class="nav__dropdown nav__mega" id="navSubLoesungen">
+              <div class="nav__mega-grid">
+                <div class="nav__mega-intro">
+                  <span class="eyebrow">Verpackungslösungen</span>
+                  <p class="nav__mega-title">Die passende Lösung für <em>Ihr Produkt</em></p>
+                  <p class="nav__mega-copy">Material, Ausstattung und Branche bestimmen, welche Verpackung passt. Wir beraten Sie persönlich.</p>
+                  <a class="btn btn--primary nav__mega-cta" href="#anfrage">Beratung anfragen</a>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaMaterial">Materialanwendungen</p>
+                  <p class="nav__mega-sub">Nach Füllgut und Schutzbedarf</p>
+                  <ul class="nav__mega-list" aria-labelledby="navMegaMaterial">
+                    <li><span class="nav__text">Hochbarrierefolien</span></li>
+                    <li><span class="nav__text">Recyclebare Verpackung</span></li>
+                    <li><span class="nav__text">Biologisch verpacken</span></li>
+                    <li><span class="nav__text">Sterilisierfähige Beutel</span></li>
+                    <li><span class="nav__text">Monomaterial</span></li>
+                    <li><span class="nav__text">Mikrowellenbeutel</span></li>
+                  </ul>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaAttribute">Attribute</p>
+                  <p class="nav__mega-sub">Funktionen und Veredelung</p>
+                  <ul class="nav__mega-list" aria-labelledby="navMegaAttribute">
+                    <li><span class="nav__text">Kindersichere Zipperbeutel</span></li>
+                    <li><span class="nav__text">Perforationen</span></li>
+                    <li><span class="nav__text">Aufdruck</span></li>
+                  </ul>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaBranchen">Branchen</p>
+                  <p class="nav__mega-sub">Lösungen nach Einsatzbereich</p>
+                  <ul class="nav__mega-list" aria-labelledby="navMegaBranchen">
+                    <li><span class="nav__text">Food – Lebensmittelverpackung</span></li>
+                    <li><span class="nav__text">Non-Food Verpackungsbeutel</span></li>
+                    <li><span class="nav__text">Kaffeeverpackung</span></li>
+                    <li><span class="nav__text">Tierfutterverpackung</span></li>
+                    <li><span class="nav__text">Chemie</span></li>
+                    <li><span class="nav__text">Pharma</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nav__mega-foot">
+                <span class="nav__mega-foot-label" id="navMegaFormen">Beutelformen</span>
+                <ul class="nav__mega-pills" aria-labelledby="navMegaFormen">
+                  <li><a href="doypack.html">Doypack</a></li>
+                  <li><a href="flachbodenbeutel.html">Box Pouch</a></li>
+                  <li><a href="seitenfaltenbeutel.html">Seitenfaltenbeutel</a></li>
+                  <li><a href="siegelrandbeutel.html">Siegelrandbeutel</a></li>
+                  <li><a href="rollenware.html">Rollenware</a></li>
+                  <li><a href="spoutbag.html">Spoutbag</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item"><span class="nav__text nav__text--top">Webshop 123pack.de</span></li>
+          <li class="nav__item"><span class="nav__text nav__text--top">Kontakt</span></li>
+          <li class="nav__item"><span class="nav__text nav__text--top">Blog</span></li>
+        </ul>
+      </nav>
+      <div class="nav__cta">
+        <a class="nav__cta-btn" href="#anfrage">Angebot anfragen</a>
+        <button class="nav__burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMobile">
+          <span class="nav__burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav__mobile" id="navMobile" aria-hidden="true">
+    <div class="nav__mobile-panel">
+      <div class="nav__mobile-top">
+        <span class="nav__mobile-label">Menü</span>
+        <button class="nav__mobile-close" id="navClose" aria-label="Menü schließen">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav class="nav__mobile-links" aria-label="Mobile Navigation">
+        <div class="nav__mgroup" data-nav-mgroup>
+          <button type="button" class="nav__mtrigger" aria-expanded="false" aria-controls="navMSubToma"><span class="nav__mnum">01</span>TOMA GmbH<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+          <ul class="nav__msub" id="navMSubToma" hidden>
+            <li><span class="nav__text">Team</span></li>
+            <li><span class="nav__text">Mission und Kompetenzen</span></li>
+            <li><span class="nav__text">PPWR &amp; Verpackung</span></li>
+            <li><span class="nav__text">Nachhaltig und biologisch verpacken</span></li>
+            <li><span class="nav__text">Konformitätserklärungen</span></li>
+          </ul>
+        </div>
+        <div class="nav__mgroup" data-nav-mgroup>
+          <button type="button" class="nav__mtrigger" aria-expanded="false" aria-controls="navMSubBeutel"><span class="nav__mnum">02</span>Verpackungsbeutel<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+          <ul class="nav__msub" id="navMSubBeutel" hidden>
+            <li><a href="doypack.html">Doypack | Standbodenbeutel</a></li>
+            <li><a href="flachbodenbeutel.html">Box Pouch | Flachbodenbeutel</a></li>
+            <li><a href="seitenfaltenbeutel.html">Quadro-Seal-Pouch | Seitenfaltenbeutel</a></li>
+            <li><a href="siegelrandbeutel.html">Siegelrandbeutel | Flachbeutel</a></li>
+            <li><a href="rollenware.html">Rollenware | Folien auf Rolle</a></li>
+            <li><a href="spoutbag.html">Spoutbag / Nachfüllbeutel</a></li>
+          </ul>
+        </div>
+        <div class="nav__mgroup" data-nav-mgroup>
+          <button type="button" class="nav__mtrigger" aria-expanded="false" aria-controls="navMSubLoesungen"><span class="nav__mnum">03</span>Verpackungslösungen<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
+          <div class="nav__msub" id="navMSubLoesungen" hidden>
+            <p class="nav__mheading">Materialanwendungen</p>
+            <ul>
+              <li><span class="nav__text">Hochbarrierefolien</span></li>
+              <li><span class="nav__text">Recyclebare Verpackung</span></li>
+              <li><span class="nav__text">Biologisch verpacken</span></li>
+              <li><span class="nav__text">Sterilisierfähige Beutel</span></li>
+              <li><span class="nav__text">Monomaterial</span></li>
+              <li><span class="nav__text">Mikrowellenbeutel</span></li>
+            </ul>
+            <p class="nav__mheading">Attribute</p>
+            <ul>
+              <li><span class="nav__text">Kindersichere Zipperbeutel</span></li>
+              <li><span class="nav__text">Perforationen</span></li>
+              <li><span class="nav__text">Aufdruck</span></li>
+            </ul>
+            <p class="nav__mheading">Branchen</p>
+            <ul>
+              <li><span class="nav__text">Food – Lebensmittelverpackung</span></li>
+              <li><span class="nav__text">Non-Food Verpackungsbeutel</span></li>
+              <li><span class="nav__text">Kaffeeverpackung</span></li>
+              <li><span class="nav__text">Tierfutterverpackung</span></li>
+              <li><span class="nav__text">Chemie</span></li>
+              <li><span class="nav__text">Pharma</span></li>
+            </ul>
+          </div>
+        </div>
+        <span class="nav__mtext"><span class="nav__mnum">04</span>Webshop 123pack.de</span>
+        <span class="nav__mtext"><span class="nav__mnum">05</span>Kontakt</span>
+        <span class="nav__mtext"><span class="nav__mnum">06</span>Blog</span>
+      </nav>
+      <a class="nav__cta-btn nav__cta-btn--block" href="#anfrage">Angebot anfragen</a>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#produkte" data-hero="scroll" aria-label="Weiter scrollen">
+    <span class="hero__scroll-label">Scroll</span>
+    <span class="hero__scroll-track" aria-hidden="true">
+      <span class="hero__scroll-dot"></span>
+    </span>
+  </a>
+
+  <main id="main">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero stack-panel" id="hero" style="--stack-z: 1" aria-labelledby="hero-title" data-lw-section="hero">
+      <div class="sil sil--hero" aria-hidden="true"><svg viewBox="0 0 200 180"><use href="#toma-silhouette"/></svg></div>
+      <div class="sil sil--hero-soft" aria-hidden="true"><svg viewBox="0 0 200 180"><use href="#toma-silhouette"/></svg></div>
+      <div class="container--wide hero__layout">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <span class="eyebrow hero__eyebrow" data-hero="eyebrow" data-lw-field="hero.eyebrow" data-lw-type="text">Beratung &amp; Fertigung aus Nettetal</span>
+            <h1 id="hero-title" data-lw-field="hero.title" data-lw-type="richtext">
+              <span class="line"><span data-hero="line">Flexible Verpackungen,</span></span>
+              <span class="line"><span data-hero="line"><em>individuell</em> für Ihr Produkt.</span></span>
+            </h1>
+            <p class="hero__sub lead" data-hero="sub" data-lw-field="hero.copy" data-lw-type="textarea">Vom Doypack bis zur Rollenware: Wir stimmen Beutelform, Material, Barriere und Druck auf Ihr Füllgut und Ihren Abfüllprozess ab – damit Sie die richtige Verpackung wählen, nicht irgendeine.</p>
+            <div class="hero__ctas" data-hero="ctas">
+              <a class="btn btn--primary" href="#anfrage">Angebot anfragen</a>
+              <a class="btn btn--ghost" href="#produkte">Beutelformen entdecken</a>
+            </div>
+            <ul class="hero__trust" data-hero="ctas" data-lw-field="hero.trust" data-lw-type="richtext">
+              <li><b>32 Jahre</b> Erfahrung</li>
+              <li>Angebot in <b>2 Arbeitstagen</b></li>
+              <li>Antwort in <b>24 Stunden</b></li>
+            </ul>
+          </div>
+
+          <div class="hero__visual" data-hero="visual">
+            <div class="media media--hero" data-hero-stage>
+              <div class="hero__float" data-hero-float>
+                <img src="assets/doypack-hero.webp" width="1024" height="1536" alt="TOMA Doypack Standbodenbeutel – orangefarbene Premium-Verpackung mit individueller Bedruckung" fetchpriority="high" decoding="async" data-hero-img data-lw-field="hero.image" data-lw-type="image" />
+              </div>
+            </div>
+            <button type="button" class="hero__badge glass hero__badge--1 is-active" data-hero="badge" data-image="assets/doypack-hero.webp" data-alt="TOMA Doypack Standbodenbeutel – orangefarbene Premium-Verpackung mit individueller Bedruckung" aria-pressed="true"><span class="dot" aria-hidden="true"></span>Doypack</button>
+            <button type="button" class="hero__badge glass hero__badge--2" data-hero="badge" data-image="assets/aromaventil.webp" data-alt="Doypack mit Aromaventil für produktschützende Barriere" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Aromaventil</button>
+            <button type="button" class="hero__badge glass hero__badge--3" data-hero="badge" data-image="assets/standbodenbeutel-ausgiesser.webp" data-alt="Doypack mit Ausgießer – Spoutbag für flüssige und pastöse Produkte" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Spoutbag</button>
+            <button type="button" class="hero__badge glass hero__badge--4" data-hero="badge" data-image="assets/sichtfenster.webp" data-alt="Doypack mit Sichtfenster – Produktinhalt auf einen Blick erkennbar" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Sichtfenster</button>
+          </div>
+        </div>
+
+        <div class="hero__strip" data-hero="strip">
+          <span class="hero__strip-label">Verpackungen für Branchen wie</span>
+          <div class="hero__branches" id="branchStrip"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ BEUTELFORMEN ============================ -->
+    <!-- Bilder: Box Pouch, Seitenfaltenbeutel und Siegelrandbeutel sind Platzhalter aus dem Doypack-Bestand -->
+    <section class="section products stack-panel" id="produkte" style="--stack-z: 2" aria-labelledby="products-title" data-lw-section="products">
+      <div class="container--wide">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Unsere Beutelformen</span>
+          <h2 id="products-title">Die passende Form für <em>Ihr Füllgut</em></h2>
+        </div>
+        <div class="products__grid">
+          <article class="products__card" data-reveal>
+            <div class="products__media"><img src="assets/doypack-tee.webp" width="1024" height="1024" alt="TOMA-Doypack mit Tee und Kräutern" loading="lazy" decoding="async" /></div>
+            <div class="products__body">
+              <span class="products__alias">Standbodenbeutel</span>
+              <h3>Doypack</h3>
+              <p>Steht stabil im Regal und ist vielseitig – für Lebensmittel, Kaffee, Tierfutter und Non-Food.</p>
+              <a class="products__link" href="doypack.html">Zu den Doypacks <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="products__card" data-reveal>
+            <div class="products__media"><img src="assets/doypack-05.webp" width="1024" height="1536" alt="Platzhalter: Flachbodenbeutel / Box Pouch" loading="lazy" decoding="async" /></div>
+            <div class="products__body">
+              <span class="products__alias">Box Pouch</span>
+              <h3>Flachbodenbeutel</h3>
+              <p>Maximale Standfestigkeit, mehr Füllvolumen und zusätzliche Druckfläche für eine exklusive Präsentation.</p>
+              <a class="products__link" href="flachbodenbeutel.html">Zu den Flachbodenbeuteln <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="products__card" data-reveal>
+            <div class="products__media"><img src="assets/aromaventil.webp" width="918" height="1306" alt="Platzhalter: Seitenfaltenbeutel mit Aromaventil" loading="lazy" decoding="async" /></div>
+            <div class="products__body">
+              <span class="products__alias">Quad Seal Pouch</span>
+              <h3>Seitenfaltenbeutel</h3>
+              <p>Der Klassiker für Kaffee, Tee und Gewürze – mit Barrierefolie und Aromaventil.</p>
+              <a class="products__link" href="seitenfaltenbeutel.html">Zu den Seitenfaltenbeuteln <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="products__card" data-reveal>
+            <div class="products__media"><img src="assets/doypack-13.webp" width="1024" height="1024" alt="Platzhalter: Siegelrandbeutel / Flachbeutel" loading="lazy" decoding="async" /></div>
+            <div class="products__body">
+              <span class="products__alias">Flachbeutel</span>
+              <h3>Siegelrandbeutel</h3>
+              <p>An drei Seiten versiegelt, flexibel einsetzbar und die günstigste Beutelform.</p>
+              <a class="products__link" href="siegelrandbeutel.html">Zu den Siegelrandbeuteln <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="products__card" data-reveal>
+            <div class="products__media"><img src="assets/standbodenbeutel-ausgiesser.webp" width="638" height="1033" alt="Standbodenbeutel mit Ausgießer und Schraubkappe" loading="lazy" decoding="async" /></div>
+            <div class="products__body">
+              <span class="products__alias">Nachfüllbeutel</span>
+              <h3>Spoutbag</h3>
+              <p>Wiederverschließbar mit Ausgießer – für Flüssigkeiten, pastöse Medien und Nachfüllware.</p>
+              <a class="products__link" href="spoutbag.html">Zu den Spoutbags <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="products__card" data-reveal>
+            <div class="products__media"><img src="assets/material.webp" width="761" height="900" alt="Illustration verschiedener Materialschichten einer Verbundfolie" loading="lazy" decoding="async" /></div>
+            <div class="products__body">
+              <span class="products__alias">Folien auf Rolle</span>
+              <h3>Rollenware</h3>
+              <p>Mono- oder Verbundfolie zur Verarbeitung direkt auf Ihrer FFS- oder HFFS-Anlage.</p>
+              <a class="products__link" href="rollenware.html">Zur Rollenware <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+        <p class="products__hint" data-reveal>Nicht sicher, welche Form passt? <a href="#anfrage">Lassen Sie sich beraten.</a></p>
+      </div>
+    </section>
+
+    <!-- ============================ VORTEILE-KARUSSELL ============================ -->
+    <section class="section values stack-panel" id="warum" style="--stack-z: 3" aria-labelledby="values-title" data-lw-section="benefits">
+      <div class="container--wide">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Warum TOMA</span>
+          <h2 id="values-title">Beratung, die sich <em>Zeit nimmt</em></h2>
+        </div>
+        <div class="values-carousel" id="valuesCarousel" data-reveal aria-roledescription="Karussell" aria-label="Vorteile von TOMA">
+          <div class="values-carousel__viewport">
+            <div class="values-carousel__track"></div>
+          </div>
+          <div class="values-carousel__controls">
+            <button type="button" class="values-carousel__btn" data-values-prev aria-label="Vorherige Vorteile">‹</button>
+            <div class="values-carousel__dots" role="tablist" aria-label="Vorteile wählen"></div>
+            <button type="button" class="values-carousel__btn" data-values-next aria-label="Nächste Vorteile">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ BRANCHEN (Tabs) ============================ -->
+    <section class="section apps stack-panel" id="branchen" style="--stack-z: 4" aria-labelledby="apps-title" data-lw-section="applications">
+      <div class="container--wide">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Branchen</span>
+          <h2 id="apps-title">Was möchten Sie <em>verpacken?</em></h2>
+          <p>Jedes Füllgut stellt eigene Anforderungen an Barriere, Verschluss und Präsentation. Wählen Sie Ihre Branche.</p>
+        </div>
+        <div class="apps__tabs" role="tablist" aria-label="Branchen" id="appsTabs"></div>
+        <div class="apps__stage card" data-reveal>
+          <div class="apps__panel" id="appsPanel"></div>
+          <div class="apps__visual" id="appsVisual" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ MATERIAL & NACHHALTIGKEIT ============================ -->
+    <section class="section material stack-panel" id="material" style="--stack-z: 5" aria-labelledby="material-title" data-lw-section="material">
+      <div class="material__bg" aria-hidden="true">
+        <img src="assets/material.webp" width="761" height="900" alt="Illustration verschiedener Materialschichten einer Verbundfolie" loading="lazy" decoding="async" data-lw-field="material.image" data-lw-type="image" />
+      </div>
+      <div class="container--wide material__layout">
+        <div class="material__text">
+          <span class="eyebrow" data-reveal>Material &amp; Nachhaltigkeit</span>
+          <h2 id="material-title" data-reveal>Das richtige <em>Material</em></h2>
+          <p class="material__lead" data-reveal>Welcher Materialaufbau passt, hängt davon ab, was Ihr Produkt schützen muss: vor Sauerstoff, Feuchtigkeit, Aromaverlust, Fett oder Licht.</p>
+          <ul class="material__props">
+            <li data-reveal><span class="material__n">01</span><span>Verbundfolien wie PET/PE oder OPP/PE – stabil und gut siegelbar</span></li>
+            <li data-reveal><span class="material__n">02</span><span>Hochbarriere mit PET/Alu/PE – gegen Licht, Sauerstoff und Feuchtigkeit</span></li>
+            <li data-reveal><span class="material__n">03</span><span>PE- oder PP-Monomaterial – recyclingfreundlicher</span></li>
+            <li data-reveal><span class="material__n">04</span><span>Papier/PE und biobasierte Varianten – natürliche Optik</span></li>
+          </ul>
+          <p class="material__note" data-reveal>Die tatsächliche Eignung und regulatorische Bewertung, etwa im Hinblick auf die PPWR, hängt vom konkreten Materialaufbau, Produkt und Anwendungsfall ab. Konformitätserklärungen erhalten Sie je nach Anwendung auf Anfrage.</p>
+          <div class="material__links" data-reveal>
+            <a class="btn btn--primary" href="#anfrage">Materialberatung anfragen</a>
+            <a class="btn btn--link" href="https://www.toma-gmbh.de/monomaterial/">Monomaterial ansehen <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--link" href="https://www.toma-gmbh.de/hochbarrierefolien/">Hochbarrierefolien ansehen <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--link" href="https://www.toma-gmbh.de/recyclebare-verpackung/">Recyclebare Verpackung ansehen <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ AUSSTATTUNG ============================ -->
+    <section class="section variants stack-panel" id="optionen" style="--stack-z: 6" aria-labelledby="options-title" data-lw-section="options">
+      <div class="container--wide">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Ausstattung</span>
+          <h2 id="options-title">Details, die Ihr Produkt <em>besser machen</em></h2>
+          <p>Welche Ausstattung möglich ist, hängt von der Beutelform ab – wir finden die passende Kombination.</p>
+        </div>
+        <div class="variants__grid">
+          <article class="variants__card" data-reveal>
+            <div class="variants__top">
+              <span class="variants__n">01</span>
+              <svg class="variants__icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <path d="M30 34h60v70H30z"/>
+                <path d="M30 48h60" stroke-dasharray="6 5"/>
+                <path d="M90 40l10-6M90 40l10 6"/>
+              </svg>
+            </div>
+            <h3>Öffnen &amp; Verschließen</h3>
+            <p class="variants__alias">einfach zu öffnen, sicher verschlossen</p>
+            <span class="variants__tag">Wiederverschließbar</span>
+            <dl class="variants__specs">
+              <div><dt>Zipper / Druckverschluss</dt><dd>Wiederverschließbar für mehrfache Entnahme</dd></div>
+              <div><dt>Kindersicherer Zipper</dt><dd>Für Produkte, die nicht in Kinderhände gehören</dd></div>
+              <div><dt>Einreißkerbe &amp; Perforation</dt><dd>Für sauberes, einfaches Öffnen</dd></div>
+            </dl>
+            <a class="btn btn--ghost variants__cta" href="https://www.toma-gmbh.de/kindersichere-zipperbeutel/">Kindersicherung ansehen</a>
+          </article>
+
+          <article class="variants__card" data-reveal>
+            <div class="variants__top">
+              <span class="variants__n">02</span>
+              <svg class="variants__icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <path d="M32 40q28-8 56 0l4 64q-32 8-64 0z"/>
+                <circle cx="72" cy="64" r="10"/>
+                <circle cx="72" cy="64" r="4"/>
+                <path d="M54 32V18h12v14"/>
+              </svg>
+            </div>
+            <h3>Frische &amp; Dosierung</h3>
+            <p class="variants__alias">Schutz und Handhabung</p>
+            <span class="variants__tag variants__tag--accent">Produktschutz</span>
+            <dl class="variants__specs">
+              <div><dt>Aromaventil</dt><dd>Lässt Gase entweichen, z. B. bei frisch geröstetem Kaffee</dd></div>
+              <div><dt>Ausgießer</dt><dd>Für Flüssigkeiten, pastöse Medien und Nachfüllware</dd></div>
+              <div><dt>Barriere nach Bedarf</dt><dd>Gegen Sauerstoff, Feuchtigkeit, Aromaverlust oder Licht</dd></div>
+            </dl>
+            <a class="btn btn--ghost variants__cta" href="spoutbag.html">Spoutbags ansehen</a>
+          </article>
+
+          <article class="variants__card" data-reveal>
+            <div class="variants__top">
+              <span class="variants__n">03</span>
+              <svg class="variants__icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <path d="M30 30h60v76H30z"/>
+                <rect x="44" y="56" width="32" height="34" rx="6"/>
+                <path d="M54 30a6 6 0 0 1 12 0"/>
+                <path d="M42 44h36"/>
+              </svg>
+            </div>
+            <h3>Präsentation im Regal</h3>
+            <p class="variants__alias">damit Ihr Produkt gesehen wird</p>
+            <span class="variants__tag variants__tag--accent">Ihr Markenlayout</span>
+            <dl class="variants__specs">
+              <div><dt>Sichtfenster</dt><dd>Zeigt das Produkt auf einen Blick</dd></div>
+              <div><dt>Euroloch</dt><dd>Für die Präsentation am Haken</dd></div>
+              <div><dt>Druck &amp; Veredelung</dt><dd>Matt, glänzend oder in Papieroptik – im Layout Ihrer Marke</dd></div>
+            </dl>
+            <a class="btn btn--ghost variants__cta" href="https://www.toma-gmbh.de/drucktechnik/">Mehr über Drucktechnik</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ABLAUF ============================ -->
+    <section class="section process stack-panel" id="ablauf" style="--stack-z: 7" aria-labelledby="process-title" data-lw-section="process">
+      <div class="container--wide">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">So läuft es ab</span>
+          <h2 id="process-title">In fünf Schritten zu <em>Ihrer Verpackung</em></h2>
+          <p>Auch wenn noch nicht alles feststeht: Offene Punkte klären wir gemeinsam.</p>
+        </div>
+        <ol class="process__list">
+          <li class="process__step" data-reveal>
+            <span class="process__n">01</span>
+            <h3>Anfrage</h3>
+            <p>Sie schicken uns Füllgut, Menge und Ihre Wünsche – per Formular, Telefon oder E-Mail.</p>
+          </li>
+          <li class="process__step" data-reveal>
+            <span class="process__n">02</span>
+            <h3>Beratung</h3>
+            <p>Ihr Ansprechpartner meldet sich innerhalb von 24 Stunden und klärt Beutelform, Material und Ausstattung mit Ihnen.</p>
+          </li>
+          <li class="process__step" data-reveal>
+            <span class="process__n">03</span>
+            <h3>Angebot</h3>
+            <p>Innerhalb von 2 Arbeitstagen erhalten Sie Ihr Angebot – auf Wunsch stimmen wir Muster mit Ihnen ab.</p>
+          </li>
+          <li class="process__step" data-reveal>
+            <span class="process__n">04</span>
+            <h3>Freigabe</h3>
+            <p>Wir stimmen Spezifikation und Druckdaten mit Ihnen ab. Produziert wird erst nach Ihrer Freigabe.</p>
+          </li>
+          <li class="process__step" data-reveal>
+            <span class="process__n">05</span>
+            <h3>Produktion &amp; Lieferung</h3>
+            <p>Ihre Verpackung wird nach der freigegebenen Spezifikation gefertigt und an Sie geliefert.</p>
+          </li>
+        </ol>
+        <div class="process__cta" data-reveal>
+          <a class="btn btn--primary" href="#anfrage">Anfrage starten</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ INDIVIDUELL ODER STANDARD ============================ -->
+    <section class="section compare stack-panel" id="standard" style="--stack-z: 8" aria-labelledby="compare-title" data-lw-section="comparison">
+      <div class="container--wide">
+        <div class="compare__intro section-head section-head--center" data-reveal>
+          <span class="eyebrow">Individuell oder Standard</span>
+          <h2 id="compare-title">Zwei Wege zur <em>passenden Verpackung</em></h2>
+          <p>Beide gehören zu TOMA. Wählen Sie den, der zu Menge, Format und Zeitplan passt.</p>
+        </div>
+
+        <div class="compare__grid" data-reveal>
+          <article class="compare__panel compare__panel--toma">
+            <div class="compare__brand">
+              <img src="assets/logo-toma.webp" width="56" height="56" alt="TOMA GmbH" />
+              <div>
+                <h3>TOMA</h3>
+                <small>Individuell gefertigt · projektbezogen</small>
+              </div>
+            </div>
+            <p class="compare__lead">Für Verpackungen, die genau zu Ihrem Füllgut, Ihrem Prozess und Ihrer Marke passen.</p>
+            <ul class="compare__list">
+              <li>Beutelform, Format &amp; Füllvolumen nach Maß</li>
+              <li>Materialaufbau passend zum Schutzbedarf</li>
+              <li>Individuelle Bedruckung &amp; Veredelung</li>
+              <li>Ausstattung wie Ventil, Ausgießer oder Kindersicherung</li>
+              <li>Persönliche Beratung &amp; Machbarkeitsprüfung</li>
+            </ul>
+            <div class="compare__foot">
+              <a class="btn btn--primary" href="#anfrage">Angebot anfragen</a>
+              <a class="btn btn--link" href="https://www.toma-gmbh.de/verpackungsloesungen/">Verpackung nach Maß <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="compare__panel compare__panel--std">
+            <div class="compare__brand">
+              <img src="assets/logo-123pack.webp" width="56" height="56" alt="123pack" />
+              <div>
+                <h3>123pack</h3>
+                <small>Standardbeutel · Webshop</small>
+              </div>
+            </div>
+            <p class="compare__lead">Für Startups, kleinere Mengen oder kleine Auflagen neuer Produktlinien.</p>
+            <ul class="compare__list">
+              <li>Standardgrößen direkt im Webshop</li>
+              <li>Kleinere Mengen bestellbar</li>
+              <li>Neutrale Beutel, individuell etikettierbar</li>
+              <li>Ohne Projektabstimmung startklar</li>
+            </ul>
+            <div class="compare__foot">
+              <a class="btn btn--ghost" href="https://www.123pack.de/" target="_blank" rel="noopener noreferrer">Zum Webshop 123pack.de <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TESTIMONIALS ============================ -->
+    <section class="section quotes stack-panel" id="stimmen" style="--stack-z: 9" aria-labelledby="quotes-title" data-lw-section="testimonials">
+      <div class="container--wide">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Kundenstimmen</span>
+          <h2 id="quotes-title">Exzellenz, <em>perfekt verpackt</em></h2>
+          <p data-lw-field="testimonials.copy" data-lw-type="textarea">Qualität ist bei uns kein Versprechen, sondern Standard. Und sollte einmal etwas nicht passen, sorgen wir schnell und unkompliziert dafür, dass es in Ordnung gebracht wird.</p>
+        </div>
+        <div class="quotes__grid quotes__grid--duo" id="testimonialGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================ FAQ ============================ -->
+    <section class="section faq stack-panel" id="faq" style="--stack-z: 10" aria-labelledby="faq-title" data-lw-section="faq">
+      <div class="container--wide faq__layout">
+        <div class="faq__intro" data-reveal>
+          <span class="eyebrow faq__eyebrow">FAQ</span>
+          <h2 id="faq-title" class="faq__title">Häufige Fragen zu <em>flexiblen Verpackungen</em></h2>
+          <p class="faq__intro-text">Antworten zu Beutelformen, Materialien und zum Ablauf Ihrer Anfrage. Wählen Sie rechts ein Thema – oder schreiben Sie uns direkt.</p>
+          <p class="faq__intro-note">Ihre Frage ist nicht dabei? <a href="#anfrage">Schreiben Sie uns direkt.</a></p>
+        </div>
+        <div class="faq__panel">
+          <div class="faq__cats" id="faqCats" data-reveal></div>
+          <div class="faq__list" id="faqList" role="tabpanel" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ KONTAKT / ANFRAGE ============================ -->
+    <section class="section lead" id="anfrage" aria-labelledby="lead-title" data-lw-section="contact">
+      <div class="container--wide lead__layout">
+        <div class="lead__intro">
+          <span class="eyebrow lead__eyebrow" data-reveal>Kontakt</span>
+          <h2 id="lead-title" class="lead__title" data-reveal>Starten Sie Ihren Weg zur <em>richtigen Verpackung</em></h2>
+          <p class="lead__text" data-reveal>Erzählen Sie uns, was Sie verpacken möchten. Wir melden uns innerhalb von 24 Stunden – und Ihr Angebot erhalten Sie innerhalb von 2 Arbeitstagen.</p>
+          <figure class="lead__person" data-reveal>
+            <span class="lead__person-mark" aria-hidden="true">FP</span>
+            <div>
+              <blockquote><p data-lw-field="contact.quote" data-lw-type="textarea">„Mit Begeisterung und Hingabe widmen wir uns jeden Tag. Für die besten Produkte, aber auch für den besten Service. Können wir Ihnen helfen?“</p></blockquote>
+              <figcaption><b>Frank Pfeiffer</b><span>Geschäftsführer, TOMA GmbH</span></figcaption>
+            </div>
+          </figure>
+          <div class="lead__contact" data-reveal>
+            <p>Lieber direkt sprechen?</p>
+            <div class="lead__contact-actions">
+              <a class="btn btn--primary" href="tel:+492157128475">+49 (0)2157 128475</a>
+              <a class="btn btn--ghost" href="mailto:info@toma-gmbh.de">info@toma-gmbh.de</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="form lead__form" id="leadForm" action="danke.html" method="post" data-lw-wpforms="contact" novalidate data-reveal>
+          <div class="form__grid">
+            <div class="form__field"><label for="f-company">Unternehmen <span class="req">*</span></label><input id="f-company" name="company" type="text" required autocomplete="organization" /><span class="error-msg">Bitte Unternehmen angeben.</span></div>
+            <div class="form__field"><label for="f-name">Vor- und Nachname <span class="req">*</span></label><input id="f-name" name="name" type="text" required autocomplete="name" /><span class="error-msg">Bitte Namen angeben.</span></div>
+            <div class="form__field"><label for="f-email">E-Mail <span class="req">*</span></label><input id="f-email" name="email" type="email" required autocomplete="email" /><span class="error-msg">Bitte gültige E-Mail angeben.</span></div>
+            <div class="form__field"><label for="f-phone">Telefon</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" /></div>
+            <div class="form__field"><label for="f-product">Produkt / Füllgut <span class="req">*</span></label><input id="f-product" name="product" type="text" required placeholder="z. B. Kaffee, Tierfutter, Duschgel" /><span class="error-msg">Bitte Füllgut angeben.</span></div>
+            <div class="form__field"><label for="f-quantity">Menge <span class="req">*</span></label><input id="f-quantity" name="quantity" type="text" required placeholder="z. B. 10.000 Stück / Jahr" /><span class="error-msg">Bitte Menge angeben.</span></div>
+            <div class="form__field"><label for="f-volume">Füllvolumen <span class="req">*</span></label><input id="f-volume" name="volume" type="text" required placeholder="z. B. 250 g / 1 l" /><span class="error-msg">Bitte Füllvolumen angeben.</span></div>
+            <div class="form__field"><label for="f-material">Material</label><input id="f-material" name="material" type="text" placeholder="optional" /></div>
+            <div class="form__field"><label for="f-features">Ausstattung</label><input id="f-features" name="features" type="text" placeholder="optional – z. B. Beutelform, Zipper" /></div>
+            <div class="form__field"><label for="f-deadline">Liefertermin</label><input id="f-deadline" name="deadline" type="text" placeholder="optional" /></div>
+            <div class="form__field full"><label for="f-message">Nachricht</label><textarea id="f-message" name="message" rows="3" placeholder="optional"></textarea></div>
+            <div class="form__field full"><label for="f-file">Datei-Upload</label><input id="f-file" name="file" type="file" accept=".pdf,.ai,.eps,image/jpeg,image/png,.zip" /><span class="form__file-hint">PDF, AI, EPS, JPG, PNG, ZIP · max. 20 MB</span></div>
+            <div class="form__field full"><label class="form__consent"><input type="checkbox" name="consent" required /><span>Ich habe die <a href="datenschutz.html" data-lw-page-ref="toma-kopie-datenschutz-v1" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung zu. <span class="req">*</span></span></label><span class="error-msg">Bitte Datenschutz bestätigen.</span></div>
+
+            <input type="hidden" name="cfg_application" id="cfg_application" />
+            <input type="hidden" name="cfg_materialGoal" id="cfg_materialGoal" />
+            <input type="hidden" name="cfg_sizeClass" id="cfg_sizeClass" />
+            <input type="hidden" name="cfg_fillVolume" id="cfg_fillVolume" />
+            <input type="hidden" name="cfg_closure" id="cfg_closure" />
+            <input type="hidden" name="cfg_features" id="cfg_features" />
+            <input type="hidden" name="cfg_recyclingGoal" id="cfg_recyclingGoal" />
+            <input type="hidden" name="cfg_finish" id="cfg_finish" />
+            <input type="hidden" name="cfg_print" id="cfg_print" />
+
+            <div class="form__field full form__actions">
+              <button class="btn btn--primary form__submit" type="submit">Anfrage absenden</button>
+            </div>
+            <div class="form__field full"><div class="form__status" id="formStatus" role="status" hidden></div></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer" id="footer">
+    <div class="container--wide">
+      <div class="footer__grid">
+        <div>
+          <a class="nav__logo footer__logo" href="index.html" data-lw-page-ref="toma-kopie-home-v1" aria-label="TOMA GmbH – Startseite">
+            <span class="nav__logo-mark"><img src="assets/logo-toma.webp" width="64" height="64" alt="TOMA GmbH" /></span>
+          </a>
+          <p>Individuelle flexible Verpackungen – abgestimmt auf Ihr Produkt, Ihren Prozess und Ihre Marke.</p>
+          <p class="footer__address">TOMA GmbH · Heidweg 37 · 41334 Nettetal</p>
+          <a class="btn btn--primary" href="#anfrage" style="margin-top:1rem">Angebot anfragen</a>
+        </div>
+        <div>
+          <h4>Produkte</h4>
+          <ul>
+            <li><a href="doypack.html">Doypacks &amp; Standbodenbeutel</a></li>
+            <li><a href="flachbodenbeutel.html">Flachbodenbeutel / Box Pouch</a></li>
+            <li><a href="seitenfaltenbeutel.html">Seitenfaltenbeutel / Quad Seal Pouch</a></li>
+            <li><a href="siegelrandbeutel.html">Siegelrandbeutel / Flachbeutel</a></li>
+            <li><a href="spoutbag.html">Spoutbag / Nachfüllbeutel</a></li>
+            <li><a href="rollenware.html">Rollenware / Folien auf Rolle</a></li>
+            <li><a href="https://www.toma-gmbh.de/kaffeeverpackung/">Kaffeeverpackung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Material &amp; Nachhaltigkeit</h4>
+          <ul>
+            <li><a href="https://www.toma-gmbh.de/monomaterial/">Monomaterial</a></li>
+            <li><a href="https://www.toma-gmbh.de/hochbarrierefolien/">Hochbarrierefolien</a></li>
+            <li><a href="https://www.toma-gmbh.de/recyclebare-verpackung/">Recyclebare Verpackung</a></li>
+            <li><a href="https://www.toma-gmbh.de/nachhaltig-und-biologisch-verpacken/">Bio-Standbodenbeutel</a></li>
+            <li><a href="https://www.toma-gmbh.de/drucktechnik/">Drucktechnik</a></li>
+            <li><a href="https://www.toma-gmbh.de/konformitaetserklaerungen/">Konformität</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="https://www.toma-gmbh.de/anfrageformular/">Muster &amp; Anfrage</a></li>
+            <li><a href="https://www.toma-gmbh.de/kontakt/">Kontakt</a></li>
+            <li><a href="https://www.123pack.de/" target="_blank" rel="noopener noreferrer">Standard bei 123pack</a></li>
+            <li><a href="tel:+492157128475">+49 (0)2157 128475</a></li>
+            <li><a href="mailto:info@toma-gmbh.de">info@toma-gmbh.de</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> TOMA GmbH · Alle Rechte vorbehalten.</span>
+        <span><a href="impressum.html" data-lw-page-ref="toma-kopie-impressum-v1">Impressum</a> · <a href="datenschutz.html" data-lw-page-ref="toma-kopie-datenschutz-v1">Datenschutz</a> · <a href="agb.html" data-lw-page-ref="toma-kopie-agb-v1">AGB</a></span>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <button type="button" class="scroll-top" id="scrollTop" aria-label="Nach oben scrollen">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 14l6-6 6 6"/>
+    </svg>
+  </button>
+
+  <!-- ============================ SVG SYMBOL DEFS ============================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="toma-silhouette" fill="currentColor"
+            d="M102.2 6.4 C128.6 4.2 155.8 14.8 170.6 35.6 C185.8 57.1 188.4 87.2 176.8 110.4 C165.6 132.8 142.8 149.2 117.4 154.6 C92.6 159.8 66.2 153.4 47.2 136.8 C27.4 119.4 16.8 93.2 19.6 67.4 C22.2 42.6 39.8 21.4 63.4 12.2 C76.2 7.2 89.4 5.4 102.2 6.4Z"/>
+    </defs>
+  </svg>
+
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/scrolltrigger.min.js" defer></script>
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

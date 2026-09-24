@@ -38,6 +38,8 @@ let currentStep = 0;
 let animating = false;
 
 export function initConfigurator() {
+  // Seiten ohne Konfigurator (Startseite): keine Chips/Formularwerte setzen
+  if (!document.getElementById("configSteps")) return;
   buildSteps();
   updatePreview();
   updateSummary();

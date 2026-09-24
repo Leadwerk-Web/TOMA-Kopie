@@ -19,7 +19,7 @@ while ($listener.IsListening) {
   $req = $ctx.Request; $res = $ctx.Response
   try {
     $urlPath = [Uri]::UnescapeDataString($req.Url.LocalPath)
-    if ($urlPath -eq "/") { $urlPath = "/doypack.html" }
+    if ($urlPath -eq "/") { $urlPath = "/index.html" }
     $filePath = Join-Path $root ($urlPath.TrimStart("/").Replace("/", [IO.Path]::DirectorySeparatorChar))
     if (Test-Path $filePath -PathType Leaf) {
       $bytes = [IO.File]::ReadAllBytes($filePath)
