@@ -55,6 +55,7 @@ flachbodenbeutel.html     → Flachbodenbeutel/Box-Pouch-Seite (gleiche Struktur
 seitenfaltenbeutel.html   → Seitenfaltenbeutel/Quad-Seal-Seite (+ Varianten-Sektion, Bilder vorerst Platzhalter)
 siegelrandbeutel.html     → Siegelrandbeutel/Flachbeutel-Seite (+ Varianten-Sektion, Bilder vorerst Platzhalter)
 rollenware.html           → Rollenware/Folien-auf-Rolle-Seite (Varianten + Beratung statt Explorer/Vergleich, Bilder vorerst Platzhalter)
+spoutbag.html             → Spoutbag/Nachfüllbeutel-Seite (Varianten + Ausgießer statt Explorer, Dosen-Vergleich ohne 123pack)
 css/tokens.css            → Design-Tokens (:root)
 css/base.css              → Reset, Typografie, Utilities, Reduced-Motion
 css/components.css        → alle Sektionen + responsive Breakpoints
@@ -66,6 +67,7 @@ js/data/flachbodenbeutel.js → Inhalte Flachbodenbeutel / Box Pouch
 js/data/seitenfaltenbeutel.js → Inhalte Seitenfaltenbeutel / Quad Seal Pouch
 js/data/siegelrandbeutel.js → Inhalte Siegelrandbeutel / Flachbeutel
 js/data/rollenware.js     → Inhalte Rollenware / Folien auf Rolle
+js/data/spoutbag.js       → Inhalte Spoutbag / Nachfüllbeutel
 js/feature-explorer.js    → Ausstattungs-Explorer (Desktop-Pin / Mobile-Akkordeon)
 js/configurator.js        → Doypack-Konfigurator (State, Live-SVG, Formularübergabe)
 js/application-explorer.js→ Anwendungsbereiche (Tabs, weicher Bildwechsel)
