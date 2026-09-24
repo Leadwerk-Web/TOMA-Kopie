@@ -249,7 +249,7 @@ function applyRules() {
 
 /* ---- Live-Vorschau ---- */
 const CONFIG_PHOTOS = {
-  default: "assets/doypack.png"
+  default: new URL("../assets/doypack.webp", import.meta.url).href
 };
 
 function resolveConfigPhoto() {
@@ -361,7 +361,17 @@ function updateSummary() {
 }
 
 function syncToForm(open) {
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ""; };
+  const set = (id, val, fieldKey = "") => {
+    let el = document.getElementById(id);
+    const wpforms = window.leadwerkGtdForms || {};
+    if (!el && fieldKey && wpforms.formId && wpforms.fieldMap && wpforms.fieldMap[fieldKey]) {
+      el = document.getElementById(`wpforms-${Number(wpforms.formId)}-field_${Number(wpforms.fieldMap[fieldKey])}`);
+    }
+    if (!el || el.dataset.touched) return;
+    el.value = val || "";
+    el.dispatchEvent(new Event("input", { bubbles: true }));
+    el.dispatchEvent(new Event("change", { bubbles: true }));
+  };
   set("cfg_application", configuration.application);
   set("cfg_materialGoal", configuration.materialGoal);
   set("cfg_sizeClass", configuration.sizeClass);
@@ -372,7 +382,11 @@ function syncToForm(open) {
   set("cfg_finish", configuration.finish);
   set("cfg_print", configuration.print);
 
-  const msg = document.getElementById("f-message");
+  const wpforms = window.leadwerkGtdForms || {};
+  const wpField = (key) => wpforms.formId && wpforms.fieldMap && wpforms.fieldMap[key]
+    ? document.getElementById(`wpforms-${Number(wpforms.formId)}-field_${Number(wpforms.fieldMap[key])}`)
+    : null;
+  const msg = document.getElementById("f-message") || wpField("message");
   if (msg) {
     const marker = "— Konfiguration —";
     const lines = [];
@@ -392,16 +406,26 @@ function syncToForm(open) {
     msg.value = block ? (userPart ? userPart + "\n\n" + block : block) : userPart;
   }
 
-  const feat = document.getElementById("f-features");
+  const feat = document.getElementById("f-features") || wpField("features");
   if (feat && !feat.dataset.touched) feat.value = configuration.features.join(", ");
-  const mat = document.getElementById("f-material");
+  const mat = document.getElementById("f-material") || wpField("material");
   if (mat && !mat.dataset.touched && configuration.materialGoal) mat.value = configuration.materialGoal;
-  const vol = document.getElementById("f-volume");
+  const vol = document.getElementById("f-volume") || wpField("volume");
   if (vol && !vol.dataset.touched && configuration.fillVolume) vol.value = configuration.fillVolume;
 }
 
 function syncChips() {
-  const chips = document.getElementById("formConfigChips");
+  let chips = document.getElementById("formConfigChips");
+  if (!chips) {
+    const form = document.querySelector(".lead__form.leadwerk-wpforms .wpforms-container");
+    if (form) {
+      const box = document.createElement("div");
+      box.className = "form__config-box";
+      box.innerHTML = '<h3>Ihre Konfiguration</h3><div class="chips" id="formConfigChips"></div>';
+      form.prepend(box);
+      chips = box.querySelector(".chips");
+    }
+  }
   if (!chips) return;
   const parts = [];
   Object.entries(stepLabels).forEach(([key, label]) => {

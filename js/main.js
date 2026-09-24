@@ -18,7 +18,7 @@ import { initHeroBadges } from "./hero-badges.js";
 /* Stack-Scroll früh setzen, damit Sticky schon beim ersten Paint greift.
    js-motion erst setzen, wenn GSAP bereit ist – sonst bleiben Inhalte unsichtbar. */
 if (
-  window.matchMedia("(min-width: 1024px)").matches &&
+  window.matchMedia("(min-width: 1200px)").matches &&
   !window.matchMedia("(prefers-reduced-motion: reduce)").matches
 ) {
   document.documentElement.classList.add("is-stack-scroll");
@@ -38,9 +38,22 @@ function revealAll() {
     el.style.filter = "none";
   });
 }
+
+function revealHero() {
+  document.querySelectorAll("[data-hero]").forEach((el) => {
+    el.style.opacity = "1";
+    el.style.transform = "none";
+    el.style.filter = "none";
+  });
+}
+
 setTimeout(() => {
   if (!window.__tomaAnimated) revealAll();
 }, 1800);
+// A throttled WebView or mobile browser can start GSAP but suspend its first
+// timeline while the tab is backgrounded. Never leave above-the-fold content
+// transparent after the intro should already have finished.
+setTimeout(revealHero, 2400);
 
 /* ---- Branchen-Strip (Hero) ---- */
 function buildBranchStrip() {
@@ -156,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ---- Stacked Overlay Scroll: Klasse + Innen-Scroll vor Page-Scroll ---- */
-const stackMq = window.matchMedia("(min-width: 1024px)");
+const stackMq = window.matchMedia("(min-width: 1200px)");
 
 function isStackScrollActive() {
   return stackMq.matches && !prefersReducedMotion;
@@ -307,14 +320,32 @@ function setupNav() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") openMenu(false); });
 
   // Aktiven Menüpunkt anhand sichtbarer Section setzen
-  const sectionIds = desktopLinks.map((a) => a.getAttribute("href")).filter(Boolean);
+  const sectionIds = desktopLinks
+    .map((a) => {
+      const href = a.getAttribute("href") || "";
+      try {
+        const url = new URL(href, window.location.href);
+        return url.origin === window.location.origin && url.pathname === window.location.pathname
+          ? url.hash
+          : "";
+      } catch {
+        return href.startsWith("#") ? href : "";
+      }
+    })
+    .filter((id) => id.length > 1);
   const sections = sectionIds
     .map((id) => document.querySelector(id))
     .filter(Boolean);
   if (sections.length && "IntersectionObserver" in window) {
     const setActive = (id) => {
       desktopLinks.forEach((a) => {
-        a.classList.toggle("is-active", a.getAttribute("href") === id);
+        let hash = "";
+        try {
+          hash = new URL(a.getAttribute("href") || "", window.location.href).hash;
+        } catch {
+          hash = a.getAttribute("href") || "";
+        }
+        a.classList.toggle("is-active", hash === id);
       });
     };
     const io = new IntersectionObserver((entries) => {

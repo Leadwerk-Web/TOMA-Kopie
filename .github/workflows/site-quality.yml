@@ -1,0 +1,73 @@
+name: Leadwerk static source quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: leadwerk-site-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+
+      - name: Verify starter contract and normalized raster assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f AGENTS.md
+          test -f index.html
+          test -f .nojekyll
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+
+          const files = [];
+          function walk(directory = '.') {
+            for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+              if (entry.name === '.git') continue;
+              const file = path.join(directory, entry.name);
+              if (entry.isDirectory()) walk(file);
+              else if (entry.isFile()) files.push(file.replace(/^\.\//u, '').replaceAll('\\', '/'));
+            }
+          }
+          walk();
+
+          const errors = [];
+          const sourceRaster = /\.(?:jpe?g|png)$/iu;
+          const webp = /\.webp$/iu;
+          const referenceFile = /\.(?:html?|css|m?js|json|webmanifest|xml)$/iu;
+          for (const file of files) {
+            if (sourceRaster.test(file)) errors.push(`${file}: commit WebP quality 85, not JPG/JPEG/PNG`);
+            if (webp.test(file)) {
+              const basename = path.posix.basename(file, path.posix.extname(file));
+              if (file !== file.toLowerCase() || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(basename)) {
+                errors.push(`${file}: WebP path must use a lowercase ASCII kebab-case basename`);
+              }
+              const bytes = fs.readFileSync(file);
+              if (bytes.length < 12 || bytes.toString('ascii', 0, 4) !== 'RIFF'
+                || bytes.toString('ascii', 8, 12) !== 'WEBP') {
+                errors.push(`${file}: invalid WebP container`);
+              }
+            }
+            if (referenceFile.test(file) && !file.endsWith('index.html')) {
+              const content = fs.readFileSync(file, 'utf8');
+              if (/\.(?:jpe?g|png)(?:[?#"'\s),]|$)/iu.test(content)) {
+                errors.push(`${file}: stale JPG/JPEG/PNG reference`);
+              }
+            }
+          }
+          if (errors.length) {
+            console.error(errors.map((error) => `- ${error}`).join('\n'));
+            process.exit(1);
+          }
+          console.log(`Checked ${files.length} source files; raster assets are normalized.`);
+          NODE

@@ -339,7 +339,7 @@ html.is-stack-scroll .explorer__stage {
   border-radius: 0;
   border-bottom-left-radius: var(--radius-medium);
   place-items: end start;
-  background: transparent;
+  background: transparent url("../assets/bauteile-basis.webp") left bottom / contain no-repeat;
 }
 html.is-stack-scroll .explorer__bauteile {
   width: 100%;
@@ -391,7 +391,7 @@ html.is-stack-scroll .footer {
 }
 .hero__layout { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(1.75rem, 3.5vw, 2.75rem); width: 100%; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 65fr) minmax(0, 35fr); align-items: center; gap: clamp(1rem, 3vw, 2rem); }
-.hero__copy { align-self: center; }
+.hero__copy { align-self: center; min-width: 0; max-width: 100%; }
 .hero__eyebrow { margin-bottom: 1.6rem; }
 .hero h1 { margin-bottom: 1.5rem; }
 .hero h1 em { font-style: normal; color: var(--color-primary); }
@@ -399,7 +399,7 @@ html.is-stack-scroll .footer {
 .hero__sub { max-width: 42ch; margin-bottom: 2.25rem; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
-.hero__strip { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
+.hero__strip { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; min-width: 0; }
 .hero__strip-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); }
 .hero__branches {
   display: flex; flex-wrap: nowrap; gap: 0.5rem 0.65rem;
@@ -1049,7 +1049,7 @@ html.is-stack-scroll .gallery__grid {
   place-items: end start;
   border-radius: 0;
   overflow: hidden;
-  background: transparent;
+  background: transparent url("../assets/bauteile-basis.webp") left bottom / contain no-repeat;
   padding: 0;
 }
 .explorer__bauteile {
@@ -1495,8 +1495,8 @@ html.is-stack-scroll .spout__text .eyebrow { margin-bottom: 0.35rem; }
   background:
     linear-gradient(90deg, rgba(246, 248, 252, 0.12) 0%, rgba(246, 248, 252, 0.45) 55%, rgba(246, 248, 252, 0.82) 100%),
     linear-gradient(180deg, rgba(246, 248, 252, 0.08) 0%, rgba(246, 248, 252, 0.28) 70%, rgba(246, 248, 252, 0.75) 100%);
-  -webkit-mask-image: url("../assets/Material.png");
-  mask-image: url("../assets/Material.png");
+  -webkit-mask-image: url("../assets/material.webp");
+  mask-image: url("../assets/material.webp");
   -webkit-mask-size: 100% auto;
   mask-size: 100% auto;
   -webkit-mask-repeat: no-repeat;
@@ -2500,6 +2500,123 @@ html.is-stack-scroll .faq__layout {
   color: var(--color-ink);
 }
 
+/* WPForms is the production form renderer. Keep its generated markup visually
+   identical to the static form without relying on WPForms theme presets. */
+.leadwerk-wpforms .wpforms-container,
+.leadwerk-wpforms .wpforms-container-full {
+  margin: 0 !important;
+}
+.leadwerk-wpforms {
+  --wpforms-field-size-input-height: 42px;
+  --wpforms-field-size-input-spacing: 0;
+  --wpforms-field-size-font-size: 0.92rem;
+  --wpforms-field-size-line-height: 1.35;
+}
+.leadwerk-wpforms .wpforms-field-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 0.9rem;
+}
+.leadwerk-wpforms .wpforms-field {
+  min-width: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.leadwerk-wpforms .wpforms-field-textarea,
+.leadwerk-wpforms .wpforms-field-checkbox,
+.leadwerk-wpforms .wpforms-field-html,
+.leadwerk-wpforms .wpforms-field-file-upload {
+  grid-column: 1 / -1;
+}
+.leadwerk-wpforms .wpforms-field-label {
+  margin: 0 0 0.3rem;
+  color: var(--color-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.leadwerk-wpforms input:not([type="checkbox"]):not([type="radio"]),
+.leadwerk-wpforms select,
+.leadwerk-wpforms textarea {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0.65rem 0.9rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: var(--radius-small) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: var(--color-ink) !important;
+  font: inherit !important;
+  font-size: 0.92rem !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.leadwerk-wpforms textarea {
+  min-height: 92px !important;
+  resize: vertical;
+}
+.leadwerk-wpforms input:focus,
+.leadwerk-wpforms select:focus,
+.leadwerk-wpforms textarea:focus {
+  outline: none !important;
+  border-color: var(--color-primary) !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 3px rgba(239, 123, 16, 0.15) !important;
+}
+.leadwerk-wpforms .wpforms-field-checkbox ul,
+.leadwerk-wpforms .wpforms-field-checkbox li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.leadwerk-wpforms .wpforms-field-checkbox label {
+  color: var(--color-text-muted);
+  font-size: 0.84rem !important;
+  line-height: 1.45;
+}
+.leadwerk-wpforms .wpforms-field-checkbox fieldset {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.leadwerk-wpforms .wpforms-field-checkbox legend {
+  margin-bottom: 0.3rem !important;
+}
+.leadwerk-wpforms .wpforms-field-checkbox a {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+.leadwerk-wpforms .wpforms-submit-container {
+  margin-top: 0.75rem !important;
+  padding: 0 !important;
+}
+.leadwerk-wpforms button[type="submit"].wpforms-submit {
+  width: 100% !important;
+  min-height: 48px;
+  border: 0 !important;
+  border-radius: var(--radius-small) !important;
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  font: inherit !important;
+  font-weight: 800 !important;
+  box-shadow: var(--shadow-button) !important;
+}
+.leadwerk-wpforms button[type="submit"].wpforms-submit:hover {
+  background: var(--color-primary-hover) !important;
+  transform: translateY(-1px);
+}
+.leadwerk-wpforms .wpforms-error,
+.leadwerk-wpforms label.wpforms-error {
+  color: #b42318 !important;
+  font-size: 0.75rem !important;
+}
+
+@media (max-width: 760px) {
+  .leadwerk-wpforms .wpforms-field-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .leadwerk-wpforms .wpforms-field {
+    grid-column: 1;
+  }
+}
+
 /* ---------------------------------------------------------------
    SCROLL TOP
 --------------------------------------------------------------- */
@@ -2578,6 +2695,7 @@ html.is-stack-scroll .faq__layout {
 }
 
 @media (max-width: 1199px) {
+  .hero { align-items: flex-start; }
   .hero__grid, .material__layout, .spout__layout, .apps__stage, .explorer__grid, .config__grid { grid-template-columns: 1fr; }
   html.is-stack-scroll .spout__layout,
   html.is-stack-scroll .material__layout {
@@ -2615,14 +2733,17 @@ html.is-stack-scroll .faq__layout {
 }
 
 @media (max-width: 768px) {
+  :root { --fs-h1: clamp(2.1rem, 9.5vw, 2.5rem); --fs-h2: clamp(1.8rem, 8vw, 2.25rem); }
   .nav__links { display: none; }
   .nav__cta > .nav__cta-btn { display: none; }
   .nav__burger { display: flex; }
   .nav__inner { padding: 0.4rem 0.4rem 0.4rem 0.5rem; }
   .hero { padding-top: 7.5rem; }
   .hero__scroll { display: none; }
-  .hero__visual { order: -1; max-width: min(640px, 96vw); justify-self: center; margin-right: 0; }
-  .hero__float { max-height: min(56svh, 520px); }
+  .hero__grid { gap: 2rem; }
+  .hero h1 { overflow-wrap: anywhere; hyphens: auto; }
+  .hero__visual { order: initial; max-width: min(360px, 84vw); justify-self: center; margin-right: 0; }
+  .hero__float { max-height: min(46svh, 420px); }
   .hero__badge { display: none; }
   .values-carousel__track .value-card { width: min(380px, 90vw); }
   .value-card__media { height: 200px; }
