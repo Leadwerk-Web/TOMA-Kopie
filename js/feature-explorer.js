@@ -4,7 +4,7 @@
    - Highlight-Ebenen erst bei Hover (rechte Liste)
    ===================================================================== */
 
-import { features } from "./data.js";
+import { features, product } from "./data.js";
 import { prefersReducedMotion, isMobile } from "./motion-config.js";
 
 const SVG_URL = new URL("../assets/Bauteile.svg", import.meta.url).href;
@@ -103,7 +103,7 @@ async function loadBauteileSvg() {
     svg.removeAttribute("height");
     svg.setAttribute("class", "explorer__bauteile");
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Doypack mit markierbaren Bauteilen");
+    svg.setAttribute("aria-label", `${product.name} mit markierbaren Bauteilen`);
     svg.setAttribute("preserveAspectRatio", "xMinYMax meet");
     svg.style.width = "100%";
     svg.style.height = "100%";

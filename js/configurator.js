@@ -3,7 +3,7 @@
    Zentraler State, Live-Vorschau, Kartenstapel (neue Kachel von rechts).
    ===================================================================== */
 
-import { configSteps, configRules, layerMap } from "./data.js";
+import { configSteps, configRules, layerMap, product } from "./data.js";
 import { prefersReducedMotion, isMobile } from "./motion-config.js";
 
 export const configuration = {
@@ -248,13 +248,9 @@ function applyRules() {
 }
 
 /* ---- Live-Vorschau ---- */
-const CONFIG_PHOTOS = {
-  default: new URL("../assets/doypack.webp", import.meta.url).href
-};
-
 function resolveConfigPhoto() {
-  // Vorerst immer dasselbe Produktbild
-  return CONFIG_PHOTOS.default;
+  // Vorerst immer dasselbe Produktbild (je Seite aus data.js)
+  return product.configPhoto;
 }
 
 function updatePreview() {
@@ -278,8 +274,8 @@ function updatePreview() {
   const svg = document.getElementById("configDoypack");
   if (svg && svg.style.display !== "none") {
     const active = new Set();
-    if (configuration.closure === "Zipper" || configuration.closure === "Kindersicherung") active.add("zipper");
-    if (configuration.closure === "Ausgießer") active.add("spout");
+    const closureLayer = layerMap[configuration.closure];
+    if (closureLayer) active.add(closureLayer);
     configuration.features.forEach((f) => { const l = layerMap[f]; if (l) active.add(l); });
     if (["Bedruckt", "Matt", "Glänzend", "Soft-Touch prüfen"].includes(configuration.finish)) active.add("print");
     if (configuration.finish === "Sichtfenster" || configuration.features.includes("Sichtfenster")) active.add("window");

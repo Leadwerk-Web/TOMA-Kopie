@@ -50,13 +50,18 @@ python -m http.server 8000
 ### Dateistruktur
 
 ```
-index.html                → Struktur, SEO-Meta, JSON-LD, Inline-SVG-Symbole
+doypack.html              → Doypack-Seite: Struktur, SEO-Meta, JSON-LD, Inline-SVG-Symbole
+flachbodenbeutel.html     → Flachbodenbeutel/Box-Pouch-Seite (gleiche Struktur, Bilder vorerst Platzhalter)
+seitenfaltenbeutel.html   → Seitenfaltenbeutel/Quad-Seal-Seite (+ Varianten-Sektion, Bilder vorerst Platzhalter)
 css/tokens.css            → Design-Tokens (:root)
 css/base.css              → Reset, Typografie, Utilities, Reduced-Motion
 css/components.css        → alle Sektionen + responsive Breakpoints
 js/motion-config.js       → Timings, Eases, Breakpoints, Reduced-Motion-Flag
 js/scroll-scenes.js       → gesamte Scroll-/Reveal-Choreografie
-js/data.js                → Inhalte (Features, Anwendungen, Konfig-Schritte, FAQ)
+js/data.js                → lädt die Inhalte passend zu <html data-product="…">
+js/data/doypack.js        → Inhalte Doypack (Features, Anwendungen, Konfig-Schritte, FAQ …)
+js/data/flachbodenbeutel.js → Inhalte Flachbodenbeutel / Box Pouch
+js/data/seitenfaltenbeutel.js → Inhalte Seitenfaltenbeutel / Quad Seal Pouch
 js/feature-explorer.js    → Ausstattungs-Explorer (Desktop-Pin / Mobile-Akkordeon)
 js/configurator.js        → Doypack-Konfigurator (State, Live-SVG, Formularübergabe)
 js/application-explorer.js→ Anwendungsbereiche (Tabs, weicher Bildwechsel)

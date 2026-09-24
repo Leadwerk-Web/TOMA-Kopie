@@ -114,7 +114,7 @@ function whenReady(cb, tries = 0) {
   setTimeout(() => whenReady(cb, tries + 1), 30);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function init() {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       revealAll();
     }
   });
-});
+}
 
 /* ---- Stacked Overlay Scroll: Klasse + Innen-Scroll vor Page-Scroll ---- */
 const stackMq = window.matchMedia("(min-width: 1200px)");
@@ -427,4 +427,14 @@ function setupResize() {
     if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }, 250);
   window.addEventListener("resize", handler);
+}
+
+/* ---------------- START ----------------
+   data.js lädt die Produktdaten per Top-Level-await – dadurch kann
+   DOMContentLoaded bereits vorbei sein, wenn dieses Modul ausgeführt wird.
+   Steht am Dateiende, damit alle Modul-Konstanten initialisiert sind. */
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
 }

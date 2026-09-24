@@ -1402,7 +1402,8 @@ html.is-stack-scroll .gallery__grid {
 .spout__badge--2 { top: 28%; right: -8%; }
 .spout__badge--3 { bottom: 26%; left: -10%; }
 .spout__badge--4 { bottom: 8%; right: -4%; }
-html.is-stack-scroll #ausgiesser.stack-panel {
+html.is-stack-scroll #ausgiesser.stack-panel,
+html.is-stack-scroll #bedruckung.stack-panel {
   padding-block: 25px;
   justify-content: center;
 }
@@ -2084,6 +2085,188 @@ html.is-stack-scroll .compare__list {
 }
 @media (max-width: 900px) {
   .compare__grid { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------------
+   ALTERNATIVEN — Beutel vs. Dose / Flasche / Kanister (Tabelle)
+--------------------------------------------------------------- */
+.alt-compare { background: var(--color-bg-warm); }
+.alt-compare__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  align-items: stretch;
+}
+.alt-compare__table-wrap,
+.alt-compare__summary {
+  border-radius: var(--radius-medium);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+.alt-compare__table-wrap {
+  overflow-x: auto;
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+}
+.alt-compare__table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+}
+.alt-compare__table th,
+.alt-compare__table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+.alt-compare__table tbody tr:last-child > * { border-bottom: 0; }
+.alt-compare__table thead th {
+  font-family: var(--font-heading);
+  font-size: var(--fs-label);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.alt-compare__table tbody th {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.alt-compare__table td { color: var(--color-text); }
+.alt-compare__table .is-highlight {
+  background: var(--color-primary-tint);
+  color: var(--color-primary-hover);
+  font-weight: 700;
+}
+.alt-compare__table thead .is-highlight {
+  border-radius: var(--radius-small) var(--radius-small) 0 0;
+  color: var(--color-primary-hover);
+}
+.alt-compare__table tbody tr:last-child .is-highlight {
+  border-radius: 0 0 var(--radius-small) var(--radius-small);
+}
+.alt-compare__summary {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+}
+.alt-compare__summary h3 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  margin: 0 0 1.15rem;
+}
+.alt-compare__summary .btn { margin-top: auto; align-self: flex-start; }
+html.is-stack-scroll #alternativen.stack-panel { justify-content: center; }
+html.is-stack-scroll .alt-compare__table th,
+html.is-stack-scroll .alt-compare__table td { padding-block: 0.6rem; }
+@media (max-width: 900px) {
+  .alt-compare__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------------------------------------------------------------
+   VARIANTEN — Bauformen als Karten (Seitenfaltenbeutel)
+--------------------------------------------------------------- */
+.variants { background: var(--grad-section); }
+.variants__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: stretch;
+}
+.variants__card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.35rem, 2.5vw, 1.9rem);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 24px 56px -30px rgba(17, 23, 38, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(1.45);
+  -webkit-backdrop-filter: blur(20px) saturate(1.45);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.variants__card:hover {
+  border-color: rgba(239, 123, 16, 0.35);
+  box-shadow:
+    0 28px 60px -28px rgba(17, 23, 38, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+.variants__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.variants__n {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.variants__icon {
+  width: 72px;
+  height: 72px;
+  fill: none;
+  stroke: var(--color-primary-hover);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.variants__card h3 {
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  margin: 0;
+}
+.variants__alias {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+.variants__tag {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--color-bg-soft);
+  color: var(--color-text);
+}
+.variants__tag--accent {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-hover);
+}
+.variants__specs {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0 0 1.25rem;
+  flex: 1 1 auto;
+  align-content: start;
+}
+.variants__specs dt {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.variants__specs dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+.variants__cta { align-self: flex-start; }
+html.is-stack-scroll .variants__card { padding: clamp(1.1rem, 2.2vh, 1.6rem); }
+html.is-stack-scroll .variants__icon { width: 56px; height: 56px; }
+html.is-stack-scroll .variants__specs { gap: 0.5rem; margin-bottom: 1rem; }
+@media (max-width: 900px) {
+  .variants__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------------------------------------------------------------

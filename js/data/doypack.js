@@ -3,6 +3,12 @@
    Positionen/Inhalte strukturiert (keine verstreuten CSS-Regeln).
    ===================================================================== */
 
+/* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
+export const product = {
+  name: "Doypack",
+  configPhoto: "assets/doypack.webp"
+};
+
 /* ---- Feature-Explorer: Ausstattungsdetails (Bauteile.svg) ----
    svgId = Element-ID in assets/Bauteile.svg; Nummern immer sichtbar,
    Highlight-Ebenen erst bei Hover auf der rechten Liste. */
@@ -328,11 +334,3 @@ export const faqs = [
     q: "Wer ist mein Ansprechpartner?",
     a: "Sie haben bei TOMA einen persönlichen Ansprechpartner – keine anonyme Ticket-Schleife. Telefonisch erreichen Sie uns unter +49 (0)2157 128475." }
 ];
-
-/* Resolve project-owned media relative to this ES module. In WordPress the
-   module lives below content/assets/js/, while page-relative assets/ URLs
-   would incorrectly point at the site root. */
-for (const item of [...applications, ...values, ...galleryItems]) {
-  if (item.image?.startsWith("assets/")) item.image = new URL(`../${item.image}`, import.meta.url).href;
-  if (item.src?.startsWith("assets/")) item.src = new URL(`../${item.src}`, import.meta.url).href;
-}
