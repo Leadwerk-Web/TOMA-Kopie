@@ -8,7 +8,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) ---- */
 export const product = {
   name: "Flexible Verpackungen",
-  configPhoto: "assets/doypack.webp"
+  configPhoto: "assets/doypack/doypack.webp"
 };
 
 /* ---- Feature-Explorer & Konfigurator: entfallen auf der Startseite ---- */
@@ -23,32 +23,32 @@ export const applications = [
     text: "Für Müsli, Nüsse, Zucker, Snacks oder Gewürze stimmen wir Material, Barriere und Verschluss auf Füllgut und gewünschte Haltbarkeit ab – je nach Anforderung mit Zipper, Sichtfenster oder Monomaterial.",
     meta: ["Barriere je nach Füllgut", "Wiederverschließbar", "Individuell bedruckt"],
     link: "https://www.toma-gmbh.de/food/", linkLabel: "Lebensmittelverpackung ansehen",
-    image: "assets/doypack-09.webp", alt: "Oranger Doypack für Müsli in Küchenumgebung" },
+    image: "assets/doypack/doypack-09.webp", alt: "Oranger Doypack für Müsli in Küchenumgebung" },
   { id: "coffee", icon: "coffee", label: "Kaffee & Tee",
     text: "Kaffee und Tee brauchen Schutz vor Sauerstoff, Licht und Aromaverlust. Seitenfaltenbeutel, Box Pouches und Doypacks mit Aromaventil gehören hier zu den typischen Lösungen.",
     meta: ["Aromaventil", "Hochbarriere", "Seitenfalte oder Flachboden"],
     link: "https://www.toma-gmbh.de/kaffeeverpackung/", linkLabel: "Kaffeeverpackung ansehen",
-    image: "assets/doypack-1.webp", alt: "Bedruckte Kaffee-Doypacks in Kraft- und Anthrazitoptik" },
+    image: "assets/doypack/doypack-1.webp", alt: "Bedruckte Kaffee-Doypacks in Kraft- und Anthrazitoptik" },
   { id: "pet", icon: "pet", label: "Tierfutter",
     text: "Für Trockenfutter, Leckerlis und Snacks: robuste Beutel mit Schutz vor Feuchtigkeit, Fett und Aromaverlust – auf Wunsch mit Zipper und großer Druckfläche für Ihre Marke.",
     meta: ["Fett- und Ölbeständigkeit", "Robust & standfest", "Ihr Layout"],
     link: "https://www.toma-gmbh.de/tierfutter/", linkLabel: "Tierfutterverpackung ansehen",
-    image: "assets/attribute-doypack.webp", alt: "Standbodenbeutel in verschiedenen Größen und Materialien" },
+    image: "assets/doypack/attribute-doypack.webp", alt: "Standbodenbeutel in verschiedenen Größen und Materialien" },
   { id: "nonfood", icon: "cosmetic", label: "Non-Food",
     text: "Für Badezusätze, Pflege- und Hygieneprodukte oder Nachfüllware – mit hochwertiger Optik, Ausgießer oder Sichtfenster, passend zu Produktlinie und Verkaufsauftritt.",
     meta: ["Nachfüllbeutel", "Hochwertige Haptik", "Transparent oder blickdicht"],
     link: "https://www.toma-gmbh.de/non-food/", linkLabel: "Non-Food-Verpackungen ansehen",
-    image: "assets/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
+    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
   { id: "chemie", icon: "powder", label: "Chemie",
     text: "Für chemische und technische Füllgüter wie Pulver, Granulate oder Flüssigkeiten wählen wir den Materialaufbau nach Schutz-, Stabilitäts- und Verarbeitungsanforderungen.",
     meta: ["Stabiler Verbund", "Ausgießer möglich", "Technische Beratung"],
     link: "https://www.toma-gmbh.de/chemie-branche/", linkLabel: "Verpackungen für die Chemie ansehen",
-    image: "assets/standbodenbeutel-ausgiesser.webp", alt: "Standbodenbeutel mit Ausgießer und Schraubkappe" },
+    image: "assets/doypack/standbodenbeutel-ausgiesser.webp", alt: "Standbodenbeutel mit Ausgießer und Schraubkappe" },
   { id: "pharma", icon: "pharma", label: "Pharma",
     text: "Für Nahrungsergänzungsmittel und pharmazeutische Erzeugnisse ist die passende Barriere oft entscheidend für Haltbarkeit und Qualität. Auf Wunsch auch mit kindersicherem Zipper.",
     meta: ["Barrierefolie", "Kindersicherer Zipper", "Gleichbleibende Qualität"],
     link: "https://www.toma-gmbh.de/verpackungsbeutel-fuer-pharma-erzeugnisse/", linkLabel: "Pharma-Verpackungsbeutel ansehen",
-    image: "assets/doypack-13.webp", alt: "Doypack für Zucker und pulverförmige Produkte" }
+    image: "assets/doypack/doypack-13.webp", alt: "Doypack für Zucker und pulverförmige Produkte" }
 ];
 
 /* ---- Vorteile-Karussell („Warum TOMA“) ---- */
@@ -56,42 +56,42 @@ export const values = [
   {
     title: "Persönliche Beratung",
     text: "Ein fester Ansprechpartner begleitet Sie von der ersten Idee bis zur Lieferung – mit Zeit für Ihre Fragen zu Beutelform, Material und Ausstattung.",
-    image: "assets/doypack-tee.webp",
+    image: "assets/doypack/doypack-tee.webp",
     alt: "TOMA-Doypack mit Tee und Kräutern",
     accent: true
   },
   {
     title: "Angebot in 2 Arbeitstagen",
     text: "Schicken Sie uns Ihre Eckdaten – Sie erhalten Ihr Angebot innerhalb von 2 Arbeitstagen.",
-    image: "assets/doypack-09.webp",
+    image: "assets/doypack/doypack-09.webp",
     alt: "Oranger Doypack für Müsli in Küchenumgebung",
     accent: false
   },
   {
     title: "Material nach Füllgut",
     text: "Barriere, Materialaufbau und Format stimmen wir auf Ihr Produkt und Ihren Abfüllprozess ab – statt Einheitslösung von der Stange.",
-    image: "assets/attribute-doypack.webp",
+    image: "assets/doypack/attribute-doypack.webp",
     alt: "Standbodenbeutel in verschiedenen Größen und Materialien",
     accent: false
   },
   {
     title: "Individueller Druck",
     text: "Tiefdruck, Flexodruck oder Digitaldruck – wir wählen das Verfahren passend zu Motiv und Auflage, im Layout Ihrer Marke.",
-    image: "assets/doypack-1.webp",
+    image: "assets/doypack/doypack-1.webp",
     alt: "Bedruckte Kaffee-Doypacks in Kraft- und Anthrazitoptik",
     accent: true
   },
   {
     title: "Nachhaltige Varianten",
     text: "Monomaterial, recyclingfreundliche oder biobasierte Aufbauten prüfen wir je nach Anforderung, Produkt und Anwendungsfall.",
-    image: "assets/standbodenbeutel-doypack-e1696408989978.webp",
+    image: "assets/doypack/standbodenbeutel-doypack-e1696408989978.webp",
     alt: "Weißer Standbodenbeutel als Beispiel für Materialoptionen",
     accent: false
   },
   {
     title: "32 Jahre Erfahrung",
     text: "Seit über drei Jahrzehnten beraten wir Hersteller zu flexiblen Verpackungen – und sorgen schnell und unkompliziert für eine Lösung, wenn einmal etwas nicht passt.",
-    image: "assets/doypack-05.webp",
+    image: "assets/doypack/doypack-05.webp",
     alt: "Premium-Doypack für Badebomben und Pflegeprodukte",
     accent: false
   }

@@ -7,7 +7,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Rollenware",
-  configPhoto: "assets/doypack.webp" // TODO: Bild einer Folienrolle
+  configPhoto: "assets/doypack/doypack.webp" // TODO: Bild einer Folienrolle
 };
 
 /* ---- Feature-Explorer: entfällt auf dieser Seite ----
@@ -20,31 +20,31 @@ export const applications = [
   { id: "food", icon: "food", label: "Lebensmittel & Trockenprodukte",
     text: "Für Lebensmittel und Trockenprodukte, die maschinell verpackt oder portioniert werden – mit Folienaufbau und Barriere passend zu Füllgut und gewünschter Haltbarkeit.",
     meta: ["Barriere je nach Füllgut", "Maschinelle Verarbeitung", "Individuell bedruckt"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-1.webp", alt: "Platzhalter: Rollenware für Lebensmittel und Trockenprodukte" },
+    image: "assets/doypack/doypack-1.webp", alt: "Platzhalter: Rollenware für Lebensmittel und Trockenprodukte" },
   { id: "pet", icon: "pet", label: "Tierfutter & Snacks",
     text: "Für Tierfutter und Snacks lassen sich Folien auf Rolle mit Schutz vor Feuchtigkeit, Fett und Aromaverlust abstimmen – bedruckt im eigenen Markenlayout.",
     meta: ["Fett- und Ölbeständigkeit", "Aromaschutz", "Ihr Layout"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/attribute-doypack.webp", alt: "Platzhalter: Rollenware für Tierfutter und Snacks" },
+    image: "assets/doypack/attribute-doypack.webp", alt: "Platzhalter: Rollenware für Tierfutter und Snacks" },
   { id: "supplements", icon: "pharma", label: "Nahrungsergänzungsmittel",
     text: "Für Nahrungsergänzungsmittel ist die richtige Barriere oft entscheidend für Haltbarkeit und Qualität – wir stimmen Materialaufbau und Maschine aufeinander ab.",
     meta: ["Barrierefolie", "Gleichbleibende Qualität", "Sachets möglich"], link: "https://www.toma-gmbh.de/verpackungsbeutel-fuer-pharma-erzeugnisse/",
-    image: "assets/doypack-05.webp", alt: "Platzhalter: Rollenware für Nahrungsergänzungsmittel" },
+    image: "assets/doypack/doypack-05.webp", alt: "Platzhalter: Rollenware für Nahrungsergänzungsmittel" },
   { id: "powder", icon: "powder", label: "Pulver, Granulate & Saaten",
     text: "Für Pulver, Granulate und Saaten, die maschinell abgefüllt werden – mit einer Folie, die zuverlässig im Produktionsprozess läuft.",
     meta: ["Prozesssicher", "Feuchtigkeitsbarriere", "Monofolie oder Verbund"], link: "https://www.toma-gmbh.de/chemie-branche/",
-    image: "assets/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Rollenware für Pulver, Granulate und Saaten" },
+    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Rollenware für Pulver, Granulate und Saaten" },
   { id: "cosmetic", icon: "cosmetic", label: "Kosmetik & Hygiene",
     text: "Für Kosmetik- und Hygieneprodukte mit individuell bedruckter Folie – passend zu Produktlinie und Verkaufsauftritt.",
     meta: ["Individuell bedruckt", "Hochwertige Haptik", "Transparent oder blickdicht"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-tee.webp", alt: "Platzhalter: Rollenware für Kosmetik- und Hygieneprodukte" },
+    image: "assets/doypack/doypack-tee.webp", alt: "Platzhalter: Rollenware für Kosmetik- und Hygieneprodukte" },
   { id: "chemical", icon: "nonfood", label: "Chemie & Technik",
     text: "Für chemische oder technische Füllgüter wählen wir den Folienaufbau nach Schutz-, Stabilitäts- und Verarbeitungsanforderungen.",
     meta: ["Stabiler Verbund", "Schutzfunktion", "Technische Beratung"], link: "https://www.toma-gmbh.de/chemie-branche/",
-    image: "assets/standbodenbeutel-ausgiesser.webp", alt: "Platzhalter: Rollenware für chemische und technische Füllgüter" },
+    image: "assets/doypack/standbodenbeutel-ausgiesser.webp", alt: "Platzhalter: Rollenware für chemische und technische Füllgüter" },
   { id: "pouches", icon: "liquid", label: "Flexible Beutelverpackungen",
     text: "Aus Rollenware entstehen flexible Beutelverpackungen wie Doypacks, Flachbeutel oder Seitenfaltenbeutel – direkt auf Ihrer Verpackungsanlage.",
     meta: ["Doypacks", "Flachbeutel", "Seitenfaltenbeutel"], link: "https://www.toma-gmbh.de/doypack-standbodenbeutel-hersteller/",
-    image: "assets/doypack-hero.webp", alt: "Platzhalter: Beutelverpackung aus Rollenware" }
+    image: "assets/doypack/doypack-hero.webp", alt: "Platzhalter: Beutelverpackung aus Rollenware" }
 ];
 
 /* ---- Konfigurator: Schritte ----
@@ -95,63 +95,63 @@ export const values = [
   {
     title: "Individuell abstimmbar",
     text: "Folienstärke, Bahnbreite, Rollenkern, Druckbild, Oberfläche und Barrierefunktion stimmen wir auf Produkt und Maschine ab.",
-    image: "assets/doypack-hero.webp",
+    image: "assets/doypack/doypack-hero.webp",
     alt: "Platzhalter: individuell abgestimmte Rollenware",
     accent: true
   },
   {
     title: "Für FFS-/HFFS-Anlagen",
     text: "Flachfolie wird direkt auf Ihrer Verpackungsanlage verarbeitet – zu Beuteln, Sachets oder flexiblen Verpackungsformaten.",
-    image: "assets/doypack-1.webp",
+    image: "assets/doypack/doypack-1.webp",
     alt: "Platzhalter: Verpackungen aus Rollenware",
     accent: false
   },
   {
     title: "Hohe Prozesssicherheit",
     text: "Abgestimmt auf Maschine und Füllgut läuft die Folie zuverlässig im Produktionsprozess – in gleichbleibender Qualität.",
-    image: "assets/attribute-doypack.webp",
+    image: "assets/doypack/attribute-doypack.webp",
     alt: "Platzhalter: maschinell verpackte Produkte",
     accent: false
   },
   {
     title: "Vielfältige Materialkombinationen",
     text: "Monofolien und Verbundfolien wie PET/PE, OPP/PE, PET/Alu/PE oder Papier/PE – passend zu Schutz- und Verarbeitungsanforderungen.",
-    image: "assets/doypack-05.webp",
+    image: "assets/doypack/doypack-05.webp",
     alt: "Platzhalter: Verpackungen aus verschiedenen Materialien",
     accent: true
   },
   {
     title: "Mit Barrierefunktion",
     text: "Schutz vor Sauerstoff, Feuchtigkeit, Aromaverlust, Fett und Licht – je nach Füllgut und gewünschter Haltbarkeit.",
-    image: "assets/doypack-aromaventil.webp",
+    image: "assets/doypack/doypack-aromaventil.webp",
     alt: "Platzhalter: Verpackung mit Barrierefolie",
     accent: false
   },
   {
     title: "Recycelbare Monomaterial-Folien",
     text: "PP- oder PE-Monomaterial für sortenreinere und recyclingfreundlichere Verpackungskonzepte.",
-    image: "assets/standbodenbeutel-doypack-e1696408989978.webp",
+    image: "assets/doypack/standbodenbeutel-doypack-e1696408989978.webp",
     alt: "Platzhalter: Verpackung als Beispiel für Monomaterial",
     accent: false
   },
   {
     title: "Bedruckbar im eigenen Design",
     text: "Tiefdruck mit bis zu 10 Farben, Flexodruck oder Digitaldruck – im individuellen Markenlayout.",
-    image: "assets/doypack-13.webp",
+    image: "assets/doypack/doypack-13.webp",
     alt: "Platzhalter: bedruckte Verpackung",
     accent: true
   },
   {
     title: "Effiziente Lagerung",
     text: "Lieferung auf Rolle – platzsparend im Lager und direkt in Produktions- und Abfüllprozesse integrierbar.",
-    image: "assets/doypack-09.webp",
+    image: "assets/doypack/doypack-09.webp",
     alt: "Platzhalter: platzsparend gelagerte Verpackung",
     accent: false
   },
   {
     title: "Kleine bis größere Serien",
     text: "Geeignet für kleine, mittlere und größere Produktionsserien – flexibel angepasst an Produktgröße und Füllmenge.",
-    image: "assets/doypack-tee.webp",
+    image: "assets/doypack/doypack-tee.webp",
     alt: "Platzhalter: Verpackungen in verschiedenen Größen",
     accent: false
   }
@@ -160,28 +160,28 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack-1.webp",
+    src: "assets/doypack/doypack-1.webp",
     alt: "Platzhalter: Lebensmittelverpackung aus Rollenware",
     title: "Lebensmittel",
     desc: "Folie auf Rolle für Trockenprodukte – mit Barriere passend zum Füllgut.",
     size: "tall"
   },
   {
-    src: "assets/doypack-05.webp",
+    src: "assets/doypack/doypack-05.webp",
     alt: "Platzhalter: Verpackung für Nahrungsergänzungsmittel aus Rollenware",
     title: "Nahrungsergänzungsmittel",
     desc: "Beutel oder Sachets, direkt auf der Verpackungsanlage hergestellt.",
     size: "normal"
   },
   {
-    src: "assets/attribute-doypack.webp",
+    src: "assets/doypack/attribute-doypack.webp",
     alt: "Platzhalter: Tierfutterverpackung aus Rollenware",
     title: "Tierfutter & Snacks",
     desc: "Bedruckt im eigenen Markenlayout – mit Schutz vor Feuchtigkeit und Aromaverlust.",
     size: "normal"
   },
   {
-    src: "assets/doypack-nachfuellbeutel.webp",
+    src: "assets/doypack/doypack-nachfuellbeutel.webp",
     alt: "Platzhalter: Verpackung für Pulver und Granulate aus Rollenware",
     title: "Pulver & Granulate",
     desc: "Prozesssicher maschinell abgefüllt – als Monofolie oder Verbundfolie.",

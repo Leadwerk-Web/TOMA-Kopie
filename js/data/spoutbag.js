@@ -8,7 +8,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Spoutbag",
-  configPhoto: "assets/standbodenbeutel-ausgiesser.webp"
+  configPhoto: "assets/doypack/standbodenbeutel-ausgiesser.webp"
 };
 
 /* ---- Feature-Explorer: entfällt auf dieser Seite ----
@@ -21,31 +21,31 @@ export const applications = [
   { id: "food", icon: "food", label: "Lebensmittel",
     text: "Für flüssige und pastöse Lebensmittel sowie feine Produkte wie Zucker: Der Ausgießer ermöglicht eine kontrollierte Entleerung, die Verschlusskappe hält den Beutel sicher verschlossen.",
     meta: ["Gut dosierbar", "Wiederverschließbar", "Lebensmittelkonform je nach Aufbau"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-tee.webp", alt: "Platzhalter: Spoutbag für Lebensmittel" },
+    image: "assets/doypack/doypack-tee.webp", alt: "Platzhalter: Spoutbag für Lebensmittel" },
   { id: "drinks", icon: "liquid", label: "Getränke",
     text: "Getränke lassen sich im Spoutbag sauber ausgießen und wieder verschließen – als leichte Alternative zu Flaschen, abgestimmt auf Füllgut und Barrierebedarf.",
     meta: ["Sauber ausgießen", "Leicht", "Barriere nach Bedarf"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/standbodenbeutel-ausgiesser.webp", alt: "Standbodenbeutel mit Ausgießer für Getränke" },
+    image: "assets/doypack/standbodenbeutel-ausgiesser.webp", alt: "Standbodenbeutel mit Ausgießer für Getränke" },
   { id: "pet", icon: "pet", label: "Tiernahrung",
     text: "Für Tiernahrung bieten Spoutbags eine praktische Entnahme und einen sicheren Wiederverschluss – bedruckt in Ihrem Markenauftritt.",
     meta: ["Praktische Entnahme", "Wiederverschließbar", "Individuell bedruckt"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/attribute-doypack.webp", alt: "Platzhalter: Spoutbag für Tiernahrung" },
+    image: "assets/doypack/attribute-doypack.webp", alt: "Platzhalter: Spoutbag für Tiernahrung" },
   { id: "care", icon: "cosmetic", label: "Kosmetik & Reinigungsmittel",
     text: "Als Nachfüllbeutel für Duschgel, Seife oder Reinigungsmittel: platzsparend, gut dosierbar und eine effiziente Alternative zu starren Flaschen.",
     meta: ["Nachfüllbeutel", "Platzsparend", "Gut dosierbar"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
+    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
   { id: "chemical", icon: "nonfood", label: "Chemie & technische Flüssigkeiten",
     text: "Für chemische und technische Flüssigkeiten stimmen wir Material und Ausgießer auf das Füllgut ab – auf Wunsch mit Spezial-Verbundfolien mit Barriere- oder antistatischen Eigenschaften.",
     meta: ["Spezial-Verbundfolien", "Sicher verschließbar", "Individuelle Ausgießer-Position"], link: "https://www.toma-gmbh.de/chemie-branche/",
-    image: "assets/doypack-13.webp", alt: "Platzhalter: Spoutbag für technische Flüssigkeiten" },
+    image: "assets/doypack/doypack-13.webp", alt: "Platzhalter: Spoutbag für technische Flüssigkeiten" },
   { id: "powder", icon: "powder", label: "Pulver & Granulate",
     text: "Auch Pulver, Granulate und feinkörnige Medien lassen sich über den Ausgießer gezielt dosieren – mit Feuchtigkeitsbarriere gegen Klumpenbildung.",
     meta: ["Feinkörnige Medien", "Feuchtigkeitsbarriere", "Gezielt dosierbar"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-05.webp", alt: "Platzhalter: Spoutbag für Pulver und Granulate" },
+    image: "assets/doypack/doypack-05.webp", alt: "Platzhalter: Spoutbag für Pulver und Granulate" },
   { id: "refill", icon: "liquid", label: "Nachfüllsysteme",
     text: "Refill-Konzepte mit Nachfüllbeuteln reduzieren Volumen und vereinfachen die Anwendung – als flexible Lösung statt starrer Verpackung.",
     meta: ["Refill-Konzept", "Weniger Volumen", "Wiederverschließbar"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer als Refill-Lösung" }
+    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer als Refill-Lösung" }
 ];
 
 /* ---- Konfigurator: Schritte ---- */
@@ -97,63 +97,63 @@ export const values = [
   {
     title: "Wiederverschließbar",
     text: "Durch Ausgießer und Verschlusskappe lassen sich Spoutbags mehrfach öffnen und wieder sicher verschließen.",
-    image: "assets/standbodenbeutel-ausgiesser.webp",
+    image: "assets/doypack/standbodenbeutel-ausgiesser.webp",
     alt: "Standbodenbeutel mit Ausgießer und Schraubkappe",
     accent: true
   },
   {
     title: "Sauber dosierbar",
     text: "Für Flüssigkeiten, pastöse Medien, Pulver oder Granulate – der Ausgießer ermöglicht eine kontrollierte Entleerung.",
-    image: "assets/doypack-tee.webp",
+    image: "assets/doypack/doypack-tee.webp",
     alt: "Platzhalter: Beutel für dosierbare Produkte",
     accent: false
   },
   {
     title: "Platzsparend",
     text: "Weniger Platzbedarf bei Lagerung, Transport und Entsorgung als viele starre Verpackungen.",
-    image: "assets/attribute-doypack.webp",
+    image: "assets/doypack/attribute-doypack.webp",
     alt: "Platzhalter: Beutel in verschiedenen Größen",
     accent: false
   },
   {
     title: "Vielseitig einsetzbar",
     text: "Für Food, Non-Food, Kosmetik, Tiernahrung oder Reinigungsmittel – bis hin zu Getränken und industriellen Produkten.",
-    image: "assets/doypack-1.webp",
+    image: "assets/doypack/doypack-1.webp",
     alt: "Platzhalter: Beutel für verschiedene Füllgüter",
     accent: true
   },
   {
     title: "Individuell anpassbar",
     text: "Format, Material, Barriere, Ausgießer und Bedruckung stimmen wir auf Produkt und Marke ab.",
-    image: "assets/doypack-hero.webp",
+    image: "assets/doypack/doypack-hero.webp",
     alt: "Platzhalter: individuell gestalteter Beutel",
     accent: false
   },
   {
     title: "Regalstark präsentierbar",
     text: "Als Standbodenbeutel mit stabiler Bodenfalte steht der Spoutbag sicher im Regal.",
-    image: "assets/doypack-09.webp",
+    image: "assets/doypack/doypack-09.webp",
     alt: "Platzhalter: Standbodenbeutel im Regal",
     accent: false
   },
   {
     title: "Effiziente Nachfülllösung",
     text: "Als Nachfüllbeutel eine Alternative zu starren Verpackungen wie Flaschen oder Kanistern.",
-    image: "assets/doypack-nachfuellbeutel.webp",
+    image: "assets/doypack/doypack-nachfuellbeutel.webp",
     alt: "Nachfüllbeutel mit Ausgießer für Duschbad",
     accent: true
   },
   {
     title: "Für Abfüllanlagen & Handbefüllung",
     text: "Geeignet für automatische Abfüllanlagen oder manuelle Befüllung – mit hoher Prozesssicherheit bei korrektem Materialdesign.",
-    image: "assets/doypack-05.webp",
+    image: "assets/doypack/doypack-05.webp",
     alt: "Platzhalter: Beutel für die Abfüllung",
     accent: false
   },
   {
     title: "Bedruckt in Ihrem Layout",
     text: "Tiefdruck mit bis zu 10 Farben inkl. Sonderfarben, Flexodruck oder Digitaldruck – Schutz und Präsentation in einer Lösung.",
-    image: "assets/doypack-aromaventil.webp",
+    image: "assets/doypack/doypack-aromaventil.webp",
     alt: "Platzhalter: bedruckter Beutel in hochwertiger Optik",
     accent: false
   }
@@ -162,28 +162,28 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack-nachfuellbeutel.webp",
+    src: "assets/doypack/doypack-nachfuellbeutel.webp",
     alt: "Nachfüllbeutel mit Ausgießer für Duschbad",
     title: "Kosmetik & Pflege",
     desc: "Nachfüllbeutel mit Ausgießer – platzsparend, gut dosierbar und wiederverschließbar.",
     size: "tall"
   },
   {
-    src: "assets/standbodenbeutel-ausgiesser.webp",
+    src: "assets/doypack/standbodenbeutel-ausgiesser.webp",
     alt: "Standbodenbeutel mit seitlichem Ausgießer",
     title: "Standbodenbeutel mit Ausgießer",
     desc: "Stabile Bodenfalte für den Regalauftritt, Ausgießer seitlich positioniert.",
     size: "normal"
   },
   {
-    src: "assets/doypack-tee.webp",
+    src: "assets/doypack/doypack-tee.webp",
     alt: "Platzhalter: Spoutbag für Lebensmittel",
     title: "Lebensmittel",
     desc: "Für flüssige, pastöse oder feinkörnige Lebensmittel – Barriere passend zum Füllgut.",
     size: "normal"
   },
   {
-    src: "assets/doypack-13.webp",
+    src: "assets/doypack/doypack-13.webp",
     alt: "Platzhalter: Spoutbag für Reinigungsmittel und technische Flüssigkeiten",
     title: "Reinigung & Technik",
     desc: "Nachfülllösung für Reinigungsmittel und technische Flüssigkeiten statt Flasche oder Kanister.",

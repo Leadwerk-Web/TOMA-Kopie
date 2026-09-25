@@ -7,11 +7,11 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Flachbodenbeutel",
-  configPhoto: "assets/doypack.webp" // TODO: Box-Pouch-Bild
+  configPhoto: "assets/doypack/doypack.webp" // TODO: Box-Pouch-Bild
 };
 
 /* ---- Feature-Explorer: Ausstattungsdetails (Bauteile.svg) ----
-   svgId = Element-ID in assets/Bauteile.svg (vorerst Doypack-Grafik). */
+   svgId = Element-ID in assets/doypack/Bauteile.svg (vorerst Doypack-Grafik). */
 export const features = [
   { id: "euroloch", label: "Euroloch", svgId: "Euroloch",
     desc: "Präsentationsoption zum Aufhängen am Verkaufsständer.",
@@ -35,31 +35,31 @@ export const applications = [
   { id: "food", icon: "food", label: "Lebensmittel & Trockenprodukte",
     text: "Für trockene Lebensmittel verbindet die Box Pouch hohe Standfestigkeit, großes Füllvolumen und einen Materialaufbau, der Feuchtigkeit und Sauerstoff abhält.",
     meta: ["Zipper", "Feuchtigkeitsbarriere", "Sichtfenster"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-13.webp", alt: "Platzhalter: Beutel für trockene Lebensmittel" },
+    image: "assets/doypack/doypack-13.webp", alt: "Platzhalter: Beutel für trockene Lebensmittel" },
   { id: "coffee", icon: "coffee", label: "Kaffee, Tee & Gewürze",
     text: "Genussmittel profitieren von Aroma- und Lichtbarriere – bei frisch geröstetem Kaffee ergänzt um ein Aromaventil.",
     meta: ["Aromaventil", "Aromabarriere", "Zipper"], link: "https://www.toma-gmbh.de/kaffeeverpackung/",
-    image: "assets/doypack-1.webp", alt: "Platzhalter: bedruckte Kaffeebeutel" },
+    image: "assets/doypack/doypack-1.webp", alt: "Platzhalter: bedruckte Kaffeebeutel" },
   { id: "snacks", icon: "food", label: "Snacks & Trockenfrüchte",
     text: "Große Druckflächen auf Front, Rückseite und Seitenfalten sorgen für starke Regalwirkung – der Wiederverschluss hält Snacks frisch.",
     meta: ["360°-Branding", "Zipper", "Tear-Notch"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-09.webp", alt: "Platzhalter: Beutel für Snacks und Trockenfrüchte" },
+    image: "assets/doypack/doypack-09.webp", alt: "Platzhalter: Beutel für Snacks und Trockenfrüchte" },
   { id: "pet", icon: "pet", label: "Tiernahrung",
     text: "Größeres Füllvolumen, stabiler Stand und robuste Materialaufbauten – Box Pouches eignen sich gut für Tiernahrung.",
     meta: ["Großes Volumen", "Slider-Zipper", "Standfest"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/attribute-doypack.webp", alt: "Platzhalter: Beutel in verschiedenen Größen" },
+    image: "assets/doypack/attribute-doypack.webp", alt: "Platzhalter: Beutel in verschiedenen Größen" },
   { id: "cosmetic", icon: "cosmetic", label: "Hygiene & Pflege",
     text: "Hochwertige Optik am POS mit Matt-, Glanz- oder Soft-Touch-Lacken für Hygiene- und Pflegeprodukte.",
     meta: ["Soft-Touch", "Sichtfenster", "Euroloch"], link: "https://www.toma-gmbh.de/verpackungsloesungen/",
-    image: "assets/doypack-05.webp", alt: "Platzhalter: Premium-Beutel für Pflegeprodukte" },
+    image: "assets/doypack/doypack-05.webp", alt: "Platzhalter: Premium-Beutel für Pflegeprodukte" },
   { id: "chemie", icon: "liquid", label: "Chemie",
     text: "Auch für chemische Produkte einsetzbar – je nach Materialaufbau und abgestimmt auf die Anforderungen des Füllguts.",
     meta: ["Materialaufbau", "Barriere", "Technische Prüfung"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Beutel für Non-Food-Produkte" },
+    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Beutel für Non-Food-Produkte" },
   { id: "nonfood", icon: "nonfood", label: "Non-Food",
     text: "Außerhalb des Lebensmittelbereichs überzeugt die Box Pouch durch Stabilität, Präsentation und flexible Ausstattung.",
     meta: ["Robust", "Individuell", "Wiederverschluss"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-tee.webp", alt: "Platzhalter: individuell bedruckter Beutel" }
+    image: "assets/doypack/doypack-tee.webp", alt: "Platzhalter: individuell bedruckter Beutel" }
 ];
 
 /* ---- Konfigurator: Schritte ---- */
@@ -119,42 +119,42 @@ export const values = [
   {
     title: "Hohe Standfestigkeit",
     text: "Durch den flach aufgeschweißten Boden stehen Box Pouches besonders stabil – im Regal wie bei der Befüllung.",
-    image: "assets/standbodenbeutel-doypack-e1696408989978.webp",
+    image: "assets/doypack/standbodenbeutel-doypack-e1696408989978.webp",
     alt: "Platzhalter: standfester Beutel",
     accent: false
   },
   {
     title: "Mehr Werbe- & Druckfläche",
     text: "Die Seitenfalten schaffen zusätzliche bedruckbare Flächen – für 360°-Markenwirkung am Point of Sale.",
-    image: "assets/doypack-tee.webp",
+    image: "assets/doypack/doypack-tee.webp",
     alt: "Platzhalter: individuell bedruckter Beutel",
     accent: true
   },
   {
     title: "Größeres Füllvolumen",
     text: "Seitenfalten und Flachboden ermöglichen mehr Inhalt bei kompakter Grundfläche.",
-    image: "assets/attribute-doypack.webp",
+    image: "assets/doypack/attribute-doypack.webp",
     alt: "Platzhalter: Beutel in verschiedenen Größen",
     accent: false
   },
   {
     title: "Hochwertige Präsentation",
     text: "Die kastenförmige Silhouette wirkt wertig und verkaufsstark – mit Matt-, Glanz- oder Soft-Touch-Lacken.",
-    image: "assets/doypack-05.webp",
+    image: "assets/doypack/doypack-05.webp",
     alt: "Platzhalter: Premium-Beutel in hochwertiger Optik",
     accent: false
   },
   {
     title: "Produktschutz & Barriere",
     text: "Mehrschicht- oder Monomaterial-Aufbauten schützen je nach Bedarf vor Sauerstoff, Feuchtigkeit, Licht und Aromaverlust.",
-    image: "assets/doypack-aromaventil.webp",
+    image: "assets/doypack/doypack-aromaventil.webp",
     alt: "Platzhalter: Beutel mit Aromaventil",
     accent: true
   },
   {
     title: "Effiziente Logistik",
     text: "Leicht, platzsparend in Lagerung und Transport – mit deutlich weniger Verpackungsgewicht als starre Verpackungen.",
-    image: "assets/doypack-09.webp",
+    image: "assets/doypack/doypack-09.webp",
     alt: "Platzhalter: Beutel in Anwendungsumgebung",
     accent: false
   },
@@ -168,21 +168,21 @@ export const values = [
   {
     title: "Vielseitig einsetzbar",
     text: "Von Kaffee, Tee und Gewürzen über Snacks und Tiernahrung bis zu Hygiene-, Pflege- und Non-Food-Produkten.",
-    image: "assets/doypack-1.webp",
+    image: "assets/doypack/doypack-1.webp",
     alt: "Platzhalter: bedruckte Kaffeebeutel",
     accent: true
   },
   {
     title: "Recyclingfähige Lösungen",
     text: "Monomaterial-PE- oder PP-Strukturen sind sortenrein recyclingfähig – abhängig vom konkreten Aufbau.",
-    image: "assets/doypack-13.webp",
+    image: "assets/doypack/doypack-13.webp",
     alt: "Platzhalter: Beutel als Beispiel für Materialoptionen",
     accent: false
   },
   {
     title: "Manuell oder automatisch befüllbar",
     text: "Je nach Ausführung geeignet für manuelle oder automatische Befüllung – mit hoher Prozesssicherheit bei abgestimmtem Materialdesign.",
-    image: "assets/doypack-nachfuellbeutel.webp",
+    image: "assets/doypack/doypack-nachfuellbeutel.webp",
     alt: "Platzhalter: Beutel in Anwendungsumgebung",
     accent: false
   }
@@ -191,28 +191,28 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack-1.webp",
+    src: "assets/doypack/doypack-1.webp",
     alt: "Platzhalter: Kaffee-Box-Pouch",
     title: "Kaffee & Tee",
     desc: "Box Pouch mit Aromaventil und Zipper – Aromaschutz trifft starke Regalwirkung.",
     size: "tall"
   },
   {
-    src: "assets/doypack-09.webp",
+    src: "assets/doypack/doypack-09.webp",
     alt: "Platzhalter: Box Pouch für Snacks",
     title: "Snacks & Trockenfrüchte",
     desc: "Große Druckflächen und Wiederverschluss – ideal für Snacks, Nüsse und Trockenfrüchte.",
     size: "normal"
   },
   {
-    src: "assets/doypack-13.webp",
+    src: "assets/doypack/doypack-13.webp",
     alt: "Platzhalter: Box Pouch für Gewürze",
     title: "Gewürze",
     desc: "Licht- und Aromabarriere schützen empfindliche Gewürze – bei hochwertiger Optik am POS.",
     size: "normal"
   },
   {
-    src: "assets/doypack-tee.webp",
+    src: "assets/doypack/doypack-tee.webp",
     alt: "Platzhalter: bedruckte Box Pouch",
     title: "Backwaren & Genuss",
     desc: "Individuell bedruckte Box Pouch – 360°-Markenwirkung über Front, Rückseite und Seitenfalten.",

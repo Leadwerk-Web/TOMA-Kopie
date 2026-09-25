@@ -7,11 +7,11 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Siegelrandbeutel",
-  configPhoto: "assets/doypack.webp" // TODO: Siegelrandbeutel-Bild
+  configPhoto: "assets/doypack/doypack.webp" // TODO: Siegelrandbeutel-Bild
 };
 
 /* ---- Feature-Explorer: Ausstattungsdetails (Bauteile.svg) ----
-   svgId = Element-ID in assets/Bauteile.svg (vorerst Doypack-Grafik). */
+   svgId = Element-ID in assets/doypack/Bauteile.svg (vorerst Doypack-Grafik). */
 export const features = [
   { id: "zipper", label: "Wiederverschluss", svgId: "Zipper",
     desc: "Wiederverschließbar mit Reißverschluss, Schiebeverschluss oder Druckverschluss / Zipper – abgestimmt auf Produkt und Nutzung.",
@@ -35,31 +35,31 @@ export const applications = [
   { id: "supplements", icon: "pharma", label: "Nahrungsergänzungsmittel",
     text: "Kompakt, sicher und funktional verpackt: Siegelrandbeutel eignen sich für Nahrungsergänzungsmittel – auf Wunsch mit Wiederverschluss und Bedruckung in Ihrem Layout.",
     meta: ["Kompakt", "Wiederverschließbar", "Individuell bedruckt"], link: "https://www.toma-gmbh.de/verpackungsbeutel-fuer-pharma-erzeugnisse/",
-    image: "assets/doypack-05.webp", alt: "Platzhalter: Siegelrandbeutel für Nahrungsergänzungsmittel" },
+    image: "assets/doypack/doypack-05.webp", alt: "Platzhalter: Siegelrandbeutel für Nahrungsergänzungsmittel" },
   { id: "snacks", icon: "food", label: "Snacks",
     text: "Für Snacks sind transparente oder blickdichte Flachbeutel möglich – mit Aufreißhilfe und Wiederverschluss für den Genuss unterwegs.",
     meta: ["Transparent oder blickdicht", "Aufreißhilfe", "Wiederverschluss"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-09.webp", alt: "Platzhalter: Siegelrandbeutel für Snacks" },
+    image: "assets/doypack/doypack-09.webp", alt: "Platzhalter: Siegelrandbeutel für Snacks" },
   { id: "pet", icon: "pet", label: "Tierfutter",
     text: "Für Tierfutter und Leckerlis lassen sich Flachbeutel sicher verschließen und in Ihrem Markenauftritt bedrucken.",
     meta: ["Sicher verschließbar", "Individuell bedruckt", "Günstige Beutelform"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/attribute-doypack.webp", alt: "Platzhalter: Siegelrandbeutel für Tierfutter" },
+    image: "assets/doypack/attribute-doypack.webp", alt: "Platzhalter: Siegelrandbeutel für Tierfutter" },
   { id: "pasta", icon: "food", label: "Nudeln",
     text: "Für Nudeln bietet sich ein transparenter Flachbeutel oder ein Beutel mit Sichtfenster an – das Produkt bleibt im Regal sichtbar.",
     meta: ["Transparent", "Sichtfenster", "Monomaterial möglich"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-1.webp", alt: "Platzhalter: Siegelrandbeutel für Nudeln" },
+    image: "assets/doypack/doypack-1.webp", alt: "Platzhalter: Siegelrandbeutel für Nudeln" },
   { id: "spices", icon: "food", label: "Gewürze",
     text: "Gewürze brauchen einen zuverlässigen Verschluss und passenden Aromaschutz – optional mit Aromaventil.",
     meta: ["Aromaventil", "Wiederverschluss", "Blickdicht"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack-13.webp", alt: "Platzhalter: Siegelrandbeutel für Gewürze" },
+    image: "assets/doypack/doypack-13.webp", alt: "Platzhalter: Siegelrandbeutel für Gewürze" },
   { id: "powder", icon: "powder", label: "Pulver & Granulate",
     text: "Für Pulver und Granulate ist wichtig, dass die Verpackung sicher verschließbar ist und auf die jeweilige Anwendung abgestimmt wird.",
     meta: ["Sicher verschließbar", "Flexibel anpassbar", "Ausgießer möglich"], link: "https://www.toma-gmbh.de/chemie-branche/",
-    image: "assets/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Siegelrandbeutel für Pulver und Granulate" },
+    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Siegelrandbeutel für Pulver und Granulate" },
   { id: "emulsions", icon: "liquid", label: "Emulsionen",
     text: "Auch Emulsionen lassen sich im Flachbeutel verpacken – mit Ausgießer für eine saubere Entnahme.",
     meta: ["Ausgießer", "Sicher verschließbar", "Individuell anpassbar"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack-tee.webp", alt: "Platzhalter: Siegelrandbeutel mit Ausgießer für Emulsionen" }
+    image: "assets/doypack/doypack-tee.webp", alt: "Platzhalter: Siegelrandbeutel mit Ausgießer für Emulsionen" }
 ];
 
 /* ---- Konfigurator: Schritte ---- */
@@ -112,49 +112,49 @@ export const values = [
   {
     title: "Günstigste Beutelform",
     text: "Flachbeutel sind die günstigste Beutelvariante – eine wirtschaftliche Lösung für Produkte, die keine Standfunktion benötigen.",
-    image: "assets/doypack-09.webp",
+    image: "assets/doypack/doypack-09.webp",
     alt: "Platzhalter: Siegelrandbeutel als wirtschaftliche Verpackung",
     accent: true
   },
   {
     title: "Vielseitig einsetzbar",
     text: "Von Nahrungsergänzungsmitteln, Snacks und Tierfutter über Nudeln und Gewürze bis zu Pulvern, Granulaten und Emulsionen.",
-    image: "assets/doypack-1.webp",
+    image: "assets/doypack/doypack-1.webp",
     alt: "Platzhalter: Siegelrandbeutel für verschiedene Füllgüter",
     accent: false
   },
   {
     title: "Individuell anpassbar",
     text: "An drei Seiten versiegelt und individuell an Produkt, Anwendung und gewünschte Funktionen angepasst.",
-    image: "assets/doypack-tee.webp",
+    image: "assets/doypack/doypack-tee.webp",
     alt: "Platzhalter: individuell angepasster Siegelrandbeutel",
     accent: false
   },
   {
     title: "Monomaterial – 100 % recycelbar",
     text: "Als Monomaterial-Beutel aus nur einem Material – je nach Ausführung als 100 % recycelbare Lösung erhältlich.",
-    image: "assets/standbodenbeutel-doypack-e1696408989978.webp",
+    image: "assets/doypack/standbodenbeutel-doypack-e1696408989978.webp",
     alt: "Platzhalter: Beutel als Beispiel für Monomaterial",
     accent: true
   },
   {
     title: "BIO Siegelrandbeutel",
     text: "Optional als BIO Variante, kompostierbar nach DIN EN 13432.",
-    image: "assets/doypack-13.webp",
+    image: "assets/doypack/doypack-13.webp",
     alt: "Platzhalter: kompostierbarer BIO Siegelrandbeutel",
     accent: false
   },
   {
     title: "Kraftpapier-Variante",
     text: "Natürlicher Look und hochwertige Haptik – die Kraftpapier-Variante für einen besonderen Markenauftritt.",
-    image: "assets/doypack-05.webp",
+    image: "assets/doypack/doypack-05.webp",
     alt: "Platzhalter: Siegelrandbeutel in Kraftpapier-Optik",
     accent: false
   },
   {
     title: "Transparent oder blickdicht",
     text: "Zeigen Sie Ihr Produkt im transparenten Flachbeutel oder schützen Sie es im blickdichten Beutel.",
-    image: "assets/doypack-hero.webp",
+    image: "assets/doypack/doypack-hero.webp",
     alt: "Platzhalter: transparenter und blickdichter Siegelrandbeutel",
     accent: false
   },
@@ -168,14 +168,14 @@ export const values = [
   {
     title: "Bedruckt in Ihrem Layout",
     text: "Tiefdruck mit bis zu 10 Farben, Flexodruck oder Digitaldruck – brillante Druckfarben für Ihr Markenbild.",
-    image: "assets/doypack-aromaventil.webp",
+    image: "assets/doypack/doypack-aromaventil.webp",
     alt: "Platzhalter: bedruckter Beutel in hochwertiger Optik",
     accent: false
   },
   {
     title: "Effiziente Logistik",
     text: "Bis zu 70–90 % weniger Verpackungsgewicht als starre Verpackungen – leicht und platzsparend in Lager und Transport.",
-    image: "assets/attribute-doypack.webp",
+    image: "assets/doypack/attribute-doypack.webp",
     alt: "Platzhalter: Beutel in verschiedenen Größen",
     accent: false
   }
@@ -184,28 +184,28 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack-09.webp",
+    src: "assets/doypack/doypack-09.webp",
     alt: "Platzhalter: Siegelrandbeutel für Snacks",
     title: "Snacks",
     desc: "Transparenter oder blickdichter Flachbeutel – mit Aufreißhilfe und optionalem Wiederverschluss.",
     size: "tall"
   },
   {
-    src: "assets/doypack-05.webp",
+    src: "assets/doypack/doypack-05.webp",
     alt: "Platzhalter: Siegelrandbeutel für Nahrungsergänzungsmittel",
     title: "Nahrungsergänzungsmittel",
     desc: "Kompakt, sicher und funktional verpackt – bedruckt in Ihrem Layout.",
     size: "normal"
   },
   {
-    src: "assets/attribute-doypack.webp",
+    src: "assets/doypack/attribute-doypack.webp",
     alt: "Platzhalter: Siegelrandbeutel für Tierfutter",
     title: "Tierfutter",
     desc: "Sicher verschließbar und individuell gestaltet.",
     size: "normal"
   },
   {
-    src: "assets/doypack-nachfuellbeutel.webp",
+    src: "assets/doypack/doypack-nachfuellbeutel.webp",
     alt: "Platzhalter: Siegelrandbeutel mit Ausgießer",
     title: "Pulver & Emulsionen",
     desc: "Flachbeutel mit Ausgießer – flexibel anpassbar für unterschiedliche Füllgüter.",

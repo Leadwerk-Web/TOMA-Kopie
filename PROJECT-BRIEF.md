@@ -22,7 +22,7 @@
 - Logo: `assets/logo-toma.webp`; favicon: `assets/silhouette.svg`.
 - Renkler: TOMA turuncu `#ef7b10`, destek mavisi `#2f7fc4`.
 - Fontlar: Yerel Manrope, Montserrat ve IBM Plex Mono.
-- Varsayılan OG görseli: `assets/doypack-scaled.webp`.
+- Varsayılan OG görseli: `assets/doypack/doypack-scaled.webp`.
 - Ana focus keyphrase: `Doypacks und Standbodenbeutel nach Maß`.
 - Canonical, OG URL, hreflang ve Organization verileri WordPress kurulum adresinden GTD tarafından üretilir.
 - Uzak analytics/embed yoktur; interaktif kütüphaneler yerel barındırılır.

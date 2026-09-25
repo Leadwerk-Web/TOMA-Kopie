@@ -538,7 +538,7 @@ html.is-stack-scroll .explorer__stage {
   border-radius: 0;
   border-bottom-left-radius: var(--radius-medium);
   place-items: end start;
-  background: transparent url("../assets/bauteile-basis.webp") left bottom / contain no-repeat;
+  background: transparent url("../assets/doypack/bauteile-basis.webp") left bottom / contain no-repeat;
 }
 html.is-stack-scroll .explorer__bauteile {
   width: 100%;
@@ -1248,7 +1248,7 @@ html.is-stack-scroll .gallery__grid {
   place-items: end start;
   border-radius: 0;
   overflow: hidden;
-  background: transparent url("../assets/bauteile-basis.webp") left bottom / contain no-repeat;
+  background: transparent url("../assets/doypack/bauteile-basis.webp") left bottom / contain no-repeat;
   padding: 0;
 }
 .explorer__bauteile {
