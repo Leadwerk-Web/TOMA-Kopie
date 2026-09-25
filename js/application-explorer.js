@@ -54,7 +54,8 @@ function render(index, animate) {
   const html = `
     <h3>${a.label}</h3>
     <p>${a.text}</p>
-    <div class="apps__meta">${a.meta.map((m) => `<span>${m}</span>`).join("")}</div>
+    ${a.items?.length ? `<dl class="apps__docs">${a.items.map((d) => `<div><dt>${d.title}</dt><dd>${d.text}</dd></div>`).join("")}</dl>` : ""}
+    ${a.meta?.length ? `<div class="apps__meta">${a.meta.map((m) => `<span>${m}</span>`).join("")}</div>` : ""}
     <p style="margin-top:1.5rem"><a class="btn btn--link" href="${a.link}">${a.linkLabel || `${a.label} ansehen`} <span class="arrow" aria-hidden="true">→</span></a></p>`;
 
   const imgHtml = `<img src="${a.image}" width="800" height="640" alt="${a.alt || a.label}" loading="lazy" decoding="async" />`;
