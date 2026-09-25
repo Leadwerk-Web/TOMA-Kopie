@@ -7,7 +7,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Seitenfaltenbeutel",
-  configPhoto: "assets/doypack/doypack.webp" // TODO: Seitenfaltenbeutel-Bild
+  configPhoto: "assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp"
 };
 
 /* ---- Feature-Explorer: Ausstattungsdetails (Bauteile.svg) ----
@@ -35,15 +35,15 @@ export const applications = [
   { id: "coffee", icon: "coffee", label: "Kaffee",
     text: "Frisch gerösteter Kaffee gast aus. Ein Aromaschutzventil lässt die Gase entweichen, Barrierefolien halten Sauerstoff, Licht und Feuchtigkeit fern.",
     meta: ["Aromaschutzventil", "Aromabarriere", "Blockboden"], link: "https://www.toma-gmbh.de/kaffeeverpackung/",
-    image: "assets/doypack/doypack-1.webp", alt: "Platzhalter: Seitenfaltenbeutel für Kaffee" },
+    image: "assets/seitenfaltenbeutel/quad-seal-06.webp", alt: "Schwarzer Seitenfaltenbeutel für Kaffee" },
   { id: "tea", icon: "coffee", label: "Tee",
     text: "Tee ist aroma- und feuchtigkeitsempfindlich. Passende Barriereeigenschaften und ein Wiederverschluss erhalten die Qualität bis zur letzten Portion.",
     meta: ["Aromabarriere", "Feuchtigkeitsbarriere", "Zipper"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack/doypack-tee.webp", alt: "Platzhalter: Seitenfaltenbeutel für Tee" },
+    image: "assets/seitenfaltenbeutel/quad-seal-05.webp", alt: "Weißer Seitenfaltenbeutel für Grüntee" },
   { id: "spices", icon: "food", label: "Gewürze",
     text: "Gewürze verlieren ohne Schutz schnell an Aroma und Farbe. Licht- und Aromabarriere schützen den Inhalt, ein Pulverzipper hält den Verschluss sauber.",
     meta: ["Lichtbarriere", "Aromabarriere", "Pulverzipper"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack/doypack-13.webp", alt: "Platzhalter: Seitenfaltenbeutel für Gewürze" },
+    image: "assets/seitenfaltenbeutel/quad-seal-12.webp", alt: "Seitenfaltenbeutel für Kräuter und Gewürze" },
   { id: "cereals", icon: "food", label: "Cerealien",
     text: "Das hohe Füllvolumen und die Belastbarkeit machen Seitenfaltenbeutel zu einer guten Lösung für Cerealien – die Feuchtigkeitsbarriere hält sie knusprig.",
     meta: ["Großes Volumen", "Feuchtigkeitsbarriere", "Wiederverschluss"], link: "https://www.toma-gmbh.de/food/",
@@ -51,11 +51,11 @@ export const applications = [
   { id: "pet", icon: "pet", label: "Tiernahrung",
     text: "Auch schwerere Befüllungen sind möglich. Seitenfaltenbeutel mit Standfunktion stehen nach dem Befüllen und präsentieren Tiernahrung im Handel.",
     meta: ["Hohe Belastbarkeit", "Standfunktion", "Slider-Zipper"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/doypack/attribute-doypack.webp", alt: "Platzhalter: Seitenfaltenbeutel für Tiernahrung" },
+    image: "assets/seitenfaltenbeutel/quad-seal-13.webp", alt: "Großer Seitenfaltenbeutel für Pferdefutter" },
   { id: "industry", icon: "nonfood", label: "Industrie & Schüttgut",
     text: "Klassische Seitenfaltenbeutel dienen als Inliner für Kartons und Kisten – für Schüttgut, Ersatzteile und weitere industrielle Anwendungen.",
     meta: ["Inliner", "LDPE / HDPE", "Robust"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Seitenfaltenbeutel für Industrie und Schüttgut" },
+    image: "assets/seitenfaltenbeutel/quad-seal-malz.webp", alt: "Rote Seitenfaltenbeutel für Malzextrakt in einer Brauerei" },
   { id: "nonfood", icon: "nonfood", label: "Non-Food Retail",
     text: "Außerhalb des Lebensmittelbereichs verbindet der Seitenfaltenbeutel Schutz und Präsentation – bedruckt in Ihrem Layout.",
     meta: ["Individuell bedruckt", "Standfunktion", "Wiederverschluss"], link: "https://www.toma-gmbh.de/non-food/",
@@ -122,8 +122,8 @@ export const values = [
   {
     title: "Ideale Aromaerhaltung",
     text: "Integrierte Aromaschutzventile lassen Gase entweichen und halten das Aroma im Beutel – ideal für frisch gerösteten Kaffee.",
-    image: "assets/doypack/doypack-aromaventil.webp",
-    alt: "Platzhalter: Beutel mit Aromaschutzventil",
+    image: "assets/seitenfaltenbeutel/quad-seal-06.webp",
+    alt: "Seitenfaltenbeutel für Kaffee",
     accent: true
   },
   {
@@ -136,29 +136,29 @@ export const values = [
   {
     title: "Hohe Belastbarkeit",
     text: "Seitenfaltenbeutel sind robust und auch für schwerere Befüllungen geeignet.",
-    image: "assets/doypack/doypack-09.webp",
-    alt: "Platzhalter: befüllter Seitenfaltenbeutel",
+    image: "assets/seitenfaltenbeutel/quad-seal-13.webp",
+    alt: "Befüllter Seitenfaltenbeutel für Pferdefutter",
     accent: false
   },
   {
     title: "Flexibel einsetzbar",
     text: "Von Kaffee, Tee und Gewürzen über Cerealien und Tiernahrung bis zu Schüttgut und Ersatzteilen.",
-    image: "assets/doypack/doypack-1.webp",
-    alt: "Platzhalter: Seitenfaltenbeutel für Kaffee",
+    image: "assets/seitenfaltenbeutel/quad-seal-12.webp",
+    alt: "Seitenfaltenbeutel für verschiedene Kräuter",
     accent: true
   },
   {
     title: "Individuell gefertigt",
     text: "Format, Material, Verschluss und Bedruckung stimmen wir auf Ihr Produkt und Ihre Anwendung ab.",
-    image: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: individuell bedruckter Beutel",
+    image: "assets/seitenfaltenbeutel/quad-seal-malz.webp",
+    alt: "Individuell gestaltete Seitenfaltenbeutel für Malzextrakt",
     accent: false
   },
   {
     title: "Bedruckt in Ihrem Layout",
     text: "Tiefdruck mit bis zu 10 Farben, Flexodruck oder Digitaldruck – Schutz und Präsentation in einer Lösung.",
-    image: "assets/doypack/doypack-05.webp",
-    alt: "Platzhalter: bedruckter Beutel in hochwertiger Optik",
+    image: "assets/seitenfaltenbeutel/quad-seal-05.webp",
+    alt: "Bedruckter Seitenfaltenbeutel für Grüntee",
     accent: false
   },
   {
@@ -187,31 +187,31 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack/doypack-1.webp",
-    alt: "Platzhalter: Seitenfaltenbeutel für Kaffee",
+    src: "assets/seitenfaltenbeutel/quad-seal-06.webp",
+    alt: "Schwarzer Seitenfaltenbeutel für Kaffee",
     title: "Kaffee",
     desc: "Seitenfaltenbeutel mit Aromaschutzventil – das Aroma bleibt im Beutel, Gase können entweichen.",
     size: "tall"
   },
   {
-    src: "assets/doypack/doypack-13.webp",
-    alt: "Platzhalter: Seitenfaltenbeutel für Gewürze",
-    title: "Gewürze",
-    desc: "Licht- und Aromabarriere schützen empfindliche Gewürze.",
-    size: "normal"
-  },
-  {
-    src: "assets/doypack/doypack-09.webp",
-    alt: "Platzhalter: Quad Bag für Cerealien",
-    title: "Cerealien",
-    desc: "Großes Füllvolumen und Feuchtigkeitsbarriere – ideal für Cerealien.",
-    size: "normal"
-  },
-  {
-    src: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: bedruckter Seitenfaltenbeutel für Tee",
+    src: "assets/seitenfaltenbeutel/quad-seal-05.webp",
+    alt: "Bedruckter Seitenfaltenbeutel für Grüntee",
     title: "Tee",
     desc: "Individuell bedruckter Seitenfaltenbeutel – Aromaschutz und Präsentation in einer Lösung.",
+    size: "normal"
+  },
+  {
+    src: "assets/seitenfaltenbeutel/quad-seal-13.webp",
+    alt: "Seitenfaltenbeutel für Pferdefutter",
+    title: "Tiernahrung",
+    desc: "Robust und auch für schwerere Befüllungen geeignet – bedruckt in Ihrem Layout.",
+    size: "normal"
+  },
+  {
+    src: "assets/seitenfaltenbeutel/quad-seal-12.webp",
+    alt: "Seitenfaltenbeutel für Kräuter und Gewürze",
+    title: "Gewürze",
+    desc: "Licht- und Aromabarriere schützen empfindliche Gewürze.",
     size: "wide"
   }
 ];

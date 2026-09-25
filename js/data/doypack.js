@@ -47,7 +47,7 @@ export const applications = [
   { id: "pet", icon: "pet", label: "Tierfutter",
     text: "Größere Füllvolumen, robustes Handling und Wiederverschluss – Doypacks eignen sich gut für den Tiernahrungsbereich.",
     meta: ["Großformat", "Zipper", "Euroloch"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/doypack/attribute-doypack.webp", alt: "Standbodenbeutel in verschiedenen Größen und Materialien" },
+    image: "assets/doypack/doypack-cat-food-e1771315511164.webp", alt: "Doypacks für Katzen- und Hundefutter" },
   { id: "cosmetic", icon: "cosmetic", label: "Kosmetik & Pflege",
     text: "Hochwertige Oberflächen und feine Veredelungen unterstützen eine Premium-Anmutung für Pflege- und Kosmetikprodukte.",
     meta: ["Soft-Touch", "Ausgießer", "Sichtfenster"], link: "https://www.toma-gmbh.de/verpackungsloesungen/",
@@ -165,8 +165,8 @@ export const values = [
   {
     title: "Breites Einsatzspektrum",
     text: "Von Food und Kaffee über Pulver und Pet Food bis Care, Non-Food und Nachfülllösungen.",
-    image: "assets/doypack/doypack-05.webp",
-    alt: "Premium-Doypack für Pflegeprodukte",
+    image: "assets/doypack/doypack-mikrowelle-02.webp",
+    alt: "Doypack für ein Fertiggericht in einer Küche",
     accent: false
   },
   {
@@ -186,8 +186,8 @@ export const values = [
   {
     title: "Beratung bis Spezifikation",
     text: "Anforderungen aufnehmen, Material und Format abstimmen, Muster bzw. Freigabe – persönlich begleitet bis zur Produktion.",
-    image: "assets/doypack/doypack-13.webp",
-    alt: "Doypack in Anwendungsumgebung",
+    image: "assets/doypack/doypack-10-e1771314983425.webp",
+    alt: "Bedruckter Doypack für Müsli in einer Küche",
     accent: false
   }
 ];
@@ -195,8 +195,8 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack/doypack-05.webp",
-    alt: "Matt-schwarzer Doypack für Badebomben",
+    src: "assets/doypack/doypack-06-e1771315055422.webp",
+    alt: "Schwarzer Doypack für Badesalz zwischen Badekugeln",
     title: "Kosmetik & Care",
     desc: "Matt-schwarzer Doypack in spa-ähnlicher Umgebung – hochwertige Optik für Pflege- und Wellnessprodukte.",
     size: "tall"

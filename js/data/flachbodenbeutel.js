@@ -7,7 +7,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Flachbodenbeutel",
-  configPhoto: "assets/doypack/doypack.webp" // TODO: Box-Pouch-Bild
+  configPhoto: "assets/flachbodenbeutel/flachbodenbeutel-neutral.webp"
 };
 
 /* ---- Feature-Explorer: Ausstattungsdetails (Bauteile.svg) ----
@@ -39,7 +39,7 @@ export const applications = [
   { id: "coffee", icon: "coffee", label: "Kaffee, Tee & Gewürze",
     text: "Genussmittel profitieren von Aroma- und Lichtbarriere – bei frisch geröstetem Kaffee ergänzt um ein Aromaventil.",
     meta: ["Aromaventil", "Aromabarriere", "Zipper"], link: "https://www.toma-gmbh.de/kaffeeverpackung/",
-    image: "assets/doypack/doypack-1.webp", alt: "Platzhalter: bedruckte Kaffeebeutel" },
+    image: "assets/flachbodenbeutel/flachbodenbeutel-kaffee-2.webp", alt: "Schwarze Flachbodenbeutel für Single-Origin-Kaffee neben einer Kaffeemühle" },
   { id: "snacks", icon: "food", label: "Snacks & Trockenfrüchte",
     text: "Große Druckflächen auf Front, Rückseite und Seitenfalten sorgen für starke Regalwirkung – der Wiederverschluss hält Snacks frisch.",
     meta: ["360°-Branding", "Zipper", "Tear-Notch"], link: "https://www.toma-gmbh.de/food/",
@@ -47,7 +47,7 @@ export const applications = [
   { id: "pet", icon: "pet", label: "Tiernahrung",
     text: "Größeres Füllvolumen, stabiler Stand und robuste Materialaufbauten – Box Pouches eignen sich gut für Tiernahrung.",
     meta: ["Großes Volumen", "Slider-Zipper", "Standfest"], link: "https://www.toma-gmbh.de/tierfutter/",
-    image: "assets/doypack/attribute-doypack.webp", alt: "Platzhalter: Beutel in verschiedenen Größen" },
+    image: "assets/flachbodenbeutel/flachbodenbeutel-hundefutter.webp", alt: "Bedruckter Flachbodenbeutel für Hundefutter auf einer Wiese mit Hunden" },
   { id: "cosmetic", icon: "cosmetic", label: "Hygiene & Pflege",
     text: "Hochwertige Optik am POS mit Matt-, Glanz- oder Soft-Touch-Lacken für Hygiene- und Pflegeprodukte.",
     meta: ["Soft-Touch", "Sichtfenster", "Euroloch"], link: "https://www.toma-gmbh.de/verpackungsloesungen/",
@@ -55,7 +55,7 @@ export const applications = [
   { id: "chemie", icon: "liquid", label: "Chemie",
     text: "Auch für chemische Produkte einsetzbar – je nach Materialaufbau und abgestimmt auf die Anforderungen des Füllguts.",
     meta: ["Materialaufbau", "Barriere", "Technische Prüfung"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Platzhalter: Beutel für Non-Food-Produkte" },
+    image: "assets/flachbodenbeutel/flachbodenbeutel-granulat.webp", alt: "Flachbodenbeutel für Bodengranulat mit flachem Boden" },
   { id: "nonfood", icon: "nonfood", label: "Non-Food",
     text: "Außerhalb des Lebensmittelbereichs überzeugt die Box Pouch durch Stabilität, Präsentation und flexible Ausstattung.",
     meta: ["Robust", "Individuell", "Wiederverschluss"], link: "https://www.toma-gmbh.de/non-food/",
@@ -119,29 +119,29 @@ export const values = [
   {
     title: "Hohe Standfestigkeit",
     text: "Durch den flach aufgeschweißten Boden stehen Box Pouches besonders stabil – im Regal wie bei der Befüllung.",
-    image: "assets/doypack/standbodenbeutel-doypack-e1696408989978.webp",
-    alt: "Platzhalter: standfester Beutel",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-seite.webp",
+    alt: "Schwarzer Flachbodenbeutel in Seitenansicht",
     accent: false
   },
   {
     title: "Mehr Werbe- & Druckfläche",
     text: "Die Seitenfalten schaffen zusätzliche bedruckbare Flächen – für 360°-Markenwirkung am Point of Sale.",
-    image: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: individuell bedruckter Beutel",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-tierfutter.webp",
+    alt: "Flachbodenbeutel in Kraftoptik mit bedrucktem Hundemotiv",
     accent: true
   },
   {
     title: "Größeres Füllvolumen",
     text: "Seitenfalten und Flachboden ermöglichen mehr Inhalt bei kompakter Grundfläche.",
-    image: "assets/doypack/attribute-doypack.webp",
-    alt: "Platzhalter: Beutel in verschiedenen Größen",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-granulat.webp",
+    alt: "Großer Flachbodenbeutel für Bodengranulat",
     accent: false
   },
   {
     title: "Hochwertige Präsentation",
     text: "Die kastenförmige Silhouette wirkt wertig und verkaufsstark – mit Matt-, Glanz- oder Soft-Touch-Lacken.",
-    image: "assets/doypack/doypack-05.webp",
-    alt: "Platzhalter: Premium-Beutel in hochwertiger Optik",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-kaffee-2.webp",
+    alt: "Schwarze Flachbodenbeutel für Kaffee in hochwertiger Optik",
     accent: false
   },
   {
@@ -168,8 +168,8 @@ export const values = [
   {
     title: "Vielseitig einsetzbar",
     text: "Von Kaffee, Tee und Gewürzen über Snacks und Tiernahrung bis zu Hygiene-, Pflege- und Non-Food-Produkten.",
-    image: "assets/doypack/doypack-1.webp",
-    alt: "Platzhalter: bedruckte Kaffeebeutel",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-hundefutter.webp",
+    alt: "Flachbodenbeutel für Hundefutter",
     accent: true
   },
   {
@@ -182,8 +182,8 @@ export const values = [
   {
     title: "Manuell oder automatisch befüllbar",
     text: "Je nach Ausführung geeignet für manuelle oder automatische Befüllung – mit hoher Prozesssicherheit bei abgestimmtem Materialdesign.",
-    image: "assets/doypack/doypack-nachfuellbeutel.webp",
-    alt: "Platzhalter: Beutel in Anwendungsumgebung",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-kaffee.webp",
+    alt: "Flachbodenbeutel für Kaffee in einer Rösterei",
     accent: false
   }
 ];
@@ -191,30 +191,30 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack/doypack-1.webp",
-    alt: "Platzhalter: Kaffee-Box-Pouch",
+    src: "assets/flachbodenbeutel/flachbodenbeutel-kaffee-kraft.webp",
+    alt: "Flachbodenbeutel in Kraftoptik für Kaffee einer Rösterei",
     title: "Kaffee & Tee",
     desc: "Box Pouch mit Aromaventil und Zipper – Aromaschutz trifft starke Regalwirkung.",
     size: "tall"
   },
   {
-    src: "assets/doypack/doypack-09.webp",
-    alt: "Platzhalter: Box Pouch für Snacks",
-    title: "Snacks & Trockenfrüchte",
-    desc: "Große Druckflächen und Wiederverschluss – ideal für Snacks, Nüsse und Trockenfrüchte.",
+    src: "assets/flachbodenbeutel/flachbodenbeutel-tierfutter.webp",
+    alt: "Bedruckter Flachbodenbeutel für Hundefutter",
+    title: "Tiernahrung",
+    desc: "Größeres Füllvolumen und stabiler Stand – bedruckt in Ihrem Markenauftritt.",
     size: "normal"
   },
   {
-    src: "assets/doypack/doypack-13.webp",
-    alt: "Platzhalter: Box Pouch für Gewürze",
-    title: "Gewürze",
-    desc: "Licht- und Aromabarriere schützen empfindliche Gewürze – bei hochwertiger Optik am POS.",
+    src: "assets/flachbodenbeutel/flachbodenbeutel-granulat.webp",
+    alt: "Flachbodenbeutel für Bodengranulat",
+    title: "Granulate & Non-Food",
+    desc: "Seitenfalten und Flachboden ermöglichen mehr Inhalt bei kompakter Grundfläche.",
     size: "normal"
   },
   {
-    src: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: bedruckte Box Pouch",
-    title: "Backwaren & Genuss",
+    src: "assets/flachbodenbeutel/flachbodenbeutel-kaffee-2.webp",
+    alt: "Bedruckte schwarze Flachbodenbeutel für Kaffee",
+    title: "Kaffee & Genuss",
     desc: "Individuell bedruckte Box Pouch – 360°-Markenwirkung über Front, Rückseite und Seitenfalten.",
     size: "wide"
   }

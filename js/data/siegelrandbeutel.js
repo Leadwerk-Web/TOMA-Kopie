@@ -7,7 +7,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Siegelrandbeutel",
-  configPhoto: "assets/doypack/doypack.webp" // TODO: Siegelrandbeutel-Bild
+  configPhoto: "assets/flachbeutel/flachbeutel-neutral.webp"
 };
 
 /* ---- Feature-Explorer: Ausstattungsdetails (Bauteile.svg) ----
@@ -35,7 +35,7 @@ export const applications = [
   { id: "supplements", icon: "pharma", label: "Nahrungsergänzungsmittel",
     text: "Kompakt, sicher und funktional verpackt: Siegelrandbeutel eignen sich für Nahrungsergänzungsmittel – auf Wunsch mit Wiederverschluss und Bedruckung in Ihrem Layout.",
     meta: ["Kompakt", "Wiederverschließbar", "Individuell bedruckt"], link: "https://www.toma-gmbh.de/verpackungsbeutel-fuer-pharma-erzeugnisse/",
-    image: "assets/doypack/doypack-05.webp", alt: "Platzhalter: Siegelrandbeutel für Nahrungsergänzungsmittel" },
+    image: "assets/flachbeutel/flachbeutel-kapseln.webp", alt: "Bedruckter Siegelrandbeutel für Kapseln" },
   { id: "snacks", icon: "food", label: "Snacks",
     text: "Für Snacks sind transparente oder blickdichte Flachbeutel möglich – mit Aufreißhilfe und Wiederverschluss für den Genuss unterwegs.",
     meta: ["Transparent oder blickdicht", "Aufreißhilfe", "Wiederverschluss"], link: "https://www.toma-gmbh.de/food/",
@@ -51,7 +51,7 @@ export const applications = [
   { id: "spices", icon: "food", label: "Gewürze",
     text: "Gewürze brauchen einen zuverlässigen Verschluss und passenden Aromaschutz – optional mit Aromaventil.",
     meta: ["Aromaventil", "Wiederverschluss", "Blickdicht"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack/doypack-13.webp", alt: "Platzhalter: Siegelrandbeutel für Gewürze" },
+    image: "assets/flachbeutel/flachbeutel-gewuerz.webp", alt: "Transparenter Siegelrandbeutel mit Kräuter- und Gewürzmischung" },
   { id: "powder", icon: "powder", label: "Pulver & Granulate",
     text: "Für Pulver und Granulate ist wichtig, dass die Verpackung sicher verschließbar ist und auf die jeweilige Anwendung abgestimmt wird.",
     meta: ["Sicher verschließbar", "Flexibel anpassbar", "Ausgießer möglich"], link: "https://www.toma-gmbh.de/chemie-branche/",
@@ -112,22 +112,22 @@ export const values = [
   {
     title: "Günstigste Beutelform",
     text: "Flachbeutel sind die günstigste Beutelvariante – eine wirtschaftliche Lösung für Produkte, die keine Standfunktion benötigen.",
-    image: "assets/doypack/doypack-09.webp",
-    alt: "Platzhalter: Siegelrandbeutel als wirtschaftliche Verpackung",
+    image: "assets/flachbeutel/flachbeutel-schrauben.webp",
+    alt: "Transparenter Siegelrandbeutel mit Schrauben und Unterlegscheiben",
     accent: true
   },
   {
     title: "Vielseitig einsetzbar",
     text: "Von Nahrungsergänzungsmitteln, Snacks und Tierfutter über Nudeln und Gewürze bis zu Pulvern, Granulaten und Emulsionen.",
-    image: "assets/doypack/doypack-1.webp",
-    alt: "Platzhalter: Siegelrandbeutel für verschiedene Füllgüter",
+    image: "assets/flachbeutel/flachbeutel-tee.webp",
+    alt: "Siegelrandbeutel mit Tee in einer Küche",
     accent: false
   },
   {
     title: "Individuell anpassbar",
     text: "An drei Seiten versiegelt und individuell an Produkt, Anwendung und gewünschte Funktionen angepasst.",
-    image: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: individuell angepasster Siegelrandbeutel",
+    image: "assets/flachbeutel/flachbeutel-gewuerz.webp",
+    alt: "Transparenter Siegelrandbeutel mit Kräutermischung",
     accent: false
   },
   {
@@ -168,8 +168,8 @@ export const values = [
   {
     title: "Bedruckt in Ihrem Layout",
     text: "Tiefdruck mit bis zu 10 Farben, Flexodruck oder Digitaldruck – brillante Druckfarben für Ihr Markenbild.",
-    image: "assets/doypack/doypack-aromaventil.webp",
-    alt: "Platzhalter: bedruckter Beutel in hochwertiger Optik",
+    image: "assets/flachbeutel/flachbeutel-kapseln.webp",
+    alt: "Bedruckter Siegelrandbeutel für Kapseln",
     accent: false
   },
   {
@@ -184,31 +184,31 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack/doypack-09.webp",
-    alt: "Platzhalter: Siegelrandbeutel für Snacks",
-    title: "Snacks",
-    desc: "Transparenter oder blickdichter Flachbeutel – mit Aufreißhilfe und optionalem Wiederverschluss.",
+    src: "assets/flachbeutel/flachbeutel-kapseln.webp",
+    alt: "Bedruckter Siegelrandbeutel für Kapseln",
+    title: "Nahrungsergänzungsmittel",
+    desc: "Kompakt, sicher und funktional verpackt – bedruckt in Ihrem Layout.",
     size: "tall"
   },
   {
-    src: "assets/doypack/doypack-05.webp",
-    alt: "Platzhalter: Siegelrandbeutel für Nahrungsergänzungsmittel",
-    title: "Nahrungsergänzungsmittel",
-    desc: "Kompakt, sicher und funktional verpackt – bedruckt in Ihrem Layout.",
+    src: "assets/flachbeutel/flachbeutel-tee.webp",
+    alt: "Transparenter Siegelrandbeutel mit Tee",
+    title: "Tee & Kräuter",
+    desc: "Transparenter Flachbeutel – das Produkt bleibt sichtbar, mit Aufreißhilfe und optionalem Wiederverschluss.",
     size: "normal"
   },
   {
-    src: "assets/doypack/attribute-doypack.webp",
-    alt: "Platzhalter: Siegelrandbeutel für Tierfutter",
-    title: "Tierfutter",
-    desc: "Sicher verschließbar und individuell gestaltet.",
+    src: "assets/flachbeutel/flachbeutel-gewuerz.webp",
+    alt: "Transparenter Siegelrandbeutel mit Gewürzmischung",
+    title: "Gewürze",
+    desc: "Zuverlässiger Verschluss und passender Aromaschutz – optional mit Aromaventil.",
     size: "normal"
   },
   {
-    src: "assets/doypack/doypack-nachfuellbeutel.webp",
-    alt: "Platzhalter: Siegelrandbeutel mit Ausgießer",
-    title: "Pulver & Emulsionen",
-    desc: "Flachbeutel mit Ausgießer – flexibel anpassbar für unterschiedliche Füllgüter.",
+    src: "assets/flachbeutel/flachbeutel-schrauben.webp",
+    alt: "Transparenter Siegelrandbeutel mit Schrauben",
+    title: "Technik & Kleinteile",
+    desc: "Die wirtschaftliche Beutelform für Produkte ohne Standfunktion – sicher verschlossen.",
     size: "wide"
   }
 ];

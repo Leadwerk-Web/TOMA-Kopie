@@ -8,7 +8,7 @@
 /* ---- Produkt: Name (Alt-/Aria-Texte) & Vorschaubild im Konfigurator ---- */
 export const product = {
   name: "Spoutbag",
-  configPhoto: "assets/doypack/standbodenbeutel-ausgiesser.webp"
+  configPhoto: "assets/nachfuellbeutel/spoutbag-neutral.webp"
 };
 
 /* ---- Feature-Explorer: entfällt auf dieser Seite ----
@@ -21,7 +21,7 @@ export const applications = [
   { id: "food", icon: "food", label: "Lebensmittel",
     text: "Für flüssige und pastöse Lebensmittel sowie feine Produkte wie Zucker: Der Ausgießer ermöglicht eine kontrollierte Entleerung, die Verschlusskappe hält den Beutel sicher verschlossen.",
     meta: ["Gut dosierbar", "Wiederverschließbar", "Lebensmittelkonform je nach Aufbau"], link: "https://www.toma-gmbh.de/food/",
-    image: "assets/doypack/doypack-tee.webp", alt: "Platzhalter: Spoutbag für Lebensmittel" },
+    image: "assets/nachfuellbeutel/nachfuellbeutel-food.webp", alt: "Bedruckte Spoutbags für Lebensmittel" },
   { id: "drinks", icon: "liquid", label: "Getränke",
     text: "Getränke lassen sich im Spoutbag sauber ausgießen und wieder verschließen – als leichte Alternative zu Flaschen, abgestimmt auf Füllgut und Barrierebedarf.",
     meta: ["Sauber ausgießen", "Leicht", "Barriere nach Bedarf"], link: "https://www.toma-gmbh.de/food/",
@@ -33,7 +33,7 @@ export const applications = [
   { id: "care", icon: "cosmetic", label: "Kosmetik & Reinigungsmittel",
     text: "Als Nachfüllbeutel für Duschgel, Seife oder Reinigungsmittel: platzsparend, gut dosierbar und eine effiziente Alternative zu starren Flaschen.",
     meta: ["Nachfüllbeutel", "Platzsparend", "Gut dosierbar"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" },
+    image: "assets/nachfuellbeutel/nachfuellbeutel-seife.webp", alt: "Transparente Spoutbags mit Flüssigseife" },
   { id: "chemical", icon: "nonfood", label: "Chemie & technische Flüssigkeiten",
     text: "Für chemische und technische Flüssigkeiten stimmen wir Material und Ausgießer auf das Füllgut ab – auf Wunsch mit Spezial-Verbundfolien mit Barriere- oder antistatischen Eigenschaften.",
     meta: ["Spezial-Verbundfolien", "Sicher verschließbar", "Individuelle Ausgießer-Position"], link: "https://www.toma-gmbh.de/chemie-branche/",
@@ -45,7 +45,7 @@ export const applications = [
   { id: "refill", icon: "liquid", label: "Nachfüllsysteme",
     text: "Refill-Konzepte mit Nachfüllbeuteln reduzieren Volumen und vereinfachen die Anwendung – als flexible Lösung statt starrer Verpackung.",
     meta: ["Refill-Konzept", "Weniger Volumen", "Wiederverschließbar"], link: "https://www.toma-gmbh.de/non-food/",
-    image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer als Refill-Lösung" }
+    image: "assets/nachfuellbeutel/nachfuellbeutel-badezusatz.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" }
 ];
 
 /* ---- Konfigurator: Schritte ---- */
@@ -104,8 +104,8 @@ export const values = [
   {
     title: "Sauber dosierbar",
     text: "Für Flüssigkeiten, pastöse Medien, Pulver oder Granulate – der Ausgießer ermöglicht eine kontrollierte Entleerung.",
-    image: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: Beutel für dosierbare Produkte",
+    image: "assets/nachfuellbeutel/nachfuellbeutel-seife.webp",
+    alt: "Spoutbags mit Flüssigseife zum Dosieren",
     accent: false
   },
   {
@@ -125,8 +125,8 @@ export const values = [
   {
     title: "Individuell anpassbar",
     text: "Format, Material, Barriere, Ausgießer und Bedruckung stimmen wir auf Produkt und Marke ab.",
-    image: "assets/doypack/doypack-hero.webp",
-    alt: "Platzhalter: individuell gestalteter Beutel",
+    image: "assets/nachfuellbeutel/nachfuellbeutel-bad.webp",
+    alt: "Weißer Spoutbag im Badambiente",
     accent: false
   },
   {
@@ -139,7 +139,7 @@ export const values = [
   {
     title: "Effiziente Nachfülllösung",
     text: "Als Nachfüllbeutel eine Alternative zu starren Verpackungen wie Flaschen oder Kanistern.",
-    image: "assets/doypack/doypack-nachfuellbeutel.webp",
+    image: "assets/nachfuellbeutel/nachfuellbeutel-badezusatz.webp",
     alt: "Nachfüllbeutel mit Ausgießer für Duschbad",
     accent: true
   },
@@ -153,8 +153,8 @@ export const values = [
   {
     title: "Bedruckt in Ihrem Layout",
     text: "Tiefdruck mit bis zu 10 Farben inkl. Sonderfarben, Flexodruck oder Digitaldruck – Schutz und Präsentation in einer Lösung.",
-    image: "assets/doypack/doypack-aromaventil.webp",
-    alt: "Platzhalter: bedruckter Beutel in hochwertiger Optik",
+    image: "assets/nachfuellbeutel/nachfuellbeutel-food.webp",
+    alt: "Bedruckte Spoutbags in hochwertiger Optik",
     accent: false
   }
 ];
@@ -162,10 +162,10 @@ export const values = [
 /* ---- Im Einsatz / Gallery ---- */
 export const galleryItems = [
   {
-    src: "assets/doypack/doypack-nachfuellbeutel.webp",
+    src: "assets/nachfuellbeutel/nachfuellbeutel-badezusatz.webp",
     alt: "Nachfüllbeutel mit Ausgießer für Duschbad",
-    title: "Kosmetik & Pflege",
-    desc: "Nachfüllbeutel mit Ausgießer – platzsparend, gut dosierbar und wiederverschließbar.",
+    title: "Bad & Nachfüllen",
+    desc: "Nachfüllbeutel für Duschbad und Pflegeprodukte – als Alternative zu Flasche oder Kanister.",
     size: "tall"
   },
   {
@@ -176,17 +176,17 @@ export const galleryItems = [
     size: "normal"
   },
   {
-    src: "assets/doypack/doypack-tee.webp",
-    alt: "Platzhalter: Spoutbag für Lebensmittel",
+    src: "assets/nachfuellbeutel/nachfuellbeutel-food.webp",
+    alt: "Bedruckte Spoutbags für Lebensmittel",
     title: "Lebensmittel",
     desc: "Für flüssige, pastöse oder feinkörnige Lebensmittel – Barriere passend zum Füllgut.",
     size: "normal"
   },
   {
-    src: "assets/doypack/doypack-13.webp",
-    alt: "Platzhalter: Spoutbag für Reinigungsmittel und technische Flüssigkeiten",
-    title: "Reinigung & Technik",
-    desc: "Nachfülllösung für Reinigungsmittel und technische Flüssigkeiten statt Flasche oder Kanister.",
+    src: "assets/nachfuellbeutel/nachfuellbeutel-seife.webp",
+    alt: "Transparente Nachfüllbeutel mit Flüssigseife",
+    title: "Kosmetik & Pflege",
+    desc: "Nachfüllbeutel mit Ausgießer – platzsparend, gut dosierbar und wiederverschließbar.",
     size: "wide"
   }
 ];
