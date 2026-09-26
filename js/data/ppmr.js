@@ -2,8 +2,7 @@
    TOMA · PPWR & Verpackung — Zentrale Inhaltsdaten
    Inhalte basierend auf https://www.toma-gmbh.de/ppmr/
    Informationsseite: kein Feature-Explorer, kein Konfigurator, kein
-   Vorteile-Karussell und keine Galerie. #dokumentation nutzt den
-   Anwendungs-Explorer (Tabs) mit Dokumentenliste statt Branchen.
+   Vorteile-Karussell, keine Galerie und kein Anwendungs-Explorer.
    ===================================================================== */
 
 /* ---- Seite: Name (Alt-/Aria-Texte) ---- */
@@ -18,47 +17,8 @@ export const configSteps = [];
 export const configRules = {};
 export const layerMap = {};
 
-/* ---- Dokumentation & Nachweise (Tabs im Abschnitt #dokumentation) ----
-   items: Dokumente je Themenbereich (werden als Liste im Tab gezeigt). */
-export const applications = [
-  { id: "food", icon: "doc", label: "Lebensmittelrecht & Konformität",
-    text: "Nachweise rund um den Lebensmittelkontakt, die technische Freigabe und die Prozessplanung.",
-    items: [
-      { title: "Declaration of Compliance (DoC)",
-        text: "Bestätigung, dass das Material oder die Verpackung den Anforderungen für Lebensmittelkontakt entspricht – häufig unter Bezug auf die Verordnung (EU) Nr. 10/2011." },
-      { title: "Materialdatenblätter",
-        text: "Technische Angaben zu Materialaufbau, Barrierewerten, Verarbeitung und zulässigen Einsatzbedingungen – Basis für Freigabe und Prozessplanung." },
-      { title: "Spezifikationen",
-        text: "Freigegebene Produkt- und Materialspezifikationen mit definierten Grenzen für Abfüllung, Lagerung und Qualitätssicherung." }
-    ],
-    link: "https://www.toma-gmbh.de/konformitaetserklaerungen/", linkLabel: "Konformitätserklärungen ansehen",
-    image: "assets/ppwr/ppwr-lebensmittel-beutel.webp",
-    alt: "Bedruckte Lebensmittelverpackungen wie Flachbodenbeutel, Spoutbag und Standbodenbeutel für Kaffee, Granola und Nüsse" },
-  { id: "materials", icon: "flask", label: "Material & Stoffe",
-    text: "Transparenz über eingesetzte Stoffe – für interne Compliance-Prüfungen, Audits und Ihr Qualitätsmanagement.",
-    items: [
-      { title: "Rohstoffe & Additive",
-        text: "Transparenz über eingesetzte Stoffe – relevant für interne Compliance-Prüfungen, Audits und die Abstimmung mit Ihrem Qualitätsmanagement." },
-      { title: "PFAS- & BPA-Hinweise",
-        text: "Materialbezogene Auskünfte zu sensiblen Stoffgruppen – abgestimmt auf die jeweilige Verpackungsanwendung und Ihre Spezifikation." }
-    ],
-    link: "#anfrage", linkLabel: "Stoffinformationen anfragen",
-    image: "assets/material.webp",
-    alt: "Aufgerissene Ecke eines Beutels mit sichtbaren Materialschichten aus Folie und Aluminium" },
-  { id: "ppwr", icon: "recycle", label: "PPWR & Markt",
-    text: "Informationen zur Vorbereitung auf kommende Anforderungen an Recyclingfähigkeit, Rezyklat und Kennzeichnung.",
-    items: [
-      { title: "Recyclingfähigkeit",
-        text: "Informationen zur Bewertung der Recyclingfähigkeit gemäß künftigen EU-Kriterien – Vorbereitung auf Design-for-Recycling-Anforderungen." },
-      { title: "Rezyklatanteile",
-        text: "Hintergrund zu möglichen Mindestanteilen an Rezyklat – abhängig von Material, Anwendung und Lebensmittelkontakt." },
-      { title: "Kennzeichnung & Produktinformationen",
-        text: "Orientierung zu Kennzeichnungspflichten und erweiterten Produktinformationen im Zuge der PPWR – je nach Verpackungstyp und Material." }
-    ],
-    link: "https://www.toma-gmbh.de/recyclebare-verpackung/", linkLabel: "Recyclebare Verpackung ansehen",
-    image: "assets/flachbodenbeutel/flachbodenbeutel-kaffee-kraft.webp",
-    alt: "Flachbodenbeutel aus Kraftpapier mit Produktetikett für Kaffee im Regal" }
-];
+/* ---- Anwendungs-Explorer: entfällt (#dokumentation ist statisch im HTML) ---- */
+export const applications = [];
 
 /* ---- Vorteile-Karussell & Galerie: entfallen ---- */
 export const values = [];

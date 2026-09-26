@@ -15,6 +15,7 @@ import { initValuesCarousel } from "./values-carousel.js";
 import { initGallery } from "./gallery.js";
 import { initHeroBadges } from "./hero-badges.js";
 import { initNavMenu } from "./nav-menu.js";
+import { initHAccordion } from "./h-accordion.js";
 
 /* Stack-Scroll früh setzen, damit Sticky schon beim ersten Paint greift.
    js-motion erst setzen, wenn GSAP bereit ist – sonst bleiben Inhalte unsichtbar. */
@@ -136,6 +137,7 @@ function init() {
   run(initValuesCarousel, "values");
   run(initGallery, "gallery");
   run(initApplicationExplorer, "apps");
+  run(initHAccordion, "h-accordion");
   run(initConfigurator, "config");
   run(initFaq, "faq");
   run(initForm, "form");

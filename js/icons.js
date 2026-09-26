@@ -13,10 +13,6 @@ export const branchIcons = {
   liquid: `<svg ${attrs}><path d="M12 3s5 6.2 5 10.2A5 5 0 0 1 7 13.2C7 9.2 12 3 12 3z"/></svg>`,
   nonfood: `<svg ${attrs}><path d="M3 8.5 12 4l9 4.5v9L12 22 3 17.5v-9z"/><path d="M12 12v10"/><path d="M3 8.5 12 13l9-4.5"/></svg>`,
   pharma: `<svg ${attrs}><path d="M8.5 8.5h7v7h-7z"/><path d="M12 6v12M6 12h12"/><rect x="4" y="4" width="16" height="16" rx="4"/></svg>`,
-  /* PPWR-Seite: Dokumenten-Tabs */
-  recycle: `<svg ${attrs}><path d="M7 19H4.8a1.8 1.8 0 0 1-1.6-2.7L7.2 9.5"/><path d="M11 19h8.2a1.8 1.8 0 0 0 1.6-2.7l-1.3-2.1"/><path d="m14 16-3 3 3 3"/><path d="M8.3 13.6 7.2 9.5l-4.1 1.1"/><path d="m9.3 5.8 1.1-1.9a1.8 1.8 0 0 1 3.1 0l4 6.8"/><path d="m13.4 9.6 4.1 1.1 1.1-4.1"/></svg>`,
-  doc: `<svg ${attrs}><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>`,
-  flask: `<svg ${attrs}><path d="M9 3h6"/><path d="M10 3v6L5 18.5A1.7 1.7 0 0 0 6.5 21h11a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>`
 };
 
 export function iconSvg(key) {

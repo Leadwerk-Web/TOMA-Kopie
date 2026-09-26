@@ -390,10 +390,11 @@
     <!-- ============================ ANFORDERUNGEN ============================ -->
     <section class="section variants ppwr-section stack-panel" id="anforderungen" style="--stack-z: 6" aria-labelledby="req-title" data-lw-section="requirements">
       <div class="container--wide">
-        <div class="section-head section-head--center section-head--wide" data-reveal>
+        <div class="section-head ppwr-head-split" data-reveal>
           <span class="eyebrow">Anforderungen im Überblick</span>
           <h2 id="req-title">Welche Anforderungen betreffen <em>Verpackungen?</em></h2>
           <p>Die Umsetzung dieser Anforderungen hängt immer vom jeweiligen Produkt, Füllgut, Prozess und Zielmarkt ab. Nicht jede Verpackungslösung kann in jedem Fall vollständig auf Monomaterial, Materialreduktion oder bestimmte Recyclingkriterien ausgerichtet werden. TOMA prüft deshalb im Rahmen konkreter Verpackungsprojekte, welche Optionen technisch, regulatorisch und wirtschaftlich sinnvoll umsetzbar sind.</p>
+          <a class="btn btn--primary ppwr-head-split__cta" href="#anfrage">Anforderungen besprechen</a>
         </div>
         <div class="variants__grid ppwr-grid-4">
           <article class="variants__card ppwr-card" data-reveal>
@@ -433,45 +434,180 @@
     </section>
 
     <!-- ============================ DOKUMENTATION (Tabs) ============================ -->
-    <section class="section apps stack-panel" id="dokumentation" style="--stack-z: 7" aria-labelledby="docs-title" data-lw-section="documents">
+    <section class="section ppwr-section stack-panel" id="dokumentation" style="--stack-z: 7" aria-labelledby="docs-title" data-lw-section="documents">
       <div class="container--wide">
-        <div class="section-head section-head--wide" data-reveal>
+        <div class="section-head ppwr-head-split" data-reveal>
           <span class="eyebrow">Dokumentation &amp; Nachweise</span>
           <h2 id="docs-title">Welche Unterlagen können <em>relevant sein?</em></h2>
           <p>Welche Dokumente Sie benötigen, hängt von Produkt, Material, Abfüllprozess und Zielmarkt ab. TOMA stellt die passenden Informationen transparent bereit – strukturiert nach Themen, nicht als undurchsichtiger Dokumentenstapel.</p>
         </div>
-        <div class="apps__tabs" role="tablist" aria-label="Themenbereiche der Dokumentation" id="appsTabs"></div>
-        <div class="apps__stage card" data-reveal>
-          <div class="apps__panel" id="appsPanel"></div>
-          <div class="apps__visual" id="appsVisual" aria-hidden="true"></div>
+        <div class="ppwr-hacc" data-haccordion data-reveal>
+          <div class="ppwr-hacc__item is-open">
+            <h3 class="ppwr-hacc__head">
+              <button class="ppwr-hacc__trigger" type="button" id="docs-tab-food" aria-expanded="true" aria-controls="docs-panel-food">
+                <span class="ppwr-hacc__n">01</span>
+                <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></span>
+                <span class="ppwr-hacc__title">Lebensmittelrecht &amp; Konformität</span>
+              </button>
+            </h3>
+            <div class="ppwr-hacc__panel" id="docs-panel-food" role="region" aria-labelledby="docs-tab-food">
+              <p class="ppwr-hacc__intro">Nachweise rund um Lebensmittelkontakt, technische Freigabe und Prozessplanung.</p>
+              <ul class="ppwr-docs__list">
+                <li><b>Declaration of Compliance (DoC)</b><span>Bestätigung der Eignung für den Lebensmittelkontakt – häufig unter Bezug auf die Verordnung (EU) Nr.&nbsp;10/2011.</span></li>
+                <li><b>Materialdatenblätter</b><span>Materialaufbau, Barrierewerte, Verarbeitung und zulässige Einsatzbedingungen.</span></li>
+                <li><b>Spezifikationen</b><span>Freigegebene Grenzen für Abfüllung, Lagerung und Qualitätssicherung.</span></li>
+              </ul>
+              <a class="btn btn--link ppwr-docs__link" href="https://www.toma-gmbh.de/konformitaetserklaerungen/">Konformitätserklärungen ansehen <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="ppwr-hacc__item">
+            <h3 class="ppwr-hacc__head">
+              <button class="ppwr-hacc__trigger" type="button" id="docs-tab-stoffe" aria-expanded="false" aria-controls="docs-panel-stoffe">
+                <span class="ppwr-hacc__n">02</span>
+                <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L5 18.5A1.7 1.7 0 0 0 6.5 21h11a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg></span>
+                <span class="ppwr-hacc__title">Material &amp; Stoffe</span>
+              </button>
+            </h3>
+            <div class="ppwr-hacc__panel" id="docs-panel-stoffe" role="region" aria-labelledby="docs-tab-stoffe">
+              <p class="ppwr-hacc__intro">Auskünfte zu eingesetzten Rohstoffen, Additiven und sensiblen Stoffgruppen.</p>
+              <ul class="ppwr-docs__list">
+                <li><b>Rohstoffe &amp; Additive</b><span>Transparenz über eingesetzte Stoffe – für Compliance-Prüfungen, Audits und Ihr Qualitätsmanagement.</span></li>
+                <li><b>PFAS- &amp; BPA-Hinweise</b><span>Auskünfte zu sensiblen Stoffgruppen – abgestimmt auf Anwendung und Spezifikation.</span></li>
+              </ul>
+              <a class="btn btn--link ppwr-docs__link" href="#anfrage">Stoffinformationen anfragen <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="ppwr-hacc__item">
+            <h3 class="ppwr-hacc__head">
+              <button class="ppwr-hacc__trigger" type="button" id="docs-tab-markt" aria-expanded="false" aria-controls="docs-panel-markt">
+                <span class="ppwr-hacc__n">03</span>
+                <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.8a1.8 1.8 0 0 1-1.6-2.7L7.2 9.5"/><path d="M11 19h8.2a1.8 1.8 0 0 0 1.6-2.7l-1.3-2.1"/><path d="m14 16-3 3 3 3"/><path d="M8.3 13.6 7.2 9.5l-4.1 1.1"/><path d="m9.3 5.8 1.1-1.9a1.8 1.8 0 0 1 3.1 0l4 6.8"/><path d="m13.4 9.6 4.1 1.1 1.1-4.1"/></svg></span>
+                <span class="ppwr-hacc__title">PPWR &amp; Markt</span>
+              </button>
+            </h3>
+            <div class="ppwr-hacc__panel" id="docs-panel-markt" role="region" aria-labelledby="docs-tab-markt">
+              <p class="ppwr-hacc__intro">Vorbereitung auf kommende Anforderungen an Recyclingfähigkeit, Rezyklat und Kennzeichnung.</p>
+              <ul class="ppwr-docs__list">
+                <li><b>Recyclingfähigkeit</b><span>Bewertung nach künftigen EU-Kriterien – Vorbereitung auf Design-for-Recycling.</span></li>
+                <li><b>Rezyklatanteile</b><span>Mögliche Mindestanteile – abhängig von Material, Anwendung und Lebensmittelkontakt.</span></li>
+                <li><b>Kennzeichnung &amp; Produktinformationen</b><span>Orientierung zu Kennzeichnungspflichten – je nach Verpackungstyp und Material.</span></li>
+              </ul>
+              <a class="btn btn--link ppwr-docs__link" href="https://www.toma-gmbh.de/recyclebare-verpackung/">Recyclebare Verpackung ansehen <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
+        <div class="ppwr-next" data-reveal>
+          <p><b>Wie kommen Sie an diese Unterlagen?</b> Auftragsbezogen, über den Shop oder gemeinsam mit unserer Beratung – wie das funktioniert, zeigen wir weiter unten.</p>
+          <a class="btn btn--ghost" href="#unterlagen">So erhalten Sie Dokumente <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PPWR KOMPAKT (Infografik als Vollbild-Layout) ============================ -->
+    <section class="section ppwr-info stack-panel" id="ppwr-kompakt" style="--stack-z: 8" aria-labelledby="info-title" data-lw-section="infographic">
+      <div class="ppwr-info__inner">
+        <div class="ppwr-info__left">
+          <div class="ppwr-info__intro">
+            <h2 class="ppwr-info__title" id="info-title" data-reveal>PPWR verständlich erklärt</h2>
+            <p class="ppwr-info__lead" data-reveal>Die neue EU&#8209;Verpackungsverordnung bringt viele Fragen mit sich. TOMA unterstützt Unternehmen dabei, Verpackungslösungen frühzeitig, recyclinggerechter und dokumentationsstark auszurichten.</p>
+          </div>
+          <div class="ppwr-info__bottom">
+            <div class="ppwr-info__topics" data-reveal>
+              <span class="ppwr-info__icon ppwr-info__icon--lg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v3"/><path d="M13 3v5h5"/><path d="M8 12h5M8 16h3"/><path d="M18 13.5l3.5 1.4v2.6c0 2.3-1.5 3.9-3.5 4.5-2-.6-3.5-2.2-3.5-4.5v-2.6z"/><path d="m16.7 17.6 1 1 1.8-2"/></svg></span>
+              <div>
+                <h3>Wichtige PPWR-Themen</h3>
+                <ul class="ppwr-info__checks">
+                  <li>Recyclingfähigkeit</li>
+                  <li>Konformität &amp; Nachweise</li>
+                  <li>Verantwortlichkeiten</li>
+                </ul>
+              </div>
+            </div>
+            <p class="ppwr-info__dates" data-reveal>
+              <span class="ppwr-info__cal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M7.5 14h.01M12 14h.01M16.5 14h.01M7.5 17.5h.01M12 17.5h.01"/></svg></span>
+              <span><b>11.02.2025</b> Inkrafttreten</span>
+              <span class="ppwr-info__sep" aria-hidden="true">|</span>
+              <span><b>12.08.2026</b> Anwendung</span>
+            </p>
+          </div>
+        </div>
+        <figure class="ppwr-info__visual" data-reveal>
+          <img src="assets/ppwr/ppwr-beutelgruppe.webp" width="793" height="726" alt="Flexible Verpackungen: weißer Flachbodenbeutel, Standbodenbeutel aus Kraftpapier, transparenter Spoutbag und brauner Seitenfaltenbeutel mit transparentem Beutel davor" loading="lazy" decoding="async" data-lw-field="infographic.image" data-lw-type="image" />
+        </figure>
+        <ul class="ppwr-info__cards">
+          <li data-reveal>
+            <span class="ppwr-info__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.8a1.8 1.8 0 0 1-1.6-2.7L7.2 9.5"/><path d="M11 19h8.2a1.8 1.8 0 0 0 1.6-2.7l-1.3-2.1"/><path d="m14 16-3 3 3 3"/><path d="M8.3 13.6 7.2 9.5l-4.1 1.1"/><path d="m9.3 5.8 1.1-1.9a1.8 1.8 0 0 1 3.1 0l4 6.8"/><path d="m13.4 9.6 4.1 1.1 1.1-4.1"/></svg></span>
+            <div>
+              <h3>Design for Recycling</h3>
+              <p>Verpackungen frühzeitig auf recyclinggerechte Strukturen ausrichten.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="ppwr-info__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10 10 5 20 4c-.5 10-5.5 15-14 15"/><path d="M5 19l8-8"/></svg></span>
+            <div>
+              <h3>Materialeffizienz</h3>
+              <p>Materialeinsatz reduzieren und Verpackungslösungen zukunftsfähig planen.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="ppwr-info__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></span>
+            <div>
+              <h3>Dokumentation &amp; Konformität</h3>
+              <p>DoC, Spezifikationen und Materialdaten übersichtlich bereitstellen.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="ppwr-info__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.2a5.2 5.2 0 0 1 5 4.8"/></svg></span>
+            <div>
+              <h3>Rollen klar verstehen</h3>
+              <p>TOMA unterstützt als Lieferant, die Verantwortung beim Inverkehrbringen liegt beim Kunden.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ============================ DOKUMENTE ERHALTEN ============================ -->
-    <section class="section ppwr-section stack-panel" id="unterlagen" style="--stack-z: 8" aria-labelledby="receive-title" data-lw-section="receive">
-      <div class="container--wide ppwr-split ppwr-split--text">
-        <div class="ppwr-split__text">
-          <span class="eyebrow" data-reveal>Transparent &amp; auftragsbezogen</span>
-          <h2 id="receive-title" data-reveal>So erhalten Sie <em>Dokumente von TOMA</em></h2>
-          <p data-reveal>TOMA stellt relevante Unterlagen transparent und auftragsbezogen bereit.</p>
-          <ol class="spout__props ppwr-props">
-            <li data-reveal><span class="spout__n">01</span><span><b>Personalisierte Aufträge</b>Dokumente werden individuell pro Auftrag erstellt.</span></li>
-            <li data-reveal><span class="spout__n">02</span><span><b>Shop ab 12.08.2026</b>Ab dem 12.08.2026 gilt die PPWR in weiten Teilen. Die zum Produkt passenden Unterlagen können Sie dann direkt zu Ihrer Shop-Bestellung abrufen (Download im Kundenbereich bzw. mit der Auftragsbestätigung). Das gilt nur für Artikel, bei denen diese Dokumente verfügbar und freigegeben sind.</span></li>
-            <li data-reveal><span class="spout__n">03</span><span><b>Beratung</b>Wir helfen bei der Zuordnung, welche Nachweise für Ihre Anwendung sinnvoll sind.</span></li>
-          </ol>
-          <div class="ppwr-split__links" data-reveal>
-            <a class="btn btn--primary" href="#anfrage">Dokumentation anfragen</a>
-          </div>
+    <section class="section ppwr-section stack-panel" id="unterlagen" style="--stack-z: 9" aria-labelledby="receive-title" data-lw-section="receive">
+      <div class="container--wide">
+        <div class="section-head ppwr-head-split" data-reveal>
+          <span class="eyebrow">Transparent &amp; auftragsbezogen</span>
+          <h2 id="receive-title">So erhalten Sie <em>Dokumente von TOMA</em></h2>
+          <p>TOMA stellt relevante Unterlagen transparent und auftragsbezogen bereit – je nach Bestellweg auf einem dieser drei Wege.</p>
+          <a class="btn btn--primary ppwr-head-split__cta" href="#anfrage">Dokumentation anfragen</a>
         </div>
-        <figure class="ppwr-figure" data-reveal>
-          <img src="assets/ppwr/ppwr-infografik.webp" width="1980" height="900" alt="Infografik „PPWR verständlich erklärt“: Design for Recycling, Materialeffizienz, Dokumentation und Konformität sowie klare Rollen; Inkrafttreten am 11.02.2025, Anwendung ab 12.08.2026" loading="lazy" decoding="async" data-lw-field="receive.image" data-lw-type="image" />
-        </figure>
+        <ol class="ppwr-ways" aria-label="Wege zu Ihren Unterlagen">
+          <li class="ppwr-ways__item" data-reveal>
+            <div class="ppwr-ways__top">
+              <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+              <span class="ppwr-ways__tag">Pro Auftrag</span>
+            </div>
+            <h3>Personalisierte Aufträge</h3>
+            <p>Dokumente werden individuell pro Auftrag erstellt.</p>
+          </li>
+          <li class="ppwr-ways__item" data-reveal>
+            <div class="ppwr-ways__top">
+              <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+              <span class="ppwr-ways__tag">Ab 12.08.2026</span>
+            </div>
+            <h3>Shop</h3>
+            <p>Ab dem 12.08.2026 gilt die PPWR in weiten Teilen. Die zum Produkt passenden Unterlagen können Sie dann direkt zu Ihrer Shop-Bestellung abrufen (Download im Kundenbereich bzw. mit der Auftragsbestätigung).</p>
+            <p class="ppwr-ways__note">Das gilt nur für Artikel, bei denen diese Dokumente verfügbar und freigegeben sind.</p>
+          </li>
+          <li class="ppwr-ways__item" data-reveal>
+            <div class="ppwr-ways__top">
+              <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></span>
+              <span class="ppwr-ways__tag">Persönlich</span>
+            </div>
+            <h3>Beratung</h3>
+            <p>Wir helfen bei der Zuordnung, welche Nachweise für Ihre Anwendung sinnvoll sind.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- ============================ KONKRET ============================ -->
-    <section class="section variants stack-panel" id="konkret" style="--stack-z: 9" aria-labelledby="practice-title" data-lw-section="practice">
+    <section class="section variants stack-panel" id="konkret" style="--stack-z: 10" aria-labelledby="practice-title" data-lw-section="practice">
       <div class="container--wide">
         <div class="section-head section-head--center section-head--wide" data-reveal>
           <span class="eyebrow">Praxisorientiert</span>
@@ -507,7 +643,7 @@
     </section>
 
     <!-- ============================ UNTERSTÜTZUNG ============================ -->
-    <section class="section spout stack-panel" id="unterstuetzung" style="--stack-z: 10" aria-labelledby="support-title" data-lw-section="support">
+    <section class="section spout stack-panel" id="unterstuetzung" style="--stack-z: 11" aria-labelledby="support-title" data-lw-section="support">
       <div class="container--wide spout__layout">
         <div class="spout__text">
           <span class="eyebrow" data-reveal>Partnerschaftlich</span>
@@ -537,7 +673,7 @@
     </section>
 
     <!-- ============================ QUELLEN ============================ -->
-    <section class="section variants stack-panel" id="quellen" style="--stack-z: 11" aria-labelledby="sources-title" data-lw-section="sources">
+    <section class="section variants stack-panel" id="quellen" style="--stack-z: 12" aria-labelledby="sources-title" data-lw-section="sources">
       <div class="container--wide">
         <div class="section-head section-head--center section-head--wide" data-reveal>
           <span class="eyebrow">Offizielle Quellen</span>
@@ -573,7 +709,7 @@
     </section>
 
     <!-- ============================ FAQ ============================ -->
-    <section class="section faq stack-panel" id="faq" style="--stack-z: 12" aria-labelledby="faq-title" data-lw-section="faq">
+    <section class="section faq stack-panel" id="faq" style="--stack-z: 13" aria-labelledby="faq-title" data-lw-section="faq">
       <div class="container--wide faq__layout">
         <div class="faq__intro" data-reveal>
           <span class="eyebrow faq__eyebrow">FAQ</span>

@@ -12,6 +12,7 @@ export function initApplicationExplorer() {
   const tabsEl = document.getElementById("appsTabs");
   const panelEl = document.getElementById("appsPanel");
   const visualEl = document.getElementById("appsVisual");
+  if (!tabsEl || !applications.length) return;
 
   tabsEl.innerHTML = applications.map((a, i) =>
     `<button class="apps__tab" role="tab" id="apptab-${a.id}" aria-selected="${i === 0}"
@@ -54,7 +55,6 @@ function render(index, animate) {
   const html = `
     <h3>${a.label}</h3>
     <p>${a.text}</p>
-    ${a.items?.length ? `<dl class="apps__docs">${a.items.map((d) => `<div><dt>${d.title}</dt><dd>${d.text}</dd></div>`).join("")}</dl>` : ""}
     ${a.meta?.length ? `<div class="apps__meta">${a.meta.map((m) => `<span>${m}</span>`).join("")}</div>` : ""}
     <p style="margin-top:1.5rem"><a class="btn btn--link" href="${a.link}">${a.linkLabel || `${a.label} ansehen`} <span class="arrow" aria-hidden="true">→</span></a></p>`;
 
