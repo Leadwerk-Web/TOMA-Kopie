@@ -145,7 +145,23 @@
   transition: transform 0.3s var(--ease-out);
 }
 .nav__item.is-open > .nav__trigger .nav__caret,
-.nav__mtrigger[aria-expanded="true"] .nav__caret { transform: rotate(180deg); }
+.nav__item.is-open > .nav__toggle .nav__caret,
+.nav__mtrigger[aria-expanded="true"] .nav__caret,
+.nav__mtoggle[aria-expanded="true"] .nav__caret { transform: rotate(180deg); }
+/* Geteilter Menüpunkt: Beschriftung verlinkt die Übersichtsseite, der Pfeil öffnet das Menü */
+.nav__item--split { display: flex; align-items: center; }
+.nav__item--split > .nav__trigger { padding-right: 0.2rem; border-radius: 999px 0 0 999px; }
+.nav__toggle {
+  display: inline-flex; align-items: center; align-self: stretch;
+  padding: 0 0.7rem 0 0.2rem;
+  background: none; border: 0; border-radius: 0 999px 999px 0;
+  color: var(--color-text-muted); cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+.nav__item--split:hover > .nav__trigger,
+.nav__item--split:hover > .nav__toggle,
+.nav__item--split.is-open > .nav__toggle { color: var(--color-ink); background: rgba(255, 255, 255, 0.85); }
+.nav__trigger.is-current + .nav__toggle { color: var(--color-ink); }
 /* Noch nicht angelegte Seiten: bewusst reiner Text, kein Link */
 .nav__text { cursor: default; }
 .nav__text--top { opacity: 0.8; }
@@ -274,17 +290,25 @@
 }
 .nav__mega-sub { margin: 0 0 0.85rem; font-size: 0.82rem; color: var(--color-text-muted); }
 .nav__mega-list { list-style: none; margin: 0; padding: 0; display: grid; }
-.nav__mega-list .nav__text {
+.nav__mega-list .nav__text,
+.nav__mega-list a {
   display: flex; align-items: center; gap: 0.6rem;
   padding: 0.45rem 0;
   font-size: 0.9rem; font-weight: 500; color: var(--color-ink);
   border-bottom: 1px solid var(--color-border);
 }
-.nav__mega-list li:last-child .nav__text { border-bottom: 0; }
-.nav__mega-list .nav__text::before {
+.nav__mega-list li:last-child .nav__text,
+.nav__mega-list li:last-child a { border-bottom: 0; }
+.nav__mega-list .nav__text::before,
+.nav__mega-list a::before {
   content: ""; width: 6px; height: 6px; flex-shrink: 0;
   border-radius: 50%; background: var(--color-primary);
 }
+/* Bereits angelegte Seiten: verlinkt, sonst wie .nav__text */
+.nav__mega-list a { font-weight: 600; transition: color var(--dur-fast); }
+.nav__mega-list a:hover,
+.nav__mega-list a:focus-visible,
+.nav__mega-list a[aria-current="page"] { color: var(--color-primary-hover); }
 .nav__mega-foot {
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem;
   padding: 0.85rem clamp(1.4rem, 2.5vw, 2rem);
@@ -428,6 +452,20 @@
 .nav__mtrigger[aria-expanded="true"],
 .nav__mtrigger.is-current { color: var(--color-primary-hover); }
 .nav__mtext { color: var(--color-text-muted); cursor: default; }
+/* Geteilte Zeile: Link zur Übersichtsseite + Pfeil-Button für das Akkordeon */
+.nav__mhead { display: flex; border-bottom: 1px solid var(--color-border); }
+.nav__mhead > .nav__mtrigger { border-bottom: 0; }
+.nav__mtoggle {
+  flex-shrink: 0; width: 3rem;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 0 0.35rem;
+  background: none; border: 0; cursor: pointer;
+  color: var(--color-ink);
+  transition: color var(--dur-fast);
+}
+.nav__mtoggle .nav__caret { width: 16px; height: 16px; }
+.nav__mtoggle:hover,
+.nav__mtoggle[aria-expanded="true"] { color: var(--color-primary-hover); }
 .nav__mnum {
   font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
   color: var(--color-primary); letter-spacing: 0.04em;
@@ -722,6 +760,8 @@ html.is-stack-scroll .hero.stack-panel.is-hero-swapping {
 .hero__visual.is-tilting .media--hero {
   transition: transform 0.12s ease-out;
 }
+/* Opt-out (data-no-tilt): kein Kippen, auch nicht der CSS-Fallback beim Hover */
+.hero__visual[data-no-tilt] .media--hero { transform: none; }
 .hero__visual.is-swapping .media--hero {
   transition: none;
 }
@@ -4201,6 +4241,36 @@ html[data-product="verpackungsloesungen"] .apps__panel { min-height: 320px; }
 }
 .vl-carousel .value-card__media img { object-fit: contain; object-position: center bottom; }
 .vl-carousel .value-card.is-active .value-card__media img { transform: translateY(-4px) scale(1.03); }
+/* Foto statt Freisteller (values[].fit = "cover"): randlos füllen */
+.vl-carousel .value-card__media--cover { padding: 0; }
+.vl-carousel .value-card__media--cover img { object-fit: cover; object-position: center; }
+.vl-carousel .value-card.is-active .value-card__media--cover img { transform: none; }
+/* Text-Badge (values[].badge): quadratischer Rahmen um das 1:1-Motiv, damit der Kreis
+   an der Stelle des entfernten Original-Badges sitzt (Mitte 74 % / 19 %) und ihn ganz abdeckt.
+   Schriftgrößen in cqw skalieren mit dem Rahmen, mit Mindestgröße für die Lesbarkeit. */
+.value-card__frame {
+  position: relative; display: block; height: 100%; aspect-ratio: 1; max-width: 100%; margin-inline: auto;
+  container-type: inline-size;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.vl-carousel .value-card__frame img { width: 100%; height: 100%; object-fit: contain; }
+.vl-carousel .value-card.is-active .value-card__frame img { transform: none; }
+.vl-carousel .value-card.is-active .value-card__frame { transform: translateY(-4px) scale(1.03); }
+.value-card__badge {
+  --badge-size: max(104px, 48cqw);
+  /* nie über die Kartenoberkante hinaus: bei kleinem Rahmen rutscht der Kreis etwas tiefer */
+  position: absolute; left: 74%; top: max(19%, calc(var(--badge-size) / 2 - 0.1rem)); z-index: 1;
+  width: var(--badge-size); aspect-ratio: 1; padding: 0 11%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.15em;
+  border-radius: 50%;
+  background: var(--color-primary); color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(217, 108, 14, 0.7);
+  transform: translate(-50%, -50%) rotate(8deg);
+  font-family: var(--font-heading); text-align: center; text-transform: uppercase; line-height: 1.1;
+  hyphens: manual; overflow-wrap: normal;
+}
+.value-card__badge small { font-size: max(0.64rem, 3.6cqw); font-weight: 700; letter-spacing: 0.06em; opacity: 0.92; }
+.value-card__badge b { font-size: max(0.8rem, 5cqw); font-weight: 800; letter-spacing: 0.01em; }
 .value-card__eyebrow { margin-bottom: 0.3rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary-hover); }
 .value-card.is-active .value-card__eyebrow { color: rgba(255, 255, 255, 0.85); }
 .value-card__link { align-self: flex-start; margin-top: auto; padding-top: 0.9rem; font-size: 0.92rem; font-weight: 700; color: var(--color-primary-hover); text-decoration: none; }
@@ -4208,12 +4278,13 @@ html[data-product="verpackungsloesungen"] .apps__panel { min-height: 320px; }
 .value-card__link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .value-card.is-active .value-card__link:focus-visible { outline-color: #fff; }
 /* Stack-Modus: Bildhöhe an die Fensterhöhe koppeln (Track-Höhe setzt values-carousel.js aus der Kartenhöhe) */
-html.is-stack-scroll #beutelformen .vl-carousel { margin-top: -2.5dvh; }
-html.is-stack-scroll #beutelformen .vl-carousel .values-carousel__viewport { padding: 0.25rem 0 1.75rem; }
-html.is-stack-scroll #beutelformen .vl-carousel .value-card__media { height: clamp(120px, calc(100dvh - 38rem), 240px); padding-top: 1rem; }
-html.is-stack-scroll #beutelformen .vl-carousel .value-card__body { padding: 0.95rem 1.25rem 1.05rem; }
-html.is-stack-scroll #beutelformen .vl-carousel .value-card__link { padding-top: 0.6rem; }
-#beutelformen .products__hint { width: 100%; max-width: none; text-align: center; }
+html.is-stack-scroll :is(#beutelformen, #verpackungen) .vl-carousel { margin-top: -2.5dvh; }
+html.is-stack-scroll :is(#beutelformen, #verpackungen) .vl-carousel .values-carousel__viewport { padding: 0.25rem 0 1.75rem; }
+html.is-stack-scroll :is(#beutelformen, #verpackungen) .vl-carousel .value-card__media { height: clamp(120px, calc(100dvh - 38rem), 240px); padding-top: 1rem; }
+html.is-stack-scroll :is(#beutelformen, #verpackungen) .vl-carousel .value-card__media--cover { padding-top: 0; }
+html.is-stack-scroll :is(#beutelformen, #verpackungen) .vl-carousel .value-card__body { padding: 0.95rem 1.25rem 1.05rem; }
+html.is-stack-scroll :is(#beutelformen, #verpackungen) .vl-carousel .value-card__link { padding-top: 0.6rem; }
+:is(#beutelformen, #verpackungen) .products__hint { width: 100%; max-width: none; text-align: center; }
 
 /* Materialien: Kopf zentriert, darunter Foto | Karte | Karte in
    gleicher Höhe, abschließend Hinweis-Leiste (.ppwr-next) mit Links und Button */
@@ -4326,4 +4397,266 @@ html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
 @media (max-width: 600px) {
   .vl-forms__rail { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .vl-mat { grid-template-columns: minmax(0, 1fr); grid-template-areas: "photo" "barrier" "mech"; }
+}
+
+/* =====================================================================
+   Hochbarrierefolien (hochbarrierefolien.html, data-product="hochbarrierefolien")
+   Materialseite aus den Bausteinen von PPWR-Seite, Verpackungslösungen und
+   Startseite (.ppwr-split, .ppwr-callout, .ppwr-next, .alt-compare__table,
+   .apps, .products, .vl-ov__aspects); hier nur Ergänzungen.
+   Lagenfarben: Außenlage grau, Barriereschicht orange, Siegelschicht blau.
+   ===================================================================== */
+html[data-product="hochbarrierefolien"] {
+  --hb-outer: #8a96ab;
+  --hb-barrier: var(--color-primary);
+  --hb-seal: var(--color-secondary);
+}
+
+/* Hero: quadratisches Freisteller-Motiv, Vorteile als Liste über den Buttons */
+html[data-product="hochbarrierefolien"] .hero__grid { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
+html[data-product="hochbarrierefolien"] .hero h1 { font-size: clamp(2.6rem, 4.6vw, 4.6rem); }
+html[data-product="hochbarrierefolien"] .hero__float { aspect-ratio: 1; max-height: min(66svh, 640px); }
+html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__float { max-height: min(calc(100dvh - 12rem), 620px); }
+/* Orangener Kreis im Motiv (Optik wie .value-card__badge), Geschwister von .hero__float in
+   .media--hero (gleiche Größe wie das Motiv) mit eigenem, gegenläufigem Schweben;
+   Position in der freien Fläche über dem braunen Beutel */
+html[data-product="hochbarrierefolien"] .hero__visual .media--hero { container-type: inline-size; }
+.hb-hero__badge {
+  animation: hb-badge-float 4.2s ease-in-out -2.1s infinite;
+  position: absolute; left: 86%; top: 15%; z-index: 2;
+  width: max(118px, 31cqw); aspect-ratio: 1; padding: 0 max(6px, 2.4cqw);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2em;
+  border-radius: 50%;
+  background: var(--color-primary); color: #fff;
+  box-shadow: 0 12px 28px -12px rgba(217, 108, 14, 0.75);
+  transform: translate(-50%, -50%) rotate(8deg);
+  font-family: var(--font-heading); text-align: center; text-transform: uppercase; line-height: 1.1;
+  hyphens: manual; overflow-wrap: normal;
+}
+.hb-hero__badge small { font-size: max(0.58rem, 2.2cqw); font-weight: 700; letter-spacing: 0.06em; opacity: 0.92; }
+.hb-hero__badge b { font-size: max(0.72rem, 2.8cqw); font-weight: 800; letter-spacing: 0.01em; }
+@keyframes hb-badge-float {
+  0%, 100% { transform: translate(-50%, -50%) rotate(8deg); }
+  50% { transform: translate(-50%, calc(-50% - 14px)) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce) { .hb-hero__badge { animation: none; } }
+@media (max-width: 600px) { .hb-hero__badge { left: 80%; top: 17%; } }
+html[data-product="hochbarrierefolien"] .hero__sub { margin-bottom: 1.25rem; }
+.hb-hero__label { margin: 0 0 0.6rem; font-size: 0.95rem; font-weight: 700; color: var(--color-ink); }
+html[data-product="hochbarrierefolien"] .hero__trust--stack { flex-direction: column; gap: 0.5rem; margin: 0 0 2rem; font-size: 1rem; }
+html[data-product="hochbarrierefolien"] .hero__trust--stack li { gap: 0.6rem; }
+html[data-product="hochbarrierefolien"] .hero__trust--stack li::before { width: 22px; height: 22px; background-size: 13px; }
+
+/* Was sind Hochbarrierefolien? Text + schematischer Folienaufbau | Kurz erklärt + Callout */
+.hb-def { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+.hb-def .ppwr-split__text > p { max-width: 62ch; }
+.hb-stack { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 0.5rem; max-width: 640px; }
+.hb-stack__layer {
+  --hb-layer: var(--hb-outer);
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: center;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-border);
+  border-left: 6px solid var(--hb-layer);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px -18px rgba(17, 23, 38, 0.3);
+  font-size: 0.92rem; line-height: 1.45; color: var(--color-text);
+}
+.hb-stack__layer b { display: block; margin-bottom: 0.1rem; font-family: var(--font-heading); font-size: 1rem; color: var(--color-ink); }
+/* Leicht versetzt gestapelt wie die Lagen eines Verbunds */
+.hb-stack__layer--outer { margin-right: 1.5rem; }
+.hb-stack__layer--barrier { --hb-layer: var(--hb-barrier); margin-inline: 0.75rem; background: #fff; }
+.hb-stack__layer--seal { --hb-layer: var(--hb-seal); margin-left: 1.5rem; }
+.hb-stack__n { font-weight: 800; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--hb-layer); }
+.hb-def__aside { display: grid; gap: clamp(1rem, 2vw, 1.25rem); min-width: 0; }
+.hb-note { padding: clamp(1.25rem, 2.4vw, 1.75rem); border-radius: var(--radius-medium); }
+.hb-note__tag {
+  display: inline-block; margin-bottom: 0.75rem; padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill); background: var(--color-primary-soft); color: var(--color-primary-hover);
+  font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.04em;
+}
+.hb-note h3 { margin-bottom: 0.5rem; font-size: clamp(1.15rem, 1.5vw, 1.35rem); }
+.hb-note p { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--color-text); }
+.hb-callout h3 { font-size: clamp(1.2rem, 1.6vw, 1.45rem); }
+
+/* Folienaufbau: Tab-Leiste (Optik wie .apps__tab) über breitem Bild-Panel (js/image-tabs.js).
+   Ohne JS (kein .is-ready): Leiste aus, alle Panels untereinander. */
+.hb-layers { display: grid; gap: clamp(0.9rem, 2vh, 1.25rem); }
+.hb-layers:not(.is-ready) .hb-layers__tabs { display: none; }
+.apps__tabs.hb-layers__tabs { margin: 0; }
+.apps__tab.hb-layers__tab { padding: 0.55rem 1.15rem; }
+.hb-layers__tab:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.hb-layers__stage { display: grid; gap: 1rem; }
+.hb-layers__panel { margin: 0; border-radius: var(--radius-large); overflow: hidden; background: #fbe3cc; box-shadow: var(--shadow-float); }
+.hb-layers__panel img { display: block; width: 100%; height: auto; aspect-ratio: 1980 / 690; }
+.hb-layers.is-ready .hb-layers__panel:not([hidden]) { animation: hb-fade 0.45s var(--ease-out) both; }
+@keyframes hb-fade { from { opacity: 0; } to { opacity: 1; } }
+/* Stack-Modus: Panelbreite aus der verfügbaren Höhe ableiten, damit das Motiv ganz ins Panel passt */
+html.is-stack-scroll .hb-layers__panel { width: min(100%, calc((100dvh - 23rem) * 2.87)); margin-inline: auto; }
+html.is-stack-scroll #folienaufbau .section-head { margin-bottom: clamp(1rem, 2.5vh, 1.75rem); }
+
+/* Barrierewerte: zwei Karten mit Kürzel in hellem Orange */
+.variants__grid.hb-values { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1120px; margin-inline: auto; }
+.hb-value__abbr {
+  font-family: var(--font-heading); font-weight: 800; line-height: 1; letter-spacing: -0.03em;
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  color: color-mix(in srgb, var(--color-primary) 35%, #fff);
+}
+.hb-value h3 { margin-bottom: 0.6rem; font-size: clamp(1.3rem, 1.9vw, 1.7rem); }
+.hb-value p { font-size: var(--fs-body); line-height: 1.55; }
+.hb-value .hb-value__note {
+  margin-top: 1rem; padding: 0.8rem 1rem;
+  border-radius: var(--radius-small); border-left: 3px solid var(--color-primary);
+  background: var(--color-primary-tint); font-size: 0.95rem;
+}
+.hb-value__note b { color: var(--color-ink); }
+
+/* Materialauswahl: Tabelle im Stil der Vergleichstabelle, Farbpunkt = Lage */
+.hb-table-wrap { padding: clamp(0.35rem, 1vw, 0.75rem) clamp(0.5rem, 1.5vw, 1rem); }
+.hb-table { min-width: 640px; }
+.hb-table tbody th { white-space: nowrap; }
+.hb-table td:nth-child(2) { font-weight: 600; color: var(--color-ink); }
+.hb-dot { display: inline-block; width: 10px; height: 10px; margin-right: 0.65rem; border-radius: 50%; vertical-align: 0.05em; background: var(--hb-barrier); }
+.hb-dot--outer { background: var(--hb-outer); }
+.hb-dot--seal { background: var(--hb-seal); }
+html.is-stack-scroll #materialauswahl .section-head { margin-bottom: clamp(1rem, 2.5vh, 1.75rem); }
+html.is-stack-scroll #materialauswahl .section-head h2 { margin-bottom: 0.4em; }
+/* Kopf: Fließtext und Link gemeinsam in der rechten Spalte (keine eigene Zeile unter der Headline) */
+.section-head.ppwr-head-split .hb-head-aside { grid-column: 2; grid-row: 2; display: grid; justify-items: start; gap: 0.75rem; }
+.section-head.ppwr-head-split .hb-head-aside p { grid-column: auto; grid-row: auto; margin: 0.35rem 0 0; }
+.section-head.ppwr-head-split.hb-head-wide { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+/* Tabelle nicht stauchen (sonst schneidet overflow-x: auto die letzten Zeilen ab) */
+.hb-table-wrap { flex-shrink: 0; }
+html.is-stack-scroll #materialauswahl .section-head h2 { font-size: clamp(1.9rem, 2.7vw, 2.7rem); }
+
+/* Anwendungsbereiche */
+html[data-product="hochbarrierefolien"] .apps__panel { min-height: 320px; }
+
+/* Verpackungsformen: Coverflow-Karussell wie auf der Verpackungslösungen-Seite (.vl-carousel) */
+html.is-stack-scroll #verpackungen .section-head { max-width: none; margin-bottom: clamp(1rem, 3vh, 2.25rem); }
+/* etwas mehr Mindesthöhe als auf der Übersichtsseite, damit der Text-Badge Platz hat */
+html.is-stack-scroll #verpackungen .vl-carousel .value-card__media { height: clamp(160px, calc(100dvh - 37rem), 250px); }
+
+/* Materialien und Verbunde: Text mit Messbedingungen | Checkliste als Karte */
+.hb-measure { margin: 0 0 1.5rem; }
+.hb-measure p { margin: 0 0 0.75rem; max-width: 62ch; font-size: 0.98rem; line-height: 1.5; color: var(--color-text); }
+.hb-measure__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.hb-measure__list li {
+  padding: 0.5rem 1rem; border-radius: var(--radius-pill);
+  background: #fff; border: 1px solid var(--color-border); box-shadow: 0 10px 24px -18px rgba(17, 23, 38, 0.3);
+  font-size: 0.95rem; color: var(--color-text);
+}
+.hb-measure__list b { color: var(--color-primary-hover); }
+.hb-checklist {
+  min-width: 0;
+  padding: clamp(1.35rem, 2.6vw, 2rem);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+.hb-checklist .vl-ov__row { padding: 0.85rem 0; font-size: 1rem; }
+.hb-checklist .vl-ov__aspects li:last-child .vl-ov__row { border-bottom: 0; padding-bottom: 0; }
+
+/* Ausstattung, Druck & Veredelung: Link-Kacheln */
+.hb-options { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.75rem, 1.6vw, 1.1rem); }
+.hb-options li { min-width: 0; }
+.hb-option {
+  display: flex; align-items: center; gap: 1rem; height: 100%;
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1.1rem, 2vw, 1.5rem);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 44px -28px rgba(17, 23, 38, 0.28);
+  font-weight: 600; color: var(--color-ink);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast) var(--ease-out);
+}
+.hb-option__icon {
+  display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px;
+  border-radius: 14px; background: var(--color-primary-soft); color: var(--color-primary-hover);
+  transition: background-color var(--dur-fast), color var(--dur-fast);
+}
+.hb-option__icon svg { width: 24px; height: 24px; }
+.hb-option__label { flex: 1; font-size: 1rem; line-height: 1.35; }
+.hb-option .arrow { color: var(--color-primary); transition: transform var(--dur-fast) var(--ease-out); }
+.hb-option:hover { border-color: rgba(239, 123, 16, 0.35); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.hb-option:hover .hb-option__icon { background: var(--color-primary); color: #fff; }
+.hb-option:hover .arrow { transform: translateX(4px); }
+.hb-option:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+
+/* Nachhaltigkeit: Hinweis im Text, PPWR/PFAS/BPA-Hinweis als Karte auf dem Foto */
+.hb-important { margin: 0 0 1.5rem; }
+.hb-photo { max-width: 480px; }
+.hb-compliance span { font-size: 0.82rem; }
+@media (min-width: 1200px) {
+  html[data-product="hochbarrierefolien"] #nachhaltigkeit .spout__layout { grid-template-columns: minmax(0, 58fr) minmax(0, 42fr); }
+}
+html.is-stack-scroll .hb-photo { max-width: min(430px, 100%); }
+
+/* Stack-Modus: textlastige Panels wie auf der PPWR-Seite */
+html.is-stack-scroll[data-product="hochbarrierefolien"] .section.stack-panel { padding: 5.25rem 0 1.5rem; justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-layers.is-ready .hb-layers__panel:not([hidden]) { animation: none; }
+  .hb-option:hover,
+  .hb-option:hover .arrow { transform: none; }
+}
+
+@media (max-height: 820px) {
+  html.is-stack-scroll[data-product="hochbarrierefolien"] .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__eyebrow { margin-bottom: 1rem; }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__sub { margin-bottom: 1rem; font-size: 1rem; }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__trust--stack { gap: 0.35rem; margin-bottom: 1.25rem; font-size: 0.95rem; }
+  html.is-stack-scroll .hb-def .ppwr-split__text > p { font-size: 1rem; }
+  html.is-stack-scroll .hb-stack { margin-top: 1rem; }
+  html.is-stack-scroll .hb-stack__layer { padding-block: 0.55rem; font-size: 0.86rem; }
+  html.is-stack-scroll .hb-note p,
+  html.is-stack-scroll .ppwr-callout.hb-callout p { font-size: 0.92rem; }
+  html.is-stack-scroll #folienaufbau .section-head,
+  html.is-stack-scroll #materialauswahl .section-head { max-width: none; }
+  html.is-stack-scroll #folienaufbau .section-head h2,
+  html.is-stack-scroll #materialauswahl .section-head h2 { font-size: clamp(1.9rem, 5.6dvh, 2.8rem); }
+  html.is-stack-scroll #folienaufbau .section-head p,
+  html.is-stack-scroll #materialauswahl .section-head p { font-size: 1rem; }
+  html.is-stack-scroll .hb-value p { font-size: 1rem; }
+  html.is-stack-scroll .hb-checklist .vl-ov__row { padding-block: 0.6rem; font-size: 0.95rem; }
+  html.is-stack-scroll .hb-important p { font-size: 0.88rem; }
+  html.is-stack-scroll .hb-table th,
+  html.is-stack-scroll .hb-table td { padding-block: 0.5rem; }
+  html.is-stack-scroll #verpackungen .section-head h2 { font-size: clamp(1.9rem, 5.6dvh, 2.8rem); margin-bottom: 0.3em; }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] .apps__tab { padding-block: 0.4rem; font-size: 0.85rem; }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] .apps__panel { min-height: 290px; }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] #branchen .apps__visual { height: min(36dvh, 340px); }
+  html.is-stack-scroll[data-product="hochbarrierefolien"] #nachhaltigkeit .spout__intro { margin-bottom: 1rem; font-size: 0.95rem; }
+  html.is-stack-scroll .hb-important { margin-bottom: 1rem; }
+}
+
+@media (max-width: 1199px) {
+  html[data-product="hochbarrierefolien"] .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-product="hochbarrierefolien"] .hero__visual { max-width: 520px; justify-self: center; }
+  .hb-def { grid-template-columns: minmax(0, 1fr); }
+  .section-head.ppwr-head-split .hb-head-aside { grid-column: 1; grid-row: auto; margin-top: 1rem; }
+  .section-head.ppwr-head-split.hb-head-wide { grid-template-columns: minmax(0, 1fr); }
+  .hb-stack { max-width: none; }
+  .hb-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hb-photo { justify-self: center; }
+}
+@media (max-width: 900px) {
+  .variants__grid.hb-values { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 768px) {
+  html[data-product="hochbarrierefolien"] .hero h1 { font-size: var(--fs-h1); }
+  html[data-product="hochbarrierefolien"] h2 { hyphens: auto; overflow-wrap: break-word; }
+  .hb-layers__panel img { aspect-ratio: 1; }
+  .hb-stack__layer--outer,
+  .hb-stack__layer--barrier,
+  .hb-stack__layer--seal { margin-inline: 0; }
+  /* Hinweiskarte unter statt auf dem Foto */
+  .hb-photo .ppwr-photo__card { position: static; margin: 0.75rem; }
+  /* Tabs als 2×2-Raster statt Einzelzeilen */
+  .apps__tabs.hb-layers__tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+  .apps__tab.hb-layers__tab { justify-content: center; padding-inline: 0.6rem; font-size: 0.85rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .hb-options { grid-template-columns: minmax(0, 1fr); }
 }

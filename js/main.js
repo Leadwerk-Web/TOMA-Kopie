@@ -17,6 +17,7 @@ import { initHeroBadges } from "./hero-badges.js";
 import { initHeroForms } from "./hero-forms.js";
 import { initNavMenu } from "./nav-menu.js";
 import { initHAccordion } from "./h-accordion.js";
+import { initImageTabs } from "./image-tabs.js";
 import { initSectionSnap } from "./section-snap.js";
 
 /* Stack-Scroll früh setzen, damit Sticky schon beim ersten Paint greift.
@@ -140,6 +141,7 @@ function init() {
   run(initGallery, "gallery");
   run(initApplicationExplorer, "apps");
   run(initHAccordion, "h-accordion");
+  run(initImageTabs, "image-tabs");
   run(initConfigurator, "config");
   run(initFaq, "faq");
   run(initForm, "form");
@@ -229,7 +231,7 @@ function setupHeroTilt() {
   if (prefersReducedMotion || isMobile()) return;
   document.querySelectorAll(".hero__visual, .spout__visual").forEach((visual) => {
     const media = visual.querySelector(".media--hero");
-    if (!media) return;
+    if (!media || visual.hasAttribute("data-no-tilt")) return;
 
     const maxTilt = 10; // Grad
     visual.classList.add("is-tilting");

@@ -17,8 +17,10 @@ export function initValuesCarousel() {
 
   track.innerHTML = values.map((v, i) => `
     <article class="value-card card" data-values-slide="${i}" aria-hidden="true">
-      <div class="value-card__media">
+      <div class="value-card__media${v.fit === "cover" ? " value-card__media--cover" : ""}">
+        ${v.badge ? `<span class="value-card__frame">` : ""}
         <img src="${v.image}" width="${v.width || 640}" height="${v.height || 512}" alt="${v.alt}" loading="${i < 3 ? "eager" : "lazy"}" decoding="async" />
+        ${v.badge ? `<span class="value-card__badge"><small>${v.badge.top}</small> <b>${v.badge.main}</b></span></span>` : ""}
       </div>
       <div class="value-card__body">
         ${v.eyebrow ? `<span class="value-card__eyebrow">${v.eyebrow}</span>` : ""}

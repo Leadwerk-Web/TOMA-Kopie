@@ -60,14 +60,16 @@ function initDesktopMenu() {
   const items = [...document.querySelectorAll("[data-nav-item]")];
   if (!items.length) return;
 
+  // Menü-Button: der Trigger selbst oder – bei geteiltem Punkt (Link + Pfeil) – der Pfeil-Button
+  const toggleOf = (item) => item.querySelector(":scope > button[aria-controls]");
   const setOpen = (item, open) => {
     item.classList.toggle("is-open", open);
-    item.querySelector(".nav__trigger")?.setAttribute("aria-expanded", String(open));
+    toggleOf(item)?.setAttribute("aria-expanded", String(open));
   };
   const closeAll = (except = null) => items.forEach((it) => { if (it !== except) setOpen(it, false); });
 
   items.forEach((item) => {
-    const trigger = item.querySelector(".nav__trigger");
+    const trigger = toggleOf(item);
     if (!trigger) return;
     let closeTimer = null;
 
@@ -111,7 +113,7 @@ function initDesktopMenu() {
 
 /* ---- Mobil: Akkordeon im Overlay ---- */
 function initMobileAccordion() {
-  document.querySelectorAll("[data-nav-mgroup] .nav__mtrigger").forEach((btn) => {
+  document.querySelectorAll("[data-nav-mgroup] button[aria-controls]").forEach((btn) => {
     const panel = document.getElementById(btn.getAttribute("aria-controls"));
     if (!panel) return;
     btn.addEventListener("click", () => {
