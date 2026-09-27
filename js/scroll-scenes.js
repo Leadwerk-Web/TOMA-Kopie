@@ -92,6 +92,9 @@ function genericReveals(gsap) {
     gsap.fromTo(el, from, {
       opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
       duration: MOTION.reveal.duration, ease: MOTION.reveal.ease,
+      // Rest-Filter/-Transform entfernen: blur(0px) hält sonst eine eigene
+      // Compositing-Ebene, auf der Fotos beim Verkleinern grisselig wirken
+      clearProps: "filter,transform",
       scrollTrigger: { trigger: el, start: revealStart(el), once: true }
     });
   });

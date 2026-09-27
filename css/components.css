@@ -3494,7 +3494,7 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
 .ppwr-figure--photo img { aspect-ratio: 574 / 752; object-fit: cover; }
 .ppwr-figure--square img { aspect-ratio: 1; }
 
-/* Callout: auf verpackungsloesungen.html (#ueberblick) im Einsatz; auf der PPWR-Seite wird für den PPWR-Check noch ein Platz gesucht */
+/* Callout: derzeit ungenutzt – für den PPWR-Check wird noch ein Platz gesucht */
 .ppwr-callout {
   position: relative;
   display: flex;
@@ -4083,12 +4083,96 @@ html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
    (.ppwr-split, .ppwr-callout, .ppwr-hacc, .apps, .products); hier nur Ergänzungen.
    ===================================================================== */
 html[data-product="verpackungsloesungen"] .hero__grid { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
-html[data-product="verpackungsloesungen"] .hero__float { aspect-ratio: 1; max-height: min(66svh, 660px); }
 html[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.4rem, 3.9vw, 4rem); }
 
-/* Überblick: freigestellter Beutel statt Foto im Callout-Kopf */
-.vl-callout .ppwr-callout__media { background: linear-gradient(180deg, #fff 0%, var(--color-bg-warm) 100%); }
-.vl-callout .ppwr-callout__media img { object-fit: contain; object-position: center; padding: 1rem 1.5rem 0.5rem; }
+/* Hero: Formen-Wähler – Bühne mit der gewählten Verpackungsart (Standardbilder der
+   Produktseiten) und darunter eine Leiste, in der alle sechs Formen ihren Platz haben.
+   Bildwechsel: hero-badges.js ([data-hero-option]); Unterschrift/Auto-Wechsel: hero-forms.js */
+.vl-forms.hero__visual { flex-direction: column; align-items: stretch; gap: clamp(0.9rem, 2.2vh, 1.5rem); }
+.vl-forms__stage { position: relative; }
+.vl-forms__stage::before {
+  content: ""; position: absolute; inset: 8% 10% 4%; z-index: 0; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 72%);
+  pointer-events: none;
+}
+.vl-forms .hero__float { aspect-ratio: 5 / 6; max-height: min(56svh, 560px); }
+html.is-stack-scroll .vl-forms .hero__float { max-height: min(calc(100dvh - 20rem), 560px); }
+.vl-forms__caption {
+  position: absolute; left: 0; bottom: 10%; z-index: 3;
+  display: grid; gap: 0.15rem; min-width: 12rem;
+  padding: 0.9rem 1.15rem 1rem; border-radius: var(--radius-medium);
+}
+.vl-forms__count { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; color: var(--color-text-muted); }
+.vl-forms__count b { color: var(--color-primary); }
+.vl-forms__name { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; line-height: 1.2; color: var(--color-ink); }
+.vl-forms__sub { font-size: 0.85rem; color: var(--color-text); }
+.vl-forms__link { margin-top: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--color-primary-hover); text-decoration: none; }
+.vl-forms__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.vl-forms__rail {
+  list-style: none; margin: 0; padding: 0.4rem;
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.35rem;
+  border-radius: var(--radius-large);
+  background: color-mix(in srgb, #fff 72%, transparent);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  position: relative; z-index: 2;
+}
+.vl-forms__rail li { min-width: 0; }
+.vl-forms__option {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 0.2rem 0.6rem;
+  border: 1px solid transparent; border-radius: var(--radius-medium);
+  background: transparent; cursor: pointer; appearance: none; -webkit-appearance: none;
+  font: inherit; font-size: 0.72rem; font-weight: 700; line-height: 1.2; text-align: center;
+  color: var(--color-ink); hyphens: manual; overflow-wrap: break-word;
+  transition: background var(--dur-fast), border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.vl-forms__option img {
+  display: block; width: 100%; height: clamp(44px, 7vh, 68px); object-fit: contain;
+  transition: transform 0.3s var(--ease-out);
+}
+.vl-forms__option:hover { background: color-mix(in srgb, #fff 80%, transparent); }
+.vl-forms__option:hover img { transform: translateY(-3px); }
+.vl-forms__option.is-active {
+  background: #fff;
+  border-color: color-mix(in srgb, var(--color-primary) 45%, transparent);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--color-primary) 16%, transparent);
+}
+.vl-forms__option:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .vl-forms__option img { transition: none; }
+  .vl-forms__option:hover img { transform: none; }
+}
+
+/* Überblick: ein Spaltenraster für Kopf und Inhalt – links Überschrift und Bild,
+   rechts beide Fließtexte (gleichwertig) und die Aspekte als ruhige nummerierte Liste */
+.section-head.ppwr-head-split.vl-ov__head,
+.vl-ov {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  column-gap: clamp(1.5rem, 4vw, 4rem);
+}
+.vl-ov__head .vl-ov__intro { grid-column: 2; grid-row: 2; align-self: start; display: grid; gap: 0.9rem; padding-top: 0.35rem; }
+.section-head.ppwr-head-split .vl-ov__intro p { grid-column: auto; grid-row: auto; margin: 0; max-width: 64ch; }
+.vl-ov { display: grid; align-items: center; }
+.vl-ov__figure { margin: 0; min-width: 0; justify-self: center; width: 100%; max-width: 520px; }
+.vl-ov__figure img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
+.vl-ov__list { min-width: 0; }
+.vl-ov__label { max-width: none; margin: 0 0 0.75rem; font-family: var(--font-heading); font-size: clamp(1.15rem, 1.5vw, 1.4rem); font-weight: 700; line-height: 1.3; color: var(--color-ink); }
+.vl-ov__aspects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+.vl-ov__row {
+  display: flex; align-items: center; gap: 1.1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--color-ink);
+}
+.vl-ov__n { flex: none; min-width: 1.75rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; color: var(--color-primary); }
+html.is-stack-scroll #ueberblick .vl-ov__head { margin-bottom: clamp(0.75rem, 2.5dvh, 1.75rem); }
+html.is-stack-scroll #ueberblick .vl-ov__figure img { width: auto; max-width: 100%; max-height: calc(100dvh - 24rem); margin-inline: auto; }
+
+/* Definition: Fließtext der Karten in normaler Textgröße wie im Überblick */
+#definition .ppwr-card p { font-size: var(--fs-body); line-height: 1.55; }
+#definition .ppwr-card h3 { margin-bottom: 0.6rem; font-size: clamp(1.45rem, 2vw, 1.85rem); }
 
 /* Auswahlhilfe: Akkordeon-Panels mit zwei Spalten (Frage + Checkliste) */
 .vl-acc .ppwr-hacc__item:not(.is-open) .ppwr-hacc__title { max-height: 15rem; }
@@ -4109,31 +4193,61 @@ html[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.4rem, 3.
 .apps__points { margin: 0 0 1.5rem; }
 html[data-product="verpackungsloesungen"] .apps__panel { min-height: 320px; }
 
-/* Beutelformen: freigestellte Renderings ganz zeigen */
-.vl-products .products__media { background: linear-gradient(160deg, #fff 0%, var(--color-bg-warm) 100%); }
-.vl-products .products__media img { object-fit: contain; object-position: center; padding: 0.6rem; }
-
-/* Materialien: Foto links, Anforderungen rechts */
-.vl-mat { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: center; }
-.vl-mat__figure { border: 0; }
-.vl-mat__figure img { aspect-ratio: 3 / 2; object-fit: cover; }
-.vl-mat__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.75rem, 1.6vw, 1.1rem); }
-.vl-mat__cards .variants__card { padding: clamp(1.1rem, 2vw, 1.5rem); }
-.vl-mat__cards .variants__top { margin-bottom: 0.75rem; }
-.vl-mat__cards h3 { margin-bottom: 0.75rem; font-size: clamp(1.02rem, 1.3vw, 1.15rem); }
-.vl-mat__cards .ppwr-checks { gap: 0.45rem; margin: 0; }
-.vl-mat__cards .ppwr-checks--plain li { font-size: 0.92rem; }
-.vl-mat__main { min-width: 0; }
-.vl-mat__side { min-width: 0; }
-.vl-mat__side .ppwr-split__links { margin-top: 1.25rem; }
-.vl-mat__note {
-  margin: 1.1rem 0 0;
-  padding-left: 0.9rem;
-  border-left: 2px solid var(--color-primary);
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--color-text);
+/* Beutelformen: Coverflow-Karussell der Startseite (.values-carousel) mit den
+   Standardbildern – freigestellt, daher contain auf warmem Verlauf statt cover */
+.vl-carousel .value-card__media {
+  height: 260px; padding: 1.25rem 1rem 0.75rem;
+  background: linear-gradient(180deg, var(--color-bg-warm) 0%, #fff 100%);
 }
+.vl-carousel .value-card__media img { object-fit: contain; object-position: center bottom; }
+.vl-carousel .value-card.is-active .value-card__media img { transform: translateY(-4px) scale(1.03); }
+.value-card__eyebrow { margin-bottom: 0.3rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary-hover); }
+.value-card.is-active .value-card__eyebrow { color: rgba(255, 255, 255, 0.85); }
+.value-card__link { align-self: flex-start; margin-top: auto; padding-top: 0.9rem; font-size: 0.92rem; font-weight: 700; color: var(--color-primary-hover); text-decoration: none; }
+.value-card.is-active .value-card__link { color: #fff; }
+.value-card__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.value-card.is-active .value-card__link:focus-visible { outline-color: #fff; }
+/* Stack-Modus: Bildhöhe an die Fensterhöhe koppeln (Track-Höhe setzt values-carousel.js aus der Kartenhöhe) */
+html.is-stack-scroll #beutelformen .vl-carousel { margin-top: -2.5dvh; }
+html.is-stack-scroll #beutelformen .vl-carousel .values-carousel__viewport { padding: 0.25rem 0 1.75rem; }
+html.is-stack-scroll #beutelformen .vl-carousel .value-card__media { height: clamp(120px, calc(100dvh - 38rem), 240px); padding-top: 1rem; }
+html.is-stack-scroll #beutelformen .vl-carousel .value-card__body { padding: 0.95rem 1.25rem 1.05rem; }
+html.is-stack-scroll #beutelformen .vl-carousel .value-card__link { padding-top: 0.6rem; }
+#beutelformen .products__hint { width: 100%; max-width: none; text-align: center; }
+
+/* Materialien: Kopf zentriert, darunter Foto | Karte | Karte in
+   gleicher Höhe, abschließend Hinweis-Leiste (.ppwr-next) mit Links und Button */
+.vl-mat {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "photo barrier mech";
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+.vl-mat__card--barrier { grid-area: barrier; }
+.vl-mat__card--mech { grid-area: mech; }
+.vl-mat__figure { grid-area: photo; margin: 0; min-width: 0; min-height: 0; border-radius: var(--radius-large); overflow: hidden; }
+.vl-mat__figure img { display: block; width: 100%; height: 100%; min-height: 240px; object-fit: cover; }
+.vl-mat__card {
+  min-width: 0;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+}
+.vl-mat__icon {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem; margin-bottom: 1rem; border-radius: 0.75rem;
+  background: var(--color-primary-tint); color: var(--color-primary-hover);
+}
+.vl-mat__icon svg { width: 20px; height: 20px; }
+.vl-mat__title { margin: 0 0 1rem; font-size: clamp(1.1rem, 1.35vw, 1.25rem); line-height: 1.3; }
+.vl-mat__card .ppwr-checks { margin: 0; gap: 0.65rem; }
+.vl-mat__next { margin-top: clamp(1rem, 2.5vh, 1.75rem); }
+.vl-mat__next p { max-width: 70ch; }
+.vl-mat__links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.75rem 1.5rem; flex-shrink: 0; }
+.vl-mat__links .btn--link { white-space: nowrap; }
 
 /* Nachhaltigkeit */
 .vl-sustain__note { margin: 0 0 1.5rem; max-width: 60ch; font-size: 0.95rem; line-height: 1.55; color: var(--color-text); }
@@ -4147,17 +4261,22 @@ html.is-stack-scroll[data-product="verpackungsloesungen"] .section.stack-panel {
 html.is-stack-scroll #auswahl .section-head,
 html.is-stack-scroll #branchen .section-head,
 html.is-stack-scroll #materialien .section-head { margin-bottom: clamp(1rem, 2.5vh, 1.75rem); }
+html.is-stack-scroll #beutelformen .section-head { max-width: none; margin-bottom: clamp(1rem, 3vh, 2.25rem); }
 html.is-stack-scroll #auswahl .section-head h2,
 html.is-stack-scroll #branchen .section-head.ppwr-head-split h2,
 html.is-stack-scroll #materialien .section-head h2 { margin-bottom: 0.4em; }
 html.is-stack-scroll .vl-photo { max-width: min(480px, 100%); }
-html.is-stack-scroll .vl-mat__figure img { width: 100%; max-height: calc(100dvh - 24rem); }
 html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
 
 @media (max-height: 820px) {
   html.is-stack-scroll[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="verpackungsloesungen"] .hero__eyebrow { margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="verpackungsloesungen"] .hero__sub { margin-bottom: 1.5rem; }
+  html.is-stack-scroll #ueberblick h2 { font-size: clamp(1.9rem, 5.6dvh, 2.8rem); }
+  html.is-stack-scroll #ueberblick .vl-ov__intro p { font-size: 1rem; }
+  html.is-stack-scroll #ueberblick .vl-ov__row { padding-block: 0.7rem; font-size: 0.98rem; }
+  html.is-stack-scroll .vl-forms .hero__float { max-height: calc(100dvh - 17rem); }
+  html.is-stack-scroll .vl-forms__option { padding-block: 0.4rem 0.45rem; gap: 0.3rem; }
   html.is-stack-scroll #auswahl .section-head,
   html.is-stack-scroll #branchen .section-head.ppwr-head-split,
   html.is-stack-scroll #materialien .section-head { max-width: none; }
@@ -4167,8 +4286,14 @@ html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
   html.is-stack-scroll .vl-acc__label,
   html.is-stack-scroll .vl-acc .ppwr-checks--plain li { font-size: 0.88rem; }
   html.is-stack-scroll .vl-acc__foot { margin-top: 0.75rem; font-size: 0.86rem; }
-  html.is-stack-scroll #definition .ppwr-card p { font-size: 0.88rem; }
-  html.is-stack-scroll .vl-mat__note { margin-top: 0.75rem; font-size: 0.86rem; }
+  html.is-stack-scroll #definition .ppwr-card p { font-size: 1rem; }
+  html.is-stack-scroll #materialien .section-head p { font-size: 1rem; }
+  html.is-stack-scroll .vl-mat__card { padding: 1.1rem 1.25rem; }
+  html.is-stack-scroll .vl-mat__icon { width: 2.1rem; height: 2.1rem; margin-bottom: 0.65rem; }
+  html.is-stack-scroll .vl-mat__title { margin-bottom: 0.7rem; }
+  html.is-stack-scroll .vl-mat__card .ppwr-checks { gap: 0.45rem; }
+  html.is-stack-scroll .vl-mat__card .ppwr-checks--plain li { font-size: 0.92rem; }
+  html.is-stack-scroll .vl-mat__next p { font-size: 0.9rem; }
   html.is-stack-scroll #nachhaltigkeit .ppwr-props { gap: 0.4rem; margin-bottom: 0.75rem; }
   html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding-block: 0.4rem; }
   html.is-stack-scroll #nachhaltigkeit .spout__text h2 { margin-bottom: 0.45em; }
@@ -4177,15 +4302,28 @@ html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
 
 @media (max-width: 1199px) {
   html[data-product="verpackungsloesungen"] .hero__grid { grid-template-columns: minmax(0, 1fr); }
-  .vl-mat { grid-template-columns: minmax(0, 1fr); }
+  html[data-product="verpackungsloesungen"] .hero__visual { max-width: 560px; justify-self: center; }
+  .section-head.ppwr-head-split.vl-ov__head,
+  .vl-ov { grid-template-columns: minmax(0, 1fr); }
+  .vl-ov__head .vl-ov__intro { grid-column: 1; grid-row: auto; margin-top: 1rem; }
+  .vl-ov { row-gap: 1.5rem; }
+  .vl-ov__figure { max-width: 420px; }
+  .vl-mat { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "photo photo" "barrier mech"; }
+  .vl-mat__figure img { aspect-ratio: 21 / 9; height: auto; min-height: 0; }
+  .vl-mat__next { flex-direction: column; align-items: flex-start; }
+  .vl-mat__links { justify-content: flex-start; }
 }
 @media (max-width: 768px) {
-  html[data-product="verpackungsloesungen"] .hero__visual { max-width: min(420px, 90vw); }
+  html[data-product="verpackungsloesungen"] .hero__visual { max-width: min(460px, 100%); }
+  .vl-forms .hero__float { max-height: min(44svh, 400px); }
+  .vl-forms__caption { bottom: 4%; min-width: 0; padding: 0.7rem 0.9rem 0.75rem; }
+  .vl-forms__name { font-size: 1.05rem; }
   html[data-product="verpackungsloesungen"] .hero h1 { font-size: var(--fs-h1); }
   html[data-product="verpackungsloesungen"] h2 { hyphens: auto; overflow-wrap: break-word; }
   /* Quadratische Illustration: Hinweiskarte unter statt auf dem Bild */
   .vl-photo .ppwr-photo__card { position: static; margin: 0.75rem; }
 }
 @media (max-width: 600px) {
-  .vl-mat__cards { grid-template-columns: minmax(0, 1fr); }
+  .vl-forms__rail { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .vl-mat { grid-template-columns: minmax(0, 1fr); grid-template-areas: "photo" "barrier" "mech"; }
 }

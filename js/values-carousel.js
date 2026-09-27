@@ -18,11 +18,13 @@ export function initValuesCarousel() {
   track.innerHTML = values.map((v, i) => `
     <article class="value-card card" data-values-slide="${i}" aria-hidden="true">
       <div class="value-card__media">
-        <img src="${v.image}" width="640" height="512" alt="${v.alt}" loading="${i < 3 ? "eager" : "lazy"}" decoding="async" />
+        <img src="${v.image}" width="${v.width || 640}" height="${v.height || 512}" alt="${v.alt}" loading="${i < 3 ? "eager" : "lazy"}" decoding="async" />
       </div>
       <div class="value-card__body">
+        ${v.eyebrow ? `<span class="value-card__eyebrow">${v.eyebrow}</span>` : ""}
         <h3>${v.title}</h3>
         <p>${v.text}</p>
+        ${v.link ? `<a class="value-card__link" href="${v.link}">${v.linkLabel || "Mehr erfahren"} <span class="arrow" aria-hidden="true">→</span></a>` : ""}
       </div>
     </article>`).join("");
 
@@ -66,6 +68,10 @@ export function initValuesCarousel() {
       slide.classList.toggle("is-side", abs === 1);
       slide.classList.toggle("is-far", abs > 1);
       slide.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
+      slide.querySelectorAll("a").forEach((a) => {
+        if (offset === 0) a.removeAttribute("tabindex");
+        else a.setAttribute("tabindex", "-1");
+      });
 
       let transform;
       let opacity;
@@ -138,8 +144,9 @@ export function initValuesCarousel() {
   });
 
   slides.forEach((slide, i) => {
-    slide.addEventListener("click", () => {
+    slide.addEventListener("click", (e) => {
       if (i === index) return;
+      e.preventDefault();
       goTo(i);
       startAuto();
     });
@@ -157,7 +164,7 @@ export function initValuesCarousel() {
   track.addEventListener("pointerdown", (e) => {
     dragging = true;
     startX = e.clientX;
-    track.setPointerCapture?.(e.pointerId);
+    if (!e.target.closest("a")) track.setPointerCapture?.(e.pointerId);
     stopAuto();
   });
   track.addEventListener("pointerup", (e) => {

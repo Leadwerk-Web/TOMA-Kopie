@@ -53,7 +53,9 @@ export function initHeroBadges() {
   const stage = visual?.querySelector("[data-hero-stage]");
   const floatEl = visual?.querySelector("[data-hero-float]") || stage;
   const heroPanel = visual?.closest(".hero") || visual?.closest(".stack-panel");
-  const badges = visual ? [...visual.querySelectorAll(".hero__badge[data-image]")] : [];
+  // Badges (Produktseiten) oder Formen-Leiste [data-hero-option] (Übersichtsseite)
+  const BADGE_SEL = ".hero__badge[data-image], [data-hero-option][data-image]";
+  const badges = visual ? [...visual.querySelectorAll(BADGE_SEL)] : [];
   if (!visual || !stage || !badges.length) return;
 
   let currentSrc =
@@ -73,6 +75,7 @@ export function initHeroBadges() {
       b.classList.toggle("is-active", on);
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
+    visual.dispatchEvent(new CustomEvent("hero:select", { detail: { badge: activeBadge } }));
   };
 
   const getBaseImg = () =>
@@ -250,7 +253,7 @@ export function initHeroBadges() {
 
   // Delegation: zuverlässiger, falls Badges später neu gemountet werden
   visual.addEventListener("click", (e) => {
-    const badge = e.target.closest(".hero__badge[data-image]");
+    const badge = e.target.closest(BADGE_SEL);
     if (!badge || !visual.contains(badge)) return;
     e.preventDefault();
     e.stopPropagation();

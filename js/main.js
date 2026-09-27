@@ -14,6 +14,7 @@ import { iconSvg } from "./icons.js";
 import { initValuesCarousel } from "./values-carousel.js";
 import { initGallery } from "./gallery.js";
 import { initHeroBadges } from "./hero-badges.js";
+import { initHeroForms } from "./hero-forms.js";
 import { initNavMenu } from "./nav-menu.js";
 import { initHAccordion } from "./h-accordion.js";
 import { initSectionSnap } from "./section-snap.js";
@@ -147,6 +148,7 @@ function init() {
   run(setupHeroTilt, "tilt");
   run(setupHeroScrollCue, "scroll-cue");
   run(initHeroBadges, "hero-badges");
+  run(initHeroForms, "hero-forms");
   run(setupScrollTop, "scroll-top");
 
   // 2) MOTION erst, wenn GSAP/ScrollTrigger geladen sind (mit Fallback).
@@ -239,7 +241,7 @@ function setupHeroTilt() {
     };
 
     const onMove = (e) => {
-      if (e.target.closest(".hero__badge, .spout__badge")) return;
+      if (e.target.closest(".hero__badge, .spout__badge, .vl-forms__rail, .vl-forms__caption")) return;
       const rect = visual.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;

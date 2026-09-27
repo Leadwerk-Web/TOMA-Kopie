@@ -253,12 +253,30 @@
             </ul>
           </div>
 
-          <div class="hero__visual" data-hero="visual">
-            <div class="media media--hero" data-hero-stage>
-              <div class="hero__float" data-hero-float>
-                <img src="assets/verpackungsloesungen/beutelsortiment-freigestellt.webp" width="1024" height="1024" alt="Beutelsortiment von TOMA: Standbodenbeutel und Flachbodenbeutel aus Kraftpapier und in Schwarz mit orangefarbenem TOMA-Logo" fetchpriority="high" decoding="async" data-hero-img data-lw-field="hero.image" data-lw-type="image" />
+          <!-- Formen-Wähler: Bühne zeigt die gewählte Verpackungsart (Bildwechsel über hero-badges.js),
+               Leiste darunter gibt allen sechs Formen einen Platz; Auto-Wechsel in hero-forms.js -->
+          <div class="hero__visual vl-forms" data-hero="visual" data-hero-forms>
+            <div class="vl-forms__stage">
+              <div class="media media--hero" data-hero-stage>
+                <div class="hero__float" data-hero-float>
+                  <img src="assets/doypack/doypack.webp" width="1086" height="1448" alt="TOMA Doypack / Standbodenbeutel" fetchpriority="high" decoding="async" data-hero-img data-lw-field="hero.image" data-lw-type="image" />
+                </div>
+              </div>
+              <div class="vl-forms__caption glass">
+                <span class="vl-forms__count" aria-hidden="true"><b data-forms-index>01</b> / 06</span>
+                <span class="vl-forms__name" data-forms-name>Doypack</span>
+                <span class="vl-forms__sub" data-forms-sub>Standbodenbeutel</span>
+                <a class="vl-forms__link" href="doypack.html" data-forms-link><span data-forms-link-label>Zum Doypack</span> <span class="arrow" aria-hidden="true">→</span></a>
               </div>
             </div>
+            <ul class="vl-forms__rail" aria-label="Verpackungsarten" data-lw-field="hero.forms" data-lw-type="richtext">
+              <li data-hero="badge"><button type="button" class="vl-forms__option is-active" data-hero-option data-image="assets/doypack/doypack.webp" data-alt="TOMA Doypack / Standbodenbeutel" data-name="Doypack" data-sub="Standbodenbeutel" data-href="doypack.html" data-link-label="Zum Doypack" aria-pressed="true"><img src="assets/doypack/doypack.webp" width="1086" height="1448" alt="" decoding="async" /><span>Doypack</span></button></li>
+              <li data-hero="badge"><button type="button" class="vl-forms__option" data-hero-option data-image="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp" data-alt="TOMA Flachbodenbeutel / Box Pouch" data-name="Flachbodenbeutel" data-sub="Box Pouch" data-href="flachbodenbeutel.html" data-link-label="Zum Flachbodenbeutel" aria-pressed="false"><img src="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp" width="813" height="1466" alt="" loading="lazy" decoding="async" /><span>Flachboden&shy;beutel</span></button></li>
+              <li data-hero="badge"><button type="button" class="vl-forms__option" data-hero-option data-image="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp" data-alt="TOMA Seitenfaltenbeutel" data-name="Seitenfaltenbeutel" data-sub="Quadro-Seal-Pouch" data-href="seitenfaltenbeutel.html" data-link-label="Zum Seitenfaltenbeutel" aria-pressed="false"><img src="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp" width="858" height="1457" alt="" loading="lazy" decoding="async" /><span>Seitenfalten&shy;beutel</span></button></li>
+              <li data-hero="badge"><button type="button" class="vl-forms__option" data-hero-option data-image="assets/flachbeutel/flachbeutel-neutral.webp" data-alt="TOMA Siegelrandbeutel / Flachbeutel" data-name="Siegelrandbeutel" data-sub="Flachbeutel" data-href="siegelrandbeutel.html" data-link-label="Zum Siegelrandbeutel" aria-pressed="false"><img src="assets/flachbeutel/flachbeutel-neutral.webp" width="1033" height="1386" alt="" loading="lazy" decoding="async" /><span>Siegelrand&shy;beutel</span></button></li>
+              <li data-hero="badge"><button type="button" class="vl-forms__option" data-hero-option data-image="assets/rollenware/rollenware-neutral.webp" data-alt="TOMA Rollenware – Folie auf Rolle" data-name="Rollenware" data-sub="Folien auf Rolle" data-href="rollenware.html" data-link-label="Zur Rollenware" aria-pressed="false"><img src="assets/rollenware/rollenware-neutral.webp" width="1219" height="1393" alt="" loading="lazy" decoding="async" /><span>Rollenware</span></button></li>
+              <li data-hero="badge"><button type="button" class="vl-forms__option" data-hero-option data-image="assets/nachfuellbeutel/spoutbag-neutral.webp" data-alt="TOMA Spoutbag mit Ausgießer" data-name="Spoutbag" data-sub="Nachfüllbeutel" data-href="spoutbag.html" data-link-label="Zum Spoutbag" aria-pressed="false"><img src="assets/nachfuellbeutel/spoutbag-neutral.webp" width="907" height="1382" alt="" loading="lazy" decoding="async" /><span>Spoutbag</span></button></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -266,29 +284,31 @@
 
     <!-- ============================ ÜBERBLICK ============================ -->
     <section class="section ppwr-section stack-panel" id="ueberblick" style="--stack-z: 2" aria-labelledby="overview-title" data-lw-section="overview">
-      <div class="container--wide ppwr-split ppwr-split--text">
-        <div class="ppwr-split__text">
-          <span class="eyebrow" data-reveal>Überblick</span>
-          <h2 id="overview-title" data-reveal>Produkt, Prozess und Vorgaben <em>im Zusammenspiel</em></h2>
-          <p data-reveal>Entscheidend ist das Zusammenspiel aus Produktanforderungen, Prozessen und regulatorischen Vorgaben.</p>
-          <p class="ppwr-split__lead" data-reveal>Wichtige Aspekte dabei sind:</p>
-          <ul class="ppwr-checks">
-            <li data-reveal>Schutz vor Feuchte, Sauerstoff und Licht</li>
-            <li data-reveal>Sichere Abfüll- und Logistikprozesse</li>
-            <li data-reveal>Wirtschaftliche Materialauswahl</li>
-            <li data-reveal>Klare Kennzeichnung und Compliance</li>
-            <li data-reveal>Verständliche Marken- und Produktkommunikation</li>
-          </ul>
-          <p class="ppwr-split__note" data-reveal>Auf dieser Seite erhalten Sie einen strukturierten Überblick über Definition und Abgrenzung, eine praxistaugliche Entscheidungslogik, typische Branchen-Use-Cases sowie Grundlagen zu Materialien, Barriere- und Schutzfunktionen. So lassen sich Anforderungen klar formulieren und Verpackungslösungen entwickeln, die technisch passen und im Alltag zuverlässig funktionieren.</p>
-        </div>
-        <aside class="ppwr-callout vl-callout" aria-labelledby="check-title" data-reveal>
-          <div class="ppwr-callout__media">
-            <img src="assets/verpackungsloesungen/standbodenbeutel-schwarz-sichtfenster.webp" width="696" height="482" alt="Zwei schwarze Standbodenbeutel aus Kraftpapier mit Sichtfenster" loading="lazy" decoding="async" data-lw-field="overview.image" data-lw-type="image" />
+      <div class="container--wide">
+        <div class="section-head ppwr-head-split vl-ov__head" data-reveal>
+          <span class="eyebrow">Überblick</span>
+          <h2 id="overview-title">Produkt, Prozess und Vorgaben <em>im Zusammenspiel</em></h2>
+          <div class="vl-ov__intro">
+            <p>Entscheidend ist das Zusammenspiel aus Produktanforderungen, Prozessen und regulatorischen Vorgaben.</p>
+            <p>Auf dieser Seite erhalten Sie einen strukturierten Überblick über Definition und Abgrenzung, eine praxistaugliche Entscheidungslogik, typische Branchen-Use-Cases sowie Grundlagen zu Materialien, Barriere- und Schutzfunktionen. So lassen sich Anforderungen klar formulieren und Verpackungslösungen entwickeln, die technisch passen und im Alltag zuverlässig funktionieren.</p>
           </div>
-          <h3 id="check-title">Verpackungslösung prüfen lassen</h3>
-          <p>Wenn Produkt und grobe Anforderungen feststehen, reicht ein kurzer Überblick zu Produktart, Schutzfunktion, Abfüll- und Versandprofil sowie Ihren Branding-Zielen. Auf dieser Basis lässt sich schnell eingrenzen, welche Verpackungslösung technisch sinnvoll und wirtschaftlich umsetzbar ist.</p>
-          <a class="btn ppwr-callout__btn" href="#anfrage">Beratung anfragen</a>
-        </aside>
+        </div>
+        <!-- Gleiches Spaltenraster wie der Kopf: links das Bild, rechts die Aspekte als ruhige Liste -->
+        <div class="vl-ov">
+          <figure class="vl-ov__figure" data-reveal>
+            <img src="assets/verpackungsloesungen/beutelsortiment-freigestellt.webp" width="1024" height="1024" alt="Beutelsortiment von TOMA: Standbodenbeutel und Flachbodenbeutel aus Kraftpapier und in Schwarz mit orangefarbenem TOMA-Logo" loading="lazy" decoding="async" data-lw-field="overview.image" data-lw-type="image" />
+          </figure>
+          <div class="vl-ov__list">
+            <p class="vl-ov__label" id="overview-aspects" data-reveal>Wichtige Aspekte dabei sind:</p>
+            <ol class="vl-ov__aspects" aria-labelledby="overview-aspects" data-lw-field="overview.aspects" data-lw-type="richtext">
+              <li class="vl-ov__item"><span class="vl-ov__row" data-reveal><span class="vl-ov__n" aria-hidden="true">01</span>Schutz vor Feuchte, Sauerstoff und Licht</span></li>
+              <li class="vl-ov__item"><span class="vl-ov__row" data-reveal><span class="vl-ov__n" aria-hidden="true">02</span>Sichere Abfüll- und Logistikprozesse</span></li>
+              <li class="vl-ov__item"><span class="vl-ov__row" data-reveal><span class="vl-ov__n" aria-hidden="true">03</span>Wirtschaftliche Materialauswahl</span></li>
+              <li class="vl-ov__item"><span class="vl-ov__row" data-reveal><span class="vl-ov__n" aria-hidden="true">04</span>Klare Kennzeichnung und Compliance</span></li>
+              <li class="vl-ov__item"><span class="vl-ov__row" data-reveal><span class="vl-ov__n" aria-hidden="true">05</span>Verständliche Marken- und Produktkommunikation</span></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -302,7 +322,6 @@
         <div class="variants__grid">
           <article class="variants__card ppwr-card" data-reveal>
             <div class="variants__top">
-              <span class="variants__n">01</span>
               <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/></svg></span>
             </div>
             <h3>Definition</h3>
@@ -310,7 +329,6 @@
           </article>
           <article class="variants__card ppwr-card" data-reveal>
             <div class="variants__top">
-              <span class="variants__n">02</span>
               <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 12 4l9 4.5v9L12 22 3 17.5v-9z"/><path d="M12 12v10"/><path d="M3 8.5 12 13l9-4.5"/></svg></span>
             </div>
             <h3>Abgrenzung</h3>
@@ -318,7 +336,6 @@
           </article>
           <article class="variants__card ppwr-card" data-reveal>
             <div class="variants__top">
-              <span class="variants__n">03</span>
               <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
             </div>
             <h3>Zielbild im B2B</h3>
@@ -507,61 +524,16 @@
           <span class="eyebrow">Unsere Beutelformen</span>
           <h2 id="products-title">Die passende Form für <em>Ihr Produkt</em></h2>
         </div>
-        <div class="products__grid vl-products">
-          <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/verpackungsloesungen/standbodenbeutel-kraftpapier-bedruckt.webp" width="400" height="400" alt="Bedruckter Standbodenbeutel aus Kraftpapier mit Sichtfenster" loading="lazy" decoding="async" /></div>
-            <div class="products__body">
-              <span class="products__alias">Standbodenbeutel</span>
-              <h3>Doypack</h3>
-              <p>Steht stabil im Regal und ist vielseitig – für Lebensmittel, Kaffee, Tierfutter und Non-Food.</p>
-              <a class="products__link" href="doypack.html">Zu den Doypacks <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/verpackungsloesungen/flachbodenbeutel-kraftpapier-bedruckt.webp" width="320" height="480" alt="Bedruckter Flachbodenbeutel aus Kraftpapier mit Sichtfenster" loading="lazy" decoding="async" /></div>
-            <div class="products__body">
-              <span class="products__alias">Box Pouch</span>
-              <h3>Flachbodenbeutel</h3>
-              <p>Maximale Standfestigkeit, mehr Füllvolumen und zusätzliche Druckfläche für eine exklusive Präsentation.</p>
-              <a class="products__link" href="flachbodenbeutel.html">Zu den Flachbodenbeuteln <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/verpackungsloesungen/seitenfaltenbeutel-kraftpapier-kaffee.webp" width="540" height="540" alt="Seitenfaltenbeutel aus Kraftpapier für Kaffee" loading="lazy" decoding="async" /></div>
-            <div class="products__body">
-              <span class="products__alias">Quad Seal Pouch</span>
-              <h3>Seitenfaltenbeutel</h3>
-              <p>Der Klassiker für Kaffee, Tee und Gewürze – mit Barrierefolie und Aromaventil.</p>
-              <a class="products__link" href="seitenfaltenbeutel.html">Zu den Seitenfaltenbeuteln <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/verpackungsloesungen/siegelrandbeutel-transparent.webp" width="500" height="500" alt="Transparenter, bedruckter Siegelrandbeutel mit Lebensmittel-Füllung" loading="lazy" decoding="async" /></div>
-            <div class="products__body">
-              <span class="products__alias">Flachbeutel</span>
-              <h3>Siegelrandbeutel</h3>
-              <p>An drei Seiten versiegelt, flexibel einsetzbar und die günstigste Beutelform.</p>
-              <a class="products__link" href="siegelrandbeutel.html">Zu den Siegelrandbeuteln <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/verpackungsloesungen/spoutbag-bedruckt.webp" width="500" height="500" alt="Bedruckter Spoutbag mit Ausgießer" loading="lazy" decoding="async" /></div>
-            <div class="products__body">
-              <span class="products__alias">Nachfüllbeutel</span>
-              <h3>Spoutbag</h3>
-              <p>Wiederverschließbar mit Ausgießer – für Flüssigkeiten, pastöse Medien und Nachfüllware.</p>
-              <a class="products__link" href="spoutbag.html">Zu den Spoutbags <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/verpackungsloesungen/rollenware-etiketten.webp" width="750" height="750" alt="Zwei bedruckte Folienrollen mit TOMA-Motiv in Orange und Violett" loading="lazy" decoding="async" /></div>
-            <div class="products__body">
-              <span class="products__alias">Folien auf Rolle</span>
-              <h3>Rollenware</h3>
-              <p>Mono- oder Verbundfolie zur Verarbeitung direkt auf Ihrer FFS- oder HFFS-Anlage.</p>
-              <a class="products__link" href="rollenware.html">Zur Rollenware <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
+        <!-- Karussell (values-carousel.js): Karten aus values in js/data/verpackungsloesungen.js -->
+        <div class="values-carousel vl-carousel" id="valuesCarousel" data-reveal aria-roledescription="Karussell" aria-label="Unsere Beutelformen">
+          <div class="values-carousel__viewport">
+            <div class="values-carousel__track"></div>
+          </div>
+          <div class="values-carousel__controls">
+            <button type="button" class="values-carousel__btn" data-values-prev aria-label="Vorherige Beutelform">‹</button>
+            <div class="values-carousel__dots" role="tablist" aria-label="Beutelform wählen"></div>
+            <button type="button" class="values-carousel__btn" data-values-next aria-label="Nächste Beutelform">›</button>
+          </div>
         </div>
         <p class="products__hint" data-reveal>Nicht sicher, welcher Verpackungstyp passt? <a href="#anfrage">Lassen Sie sich beraten.</a></p>
       </div>
@@ -570,49 +542,42 @@
     <!-- ============================ MATERIALIEN & VERBUNDE ============================ -->
     <section class="section ppwr-section stack-panel" id="materialien" style="--stack-z: 7" aria-labelledby="materials-title" data-lw-section="materials">
       <div class="container--wide">
-        <div class="section-head ppwr-head-split" data-reveal>
+        <div class="section-head section-head--center section-head--wide vl-mat__head" data-reveal>
           <span class="eyebrow">Barriere, Schutz und Recycling</span>
           <h2 id="materials-title">Materialien und <em>Verbunde</em></h2>
           <p>Die Materialwahl ist immer ein Abwägen zwischen Schutzfunktion, Verarbeitung, Optik und Entsorgungsweg. Grundsätzlich wird zwischen Monomaterial-Lösungen und Verbundmaterialien unterschieden. Welche Variante sinnvoll ist, hängt vom Einsatzzweck ab. Entscheidend ist die funktionale Betrachtung statt reiner Schlagworte.</p>
         </div>
+        <!-- Foto | Karte | Karte, gleich hoch (Reihenfolge per grid-template-areas); darunter Hinweis-Leiste mit Links -->
         <div class="vl-mat">
-          <div class="vl-mat__main">
-            <figure class="ppwr-figure vl-mat__figure" data-reveal>
-              <img src="assets/verpackungsloesungen/beutelsortiment-szene.webp" width="1536" height="1024" alt="Bedruckte Standbodenbeutel, Flachbodenbeutel und Siegelrandbeutel von TOMA in verschiedenen Farben und Materialien" loading="lazy" decoding="async" data-lw-field="materials.image" data-lw-type="image" />
-            </figure>
-            <p class="vl-mat__note" data-reveal>Konkrete Barrierekennwerte wie OTR oder WVTR sollten nur genannt werden, wenn sie durch belastbare Spezifikationen abgesichert sind. So bleibt die Materialauswahl technisch korrekt und nachvollziehbar.</p>
+          <div class="vl-mat__card vl-mat__card--barrier" data-reveal>
+            <span class="vl-mat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/></svg></span>
+            <h3 class="vl-mat__title">Erforderliche Barrierefunktionen</h3>
+            <ul class="ppwr-checks ppwr-checks--plain">
+              <li>Sauerstoffbarriere</li>
+              <li>Wasserdampfbarriere</li>
+              <li>Aroma- und Lichtbarriere</li>
+            </ul>
           </div>
-          <div class="vl-mat__side">
-            <div class="vl-mat__cards">
-              <article class="variants__card ppwr-card" data-reveal>
-                <div class="variants__top">
-                  <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/></svg></span>
-                </div>
-                <h3>Erforderliche Barrierefunktionen</h3>
-                <ul class="ppwr-checks ppwr-checks--plain">
-                  <li>Sauerstoffbarriere</li>
-                  <li>Wasserdampfbarriere</li>
-                  <li>Aroma- und Lichtbarriere</li>
-                </ul>
-              </article>
-              <article class="variants__card ppwr-card" data-reveal>
-                <div class="variants__top">
-                  <span class="ppwr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/></svg></span>
-                </div>
-                <h3>Mechanische Anforderungen</h3>
-                <ul class="ppwr-checks ppwr-checks--plain">
-                  <li>Steifigkeit und Formstabilität</li>
-                  <li>Durchstoß- und Reißfestigkeit</li>
-                  <li>Siegelnahtfestigkeit</li>
-                  <li>Materialverträglichkeit mit Inhalt (z.&nbsp;B. Temperatur)</li>
-                </ul>
-              </article>
-            </div>
-            <div class="ppwr-split__links" data-reveal>
-              <a class="btn btn--primary" href="#anfrage">Haben Sie noch Fragen?</a>
-              <a class="btn btn--link" href="https://www.toma-gmbh.de/hochbarrierefolien/">Hochbarrierefolien ansehen <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="btn btn--link" href="https://www.toma-gmbh.de/monomaterial/">Monomaterial ansehen <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
+          <figure class="vl-mat__figure" data-reveal>
+            <img src="assets/verpackungsloesungen/beutelsortiment-szene-960.webp" srcset="assets/verpackungsloesungen/beutelsortiment-szene-960.webp 960w, assets/verpackungsloesungen/beutelsortiment-szene.webp 1536w" sizes="(min-width: 1200px) 34vw, 100vw" width="1536" height="1024" alt="Bedruckte Standbodenbeutel, Flachbodenbeutel und Siegelrandbeutel von TOMA in verschiedenen Farben und Materialien" loading="lazy" decoding="async" data-lw-field="materials.image" data-lw-type="image" />
+          </figure>
+          <div class="vl-mat__card vl-mat__card--mech" data-reveal>
+            <span class="vl-mat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/></svg></span>
+            <h3 class="vl-mat__title">Mechanische Anforderungen</h3>
+            <ul class="ppwr-checks ppwr-checks--plain">
+              <li>Steifigkeit und Formstabilität</li>
+              <li>Durchstoß- und Reißfestigkeit</li>
+              <li>Siegelnahtfestigkeit</li>
+              <li>Materialverträglichkeit mit Inhalt (z.&nbsp;B. Temperatur)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ppwr-next vl-mat__next" data-reveal>
+          <p>Konkrete Barrierekennwerte wie OTR oder WVTR sollten nur genannt werden, wenn sie durch belastbare Spezifikationen abgesichert sind. So bleibt die Materialauswahl technisch korrekt und nachvollziehbar.</p>
+          <div class="vl-mat__links">
+            <a class="btn btn--link" href="https://www.toma-gmbh.de/hochbarrierefolien/">Hochbarrierefolien <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--link" href="https://www.toma-gmbh.de/monomaterial/">Monomaterial <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--primary" href="#anfrage">Haben Sie noch Fragen?</a>
           </div>
         </div>
       </div>
@@ -652,7 +617,7 @@
       <div class="container--wide faq__layout">
         <div class="faq__intro" data-reveal>
           <span class="eyebrow faq__eyebrow">FAQ</span>
-          <h2 id="faq-title" class="faq__title">Häufige Fragen zu <em>Verpackungslösungen</em></h2>
+          <h2 id="faq-title" class="faq__title">Häufige Fragen zu <em>Verpackungs&shy;lösungen</em></h2>
           <p class="faq__intro-text">Wussten Sie …? Die Auswahl der richtigen Verpackung wirft oft ähnliche Fragen auf – unabhängig von Branche oder Produkt. Die folgenden FAQs geben eine erste Orientierung und zeigen, worauf es bei nachhaltigen, funktionalen und wirtschaftlichen Verpackungslösungen ankommt.</p>
           <p class="faq__intro-note">War Ihre Frage nicht dabei? <a href="#anfrage">Schreiben Sie uns direkt.</a></p>
         </div>

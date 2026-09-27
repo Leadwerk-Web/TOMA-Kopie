@@ -1,8 +1,8 @@
 /* =====================================================================
    TOMA · Verpackungslösungen (Übersichtsseite) — Zentrale Inhaltsdaten
    Inhalte basierend auf https://www.toma-gmbh.de/verpackungsloesungen/
-   Übersichtsseite: kein Feature-Explorer, kein Konfigurator, kein
-   Vorteile-Karussell, keine Galerie, keine Testimonials.
+   Übersichtsseite: kein Feature-Explorer, kein Konfigurator, keine Galerie,
+   keine Testimonials; das Vorteile-Karussell zeigt hier die Beutelformen.
    ===================================================================== */
 
 /* ---- Seite: Name (Alt-/Aria-Texte) ---- */
@@ -93,8 +93,36 @@ export const applications = [
     image: "assets/doypack/doypack-nachfuellbeutel.webp", alt: "Nachfüllbeutel mit Ausgießer für Duschbad" }
 ];
 
-/* ---- Vorteile-Karussell & Galerie: entfallen ---- */
-export const values = [];
+/* ---- Beutelformen-Karussell (#beutelformen, values-carousel.js) ----
+   Standardbilder der Produktseiten; Kurztexte wie auf der Startseite. */
+export const values = [
+  { eyebrow: "Standbodenbeutel", title: "Doypack",
+    text: "Steht stabil im Regal und ist vielseitig – für Lebensmittel, Kaffee, Tierfutter und Non-Food.",
+    image: "assets/doypack/doypack.webp", width: 1086, height: 1448, alt: "TOMA Doypack / Standbodenbeutel",
+    link: "doypack.html", linkLabel: "Zu den Doypacks" },
+  { eyebrow: "Box Pouch", title: "Flachbodenbeutel",
+    text: "Maximale Standfestigkeit, mehr Füllvolumen und zusätzliche Druckfläche für eine exklusive Präsentation.",
+    image: "assets/flachbodenbeutel/flachbodenbeutel-neutral.webp", width: 813, height: 1466, alt: "TOMA Flachbodenbeutel / Box Pouch",
+    link: "flachbodenbeutel.html", linkLabel: "Zu den Flachbodenbeuteln" },
+  { eyebrow: "Quad Seal Pouch", title: "Seitenfaltenbeutel",
+    text: "Der Klassiker für Kaffee, Tee und Gewürze – mit Barrierefolie und Aromaventil.",
+    image: "assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp", width: 858, height: 1457, alt: "TOMA Seitenfaltenbeutel",
+    link: "seitenfaltenbeutel.html", linkLabel: "Zu den Seitenfaltenbeuteln" },
+  { eyebrow: "Flachbeutel", title: "Siegelrandbeutel",
+    text: "An drei Seiten versiegelt, flexibel einsetzbar und die günstigste Beutelform.",
+    image: "assets/flachbeutel/flachbeutel-neutral.webp", width: 1033, height: 1386, alt: "TOMA Siegelrandbeutel / Flachbeutel",
+    link: "siegelrandbeutel.html", linkLabel: "Zu den Siegelrandbeuteln" },
+  { eyebrow: "Nachfüllbeutel", title: "Spoutbag",
+    text: "Wiederverschließbar mit Ausgießer – für Flüssigkeiten, pastöse Medien und Nachfüllware.",
+    image: "assets/nachfuellbeutel/spoutbag-neutral.webp", width: 907, height: 1382, alt: "TOMA Spoutbag mit Ausgießer",
+    link: "spoutbag.html", linkLabel: "Zu den Spoutbags" },
+  { eyebrow: "Folien auf Rolle", title: "Rollenware",
+    text: "Mono- oder Verbundfolie zur Verarbeitung direkt auf Ihrer FFS- oder HFFS-Anlage.",
+    image: "assets/rollenware/rollenware-neutral.webp", width: 1219, height: 1393, alt: "TOMA Rollenware – Folie auf Rolle",
+    link: "rollenware.html", linkLabel: "Zur Rollenware" }
+];
+
+/* ---- Galerie: entfällt ---- */
 export const galleryItems = [];
 
 /* ---- Testimonials: entfallen ---- */
