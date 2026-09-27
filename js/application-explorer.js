@@ -53,8 +53,9 @@ function render(index, animate) {
   const gsap = window.gsap;
 
   const html = `
-    <h3>${a.label}</h3>
-    <p>${a.text}</p>
+    <h3>${a.title || a.label}</h3>
+    ${a.text ? `<p>${a.text}</p>` : ""}
+    ${a.points?.length ? `<ul class="ppwr-checks ppwr-checks--plain apps__points">${a.points.map((pt) => `<li>${pt}</li>`).join("")}</ul>` : ""}
     ${a.meta?.length ? `<div class="apps__meta">${a.meta.map((m) => `<span>${m}</span>`).join("")}</div>` : ""}
     <p style="margin-top:1.5rem"><a class="btn btn--link" href="${a.link}">${a.linkLabel || `${a.label} ansehen`} <span class="arrow" aria-hidden="true">→</span></a></p>`;
 

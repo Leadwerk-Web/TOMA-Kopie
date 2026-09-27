@@ -5,6 +5,7 @@
    ===================================================================== */
 
 import { MOTION, prefersReducedMotion, isMobile } from "./motion-config.js";
+import { naturalTop } from "./section-snap.js";
 
 let ctx = null;
 /* Aufräumfunktionen für Event-Listener (gsap.context räumt nur Tweens ab) */
@@ -91,9 +92,25 @@ function genericReveals(gsap) {
     gsap.fromTo(el, from, {
       opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
       duration: MOTION.reveal.duration, ease: MOTION.reveal.ease,
-      scrollTrigger: { trigger: el, start: MOTION.reveal.start, once: true }
+      scrollTrigger: { trigger: el, start: revealStart(el), once: true }
     });
   });
+}
+
+/* Stack-Modus: Die Panels kleben übereinander. Ein Element tief unten im Panel
+   (unterhalb der Reveal-Linie) würde erst beim Weiterscrollen auslösen – dann
+   fährt aber schon das nächste Panel darüber. Startpunkt deshalb aus der
+   natürlichen Panel-Position berechnen und spätestens auf die Ruheposition
+   des Panels legen. */
+function revealStart(el) {
+  const panel = el.closest(".stack-panel");
+  if (!panel || !document.documentElement.classList.contains("is-stack-scroll")) return MOTION.reveal.start;
+  const linePct = parseFloat(MOTION.reveal.start.split(" ")[1]) / 100;
+  return () => {
+    const top = naturalTop(panel);
+    const offset = el.getBoundingClientRect().top - panel.getBoundingClientRect().top;
+    return Math.min(top + offset - window.innerHeight * linePct, top - 1);
+  };
 }
 
 /* ---------------- PPWR-INFOGRAFIK (#ppwr-kompakt) ----------------

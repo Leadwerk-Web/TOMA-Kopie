@@ -12,6 +12,7 @@ export const branchIcons = {
   cosmetic: `<svg ${attrs}><path d="M9 3h6v4H9z"/><path d="M8 7h8l1 13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L8 7z"/><path d="M10 12h4"/></svg>`,
   liquid: `<svg ${attrs}><path d="M12 3s5 6.2 5 10.2A5 5 0 0 1 7 13.2C7 9.2 12 3 12 3z"/></svg>`,
   nonfood: `<svg ${attrs}><path d="M3 8.5 12 4l9 4.5v9L12 22 3 17.5v-9z"/><path d="M12 12v10"/><path d="M3 8.5 12 13l9-4.5"/></svg>`,
+  industry: `<svg ${attrs}><path d="M3 21V10l6 4v-4l6 4V5h3l1 16"/><path d="M2 21h20"/><path d="M7 17h2M12 17h2"/></svg>`,
   pharma: `<svg ${attrs}><path d="M8.5 8.5h7v7h-7z"/><path d="M12 6v12M6 12h12"/><rect x="4" y="4" width="16" height="16" rx="4"/></svg>`,
 };
 

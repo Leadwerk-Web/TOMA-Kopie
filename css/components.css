@@ -264,6 +264,9 @@
 .nav__mega-title em { font-style: normal; color: var(--color-primary); }
 .nav__mega-copy { margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--color-text); }
 .nav__mega-cta { margin-top: auto; padding: 0.7rem 1.2rem; font-size: 0.86rem; }
+.nav__mega-link { font-size: 0.86rem; font-weight: 700; color: var(--color-primary-hover); }
+.nav__mega-link:hover,
+.nav__mega-link[aria-current="page"] { text-decoration: underline; text-underline-offset: 3px; }
 .nav__mega-heading {
   margin: 0 0 0.2rem;
   font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
@@ -3491,7 +3494,7 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
 .ppwr-figure--photo img { aspect-ratio: 574 / 752; object-fit: cover; }
 .ppwr-figure--square img { aspect-ratio: 1; }
 
-/* Callout (PPWR-Check) – derzeit nicht eingebunden, Platz für den Block wird noch gesucht */
+/* Callout: auf verpackungsloesungen.html (#ueberblick) im Einsatz; auf der PPWR-Seite wird für den PPWR-Check noch ein Platz gesucht */
 .ppwr-callout {
   position: relative;
   display: flex;
@@ -4072,4 +4075,117 @@ html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
 }
 @media (max-width: 600px) {
   .variants__grid.ppwr-grid-4 { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* =====================================================================
+   Verpackungslösungen (verpackungsloesungen.html, data-product="verpackungsloesungen")
+   Übersichtsseite aus den Bausteinen von PPWR-Seite und Startseite
+   (.ppwr-split, .ppwr-callout, .ppwr-hacc, .apps, .products); hier nur Ergänzungen.
+   ===================================================================== */
+html[data-product="verpackungsloesungen"] .hero__grid { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
+html[data-product="verpackungsloesungen"] .hero__float { aspect-ratio: 1; max-height: min(66svh, 660px); }
+html[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.4rem, 3.9vw, 4rem); }
+
+/* Überblick: freigestellter Beutel statt Foto im Callout-Kopf */
+.vl-callout .ppwr-callout__media { background: linear-gradient(180deg, #fff 0%, var(--color-bg-warm) 100%); }
+.vl-callout .ppwr-callout__media img { object-fit: contain; object-position: center; padding: 1rem 1.5rem 0.5rem; }
+
+/* Auswahlhilfe: Akkordeon-Panels mit zwei Spalten (Frage + Checkliste) */
+.vl-acc .ppwr-hacc__item:not(.is-open) .ppwr-hacc__title { max-height: 15rem; }
+.vl-acc__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem 2rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--color-primary-tint);
+}
+.vl-acc__label { margin: 0 0 0.75rem; font-size: 0.95rem; font-weight: 600; line-height: 1.5; color: var(--color-ink); }
+.vl-acc .ppwr-checks { gap: 0.5rem; margin: 0; }
+.vl-acc .ppwr-checks--plain li { font-size: 0.95rem; }
+.vl-acc__foot { margin: 1.1rem 0 0; max-width: 75ch; font-size: 0.92rem; line-height: 1.5; color: var(--color-text); }
+.vl-acc__link { align-self: flex-start; margin-top: auto; padding-top: 1rem; }
+
+/* Branchen-Tabs: Anforderungen als Checkliste */
+.apps__points { margin: 0 0 1.5rem; }
+html[data-product="verpackungsloesungen"] .apps__panel { min-height: 320px; }
+
+/* Beutelformen: freigestellte Renderings ganz zeigen */
+.vl-products .products__media { background: linear-gradient(160deg, #fff 0%, var(--color-bg-warm) 100%); }
+.vl-products .products__media img { object-fit: contain; object-position: center; padding: 0.6rem; }
+
+/* Materialien: Foto links, Anforderungen rechts */
+.vl-mat { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: center; }
+.vl-mat__figure { border: 0; }
+.vl-mat__figure img { aspect-ratio: 3 / 2; object-fit: cover; }
+.vl-mat__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.75rem, 1.6vw, 1.1rem); }
+.vl-mat__cards .variants__card { padding: clamp(1.1rem, 2vw, 1.5rem); }
+.vl-mat__cards .variants__top { margin-bottom: 0.75rem; }
+.vl-mat__cards h3 { margin-bottom: 0.75rem; font-size: clamp(1.02rem, 1.3vw, 1.15rem); }
+.vl-mat__cards .ppwr-checks { gap: 0.45rem; margin: 0; }
+.vl-mat__cards .ppwr-checks--plain li { font-size: 0.92rem; }
+.vl-mat__main { min-width: 0; }
+.vl-mat__side { min-width: 0; }
+.vl-mat__side .ppwr-split__links { margin-top: 1.25rem; }
+.vl-mat__note {
+  margin: 1.1rem 0 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--color-primary);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+/* Nachhaltigkeit */
+.vl-sustain__note { margin: 0 0 1.5rem; max-width: 60ch; font-size: 0.95rem; line-height: 1.55; color: var(--color-text); }
+.vl-photo { max-width: 520px; background: #eef0f4; }
+@media (min-width: 1200px) {
+  html[data-product="verpackungsloesungen"] #nachhaltigkeit .spout__layout { grid-template-columns: minmax(0, 56fr) minmax(0, 44fr); }
+}
+
+/* Stack-Modus: textlastige Panels wie auf der PPWR-Seite */
+html.is-stack-scroll[data-product="verpackungsloesungen"] .section.stack-panel { padding: 5.25rem 0 1.5rem; justify-content: center; }
+html.is-stack-scroll #auswahl .section-head,
+html.is-stack-scroll #branchen .section-head,
+html.is-stack-scroll #materialien .section-head { margin-bottom: clamp(1rem, 2.5vh, 1.75rem); }
+html.is-stack-scroll #auswahl .section-head h2,
+html.is-stack-scroll #branchen .section-head.ppwr-head-split h2,
+html.is-stack-scroll #materialien .section-head h2 { margin-bottom: 0.4em; }
+html.is-stack-scroll .vl-photo { max-width: min(480px, 100%); }
+html.is-stack-scroll .vl-mat__figure img { width: 100%; max-height: calc(100dvh - 24rem); }
+html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
+
+@media (max-height: 820px) {
+  html.is-stack-scroll[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
+  html.is-stack-scroll[data-product="verpackungsloesungen"] .hero__eyebrow { margin-bottom: 1rem; }
+  html.is-stack-scroll[data-product="verpackungsloesungen"] .hero__sub { margin-bottom: 1.5rem; }
+  html.is-stack-scroll #auswahl .section-head,
+  html.is-stack-scroll #branchen .section-head.ppwr-head-split,
+  html.is-stack-scroll #materialien .section-head { max-width: none; }
+  html.is-stack-scroll #auswahl .section-head h2,
+  html.is-stack-scroll #branchen .section-head.ppwr-head-split h2,
+  html.is-stack-scroll #materialien .section-head h2 { font-size: clamp(1.9rem, 5.6dvh, 2.8rem); }
+  html.is-stack-scroll .vl-acc__label,
+  html.is-stack-scroll .vl-acc .ppwr-checks--plain li { font-size: 0.88rem; }
+  html.is-stack-scroll .vl-acc__foot { margin-top: 0.75rem; font-size: 0.86rem; }
+  html.is-stack-scroll #definition .ppwr-card p { font-size: 0.88rem; }
+  html.is-stack-scroll .vl-mat__note { margin-top: 0.75rem; font-size: 0.86rem; }
+  html.is-stack-scroll #nachhaltigkeit .ppwr-props { gap: 0.4rem; margin-bottom: 0.75rem; }
+  html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding-block: 0.4rem; }
+  html.is-stack-scroll #nachhaltigkeit .spout__text h2 { margin-bottom: 0.45em; }
+  html.is-stack-scroll .vl-sustain__note { margin-bottom: 1rem; font-size: 0.88rem; }
+}
+
+@media (max-width: 1199px) {
+  html[data-product="verpackungsloesungen"] .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  .vl-mat { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 768px) {
+  html[data-product="verpackungsloesungen"] .hero__visual { max-width: min(420px, 90vw); }
+  html[data-product="verpackungsloesungen"] .hero h1 { font-size: var(--fs-h1); }
+  html[data-product="verpackungsloesungen"] h2 { hyphens: auto; overflow-wrap: break-word; }
+  /* Quadratische Illustration: Hinweiskarte unter statt auf dem Bild */
+  .vl-photo .ppwr-photo__card { position: static; margin: 0.75rem; }
+}
+@media (max-width: 600px) {
+  .vl-mat__cards { grid-template-columns: minmax(0, 1fr); }
 }

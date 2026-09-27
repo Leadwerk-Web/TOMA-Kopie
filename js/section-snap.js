@@ -28,7 +28,7 @@ function inFlow(el) {
 
 /* Natürliche Position im Fluss: offsetTop enthält bei klebenden Panels den
    Sticky-Versatz, daher über die (festen) Höhen der Vorgänger rechnen. */
-function naturalTop(el) {
+export function naturalTop(el) {
   const parent = el.parentElement;
   let top = parent.getBoundingClientRect().top + window.scrollY;
   for (let sib = parent.firstElementChild; sib && sib !== el; sib = sib.nextElementSibling) {
