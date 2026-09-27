@@ -16,6 +16,7 @@ import { initGallery } from "./gallery.js";
 import { initHeroBadges } from "./hero-badges.js";
 import { initNavMenu } from "./nav-menu.js";
 import { initHAccordion } from "./h-accordion.js";
+import { initSectionSnap } from "./section-snap.js";
 
 /* Stack-Scroll früh setzen, damit Sticky schon beim ersten Paint greift.
    js-motion erst setzen, wenn GSAP bereit ist – sonst bleiben Inhalte unsichtbar. */
@@ -161,6 +162,7 @@ function init() {
       window.__tomaAnimated = true;
 
       setupLenis();
+      initSectionSnap();
       initScrollScenes();
       refreshAfterAssets();
       setupResize();

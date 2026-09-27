@@ -36,6 +36,8 @@ export function initGallery() {
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    // Lenis ignoriert overflow:hidden – Seite dahinter anhalten
+    if (window.lenis) window.lenis.stop();
     closeBtn.focus();
   };
 
@@ -43,6 +45,7 @@ export function initGallery() {
     lightbox.hidden = true;
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    if (window.lenis) window.lenis.start();
     imgEl.removeAttribute("src");
   };
 

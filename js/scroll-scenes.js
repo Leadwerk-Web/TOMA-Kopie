@@ -7,6 +7,8 @@
 import { MOTION, prefersReducedMotion, isMobile } from "./motion-config.js";
 
 let ctx = null;
+/* Aufräumfunktionen für Event-Listener (gsap.context räumt nur Tweens ab) */
+let cleanups = [];
 
 export function initScrollScenes() {
   const gsap = window.gsap;
@@ -29,11 +31,14 @@ export function initScrollScenes() {
       heroParallax(gsap);
     }
     genericReveals(gsap);
+    ppwrInfoScene(gsap);
     blobDrift(gsap);
   });
 }
 
 export function killScrollScenes() {
+  cleanups.forEach((fn) => fn());
+  cleanups = [];
   if (ctx) { ctx.revert(); ctx = null; }
 }
 
@@ -73,7 +78,8 @@ function heroParallax(gsap) {
 
 /* ---------------- GENERISCHE REVEALS (variierend) ---------------- */
 function genericReveals(gsap) {
-  const items = gsap.utils.toArray("[data-reveal]");
+  // Abschnitte mit eigener Szene (data-scene) choreografieren ihre Reveals selbst
+  const items = gsap.utils.toArray("[data-reveal]").filter((el) => !el.closest("[data-scene]"));
   const variants = ["rise", "scale", "fade"];
   items.forEach((el, i) => {
     const variant = variants[i % variants.length];
@@ -87,6 +93,82 @@ function genericReveals(gsap) {
       duration: MOTION.reveal.duration, ease: MOTION.reveal.ease,
       scrollTrigger: { trigger: el, start: MOTION.reveal.start, once: true }
     });
+  });
+}
+
+/* ---------------- PPWR-INFOGRAFIK (#ppwr-kompakt) ----------------
+   Auftritt beim Hineinscrollen, danach schwebende Beutelgruppe und
+   (Desktop, feiner Zeiger) leichte Tiefenverschiebung zur Maus. */
+function ppwrInfoScene(gsap) {
+  const section = document.querySelector('[data-scene="ppwr-info"]');
+  if (!section) return;
+  const q = gsap.utils.selector(section);
+  const title = q(".ppwr-info__title");
+  const lead = q(".ppwr-info__lead");
+  const visual = q(".ppwr-info__visual");
+  const img = q(".ppwr-info__visual img");
+  const cards = q(".ppwr-info__cards li");
+  const cardIcons = q(".ppwr-info__cards .ppwr-info__icon");
+  const topics = q(".ppwr-info__topics");
+  const topicsIcon = q(".ppwr-info__topics .ppwr-info__icon");
+  const checks = q(".ppwr-info__checks li");
+  const dates = q(".ppwr-info__dates");
+  const mobile = isMobile();
+
+  const tl = gsap.timeline({
+    defaults: { ease: MOTION.reveal.ease },
+    scrollTrigger: { trigger: section, start: "top 60%", once: true },
+    onComplete: () => {
+      // Inline-Transforms entfernen, sonst greift der CSS-Hover der Karten nicht
+      gsap.set([...cards, ...cardIcons, topicsIcon], { clearProps: "transform" });
+      gsap.set(title, { clearProps: "clipPath" });
+      section.classList.add("is-in");
+    }
+  });
+
+  tl.fromTo(title,
+      { opacity: 0, clipPath: "inset(0% 100% 0% 0% round 999px)" },
+      { opacity: 1, clipPath: "inset(0% 0% 0% 0% round 999px)", duration: 0.8, ease: "power3.inOut" }, 0)
+    .fromTo(visual, { opacity: 0, y: 60, scale: 0.86 }, { opacity: 1, y: 0, scale: 1, duration: 1.2 }, 0.1)
+    .fromTo(lead, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7 }, 0.3)
+    .fromTo(cards,
+      { opacity: 0, x: mobile ? 0 : 60, y: mobile ? 24 : 0 },
+      { opacity: 1, x: 0, y: 0, duration: 0.75, stagger: 0.11 }, 0.35)
+    .fromTo(cardIcons,
+      { scale: 0.4, rotation: -25 },
+      { scale: 1, rotation: 0, duration: 0.6, stagger: 0.11, ease: "back.out(2.2)" }, 0.5)
+    .fromTo(topics, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.75 }, 0.55)
+    .fromTo(topicsIcon,
+      { scale: 0.4, rotation: -25 },
+      { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2.2)" }, 0.7)
+    .fromTo(checks, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.45, stagger: 0.12 }, 0.8)
+    .fromTo(dates, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, 0.95);
+
+  // Ruhiges Schweben (eigene Eigenschaften, kollidiert nicht mit dem Auftritt)
+  gsap.to(img, { yPercent: -2.5, rotation: 0.6, duration: 3.4, ease: "sine.inOut", yoyo: true, repeat: -1 });
+
+  // Tiefenwirkung zur Maus – nur Desktop mit feinem Zeiger
+  if (mobile || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  const layers = [
+    { el: img, x: -18, y: -12 },
+    { el: q(".ppwr-info__cards"), x: 8, y: 6 },
+    { el: q(".ppwr-info__left"), x: 5, y: 4 }
+  ].map((l) => ({
+    ...l,
+    toX: gsap.quickTo(l.el, "x", { duration: 0.9, ease: "power3.out" }),
+    toY: gsap.quickTo(l.el, "y", { duration: 0.9, ease: "power3.out" })
+  }));
+  const move = (nx, ny) => layers.forEach((l) => { l.toX(nx * l.x); l.toY(ny * l.y); });
+  const onMove = (e) => {
+    const r = section.getBoundingClientRect();
+    move(((e.clientX - r.left) / r.width) * 2 - 1, ((e.clientY - r.top) / r.height) * 2 - 1);
+  };
+  const onLeave = () => move(0, 0);
+  section.addEventListener("pointermove", onMove);
+  section.addEventListener("pointerleave", onLeave);
+  cleanups.push(() => {
+    section.removeEventListener("pointermove", onMove);
+    section.removeEventListener("pointerleave", onLeave);
   });
 }
 
