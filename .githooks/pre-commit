@@ -1,0 +1,38 @@
+#!/bin/sh
+# Lokale Kopie der Regeln aus .github/workflows/site-quality.yml, damit ein
+# Commit gar nicht erst entsteht, den die CI ablehnt. Prüft nur den Index.
+# Aktivieren (einmal pro Klon): git config core.hooksPath .githooks
+
+errors=$(
+  git diff --cached --name-only --diff-filter=ACMR | while IFS= read -r file; do
+    lower=$(printf '%s' "$file" | tr 'A-Z' 'a-z')
+    case "$lower" in
+      *.jpg|*.jpeg|*.png)
+        echo "- $file: nur WebP (Qualität 85) committen, kein JPG/JPEG/PNG"
+        ;;
+      *.webp)
+        base=$(basename "$file" | sed 's/\.[^.]*$//')
+        if [ "$file" != "$lower" ] || ! printf '%s' "$base" | grep -Eq '^[a-z0-9]+(-[a-z0-9]+)*$'; then
+          echo "- $file: WebP-Pfad muss kleingeschrieben sein, Dateiname in kebab-case (a-z, 0-9, -)"
+        fi
+        if [ "$(git show ":$file" | head -c 12 | tail -c 4)" != "WEBP" ]; then
+          echo "- $file: kein gültiger WebP-Container"
+        fi
+        ;;
+    esac
+    case "$lower" in
+      *index.html) ;;
+      *.html|*.htm|*.css|*.js|*.mjs|*.json|*.webmanifest|*.xml)
+        if git show ":$file" | grep -Eiq "\.(jpe?g|png)([?#\"'[:space:]),]|$)"; then
+          echo "- $file: verweist noch auf JPG/JPEG/PNG"
+        fi
+        ;;
+    esac
+  done
+)
+
+if [ -n "$errors" ]; then
+  echo "Commit abgebrochen, die CI (site-quality.yml) würde ihn ablehnen:" >&2
+  echo "$errors" >&2
+  exit 1
+fi
