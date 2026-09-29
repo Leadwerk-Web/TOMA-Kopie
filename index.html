@@ -67,21 +67,40 @@
               </ul>
             </div>
           </li>
-          <li class="nav__item" data-nav-item>
+          <li class="nav__item nav__item--mega" data-nav-item>
             <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubBeutel">Verpackungsbeutel<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
-            <div class="nav__dropdown nav__dropdown--wide" id="navSubBeutel">
-              <div class="nav__beutel">
+            <div class="nav__dropdown nav__mega" id="navSubBeutel">
+              <div class="nav__mega-grid nav__mega-grid--beutel">
+                <div class="nav__mega-intro">
+                  <span class="eyebrow">Verpackungsbeutel</span>
+                  <p class="nav__mega-title">Die passende <em>Beutelform</em> für Ihr Produkt</p>
+                  <p class="nav__mega-copy">Vom Standbodenbeutel bis zur Folie auf Rolle: Füllgut, Menge und Abfüllung entscheiden, welche Form passt. Wir beraten Sie persönlich.</p>
+                  <a class="btn btn--primary nav__mega-cta" href="#anfrage">Beratung anfragen</a>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaBeutel">Beutelformen</p>
+                  <p class="nav__mega-sub">Vom Standbodenbeutel bis zur Rolle</p>
+                  <ul class="nav__sublist nav__sublist--grid" aria-labelledby="navMegaBeutel">
+                    <li><a class="nav__sublink" href="doypack.html" data-preview-src="assets/doypack/doypack.webp"><b>Doypack</b><span>Standbodenbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="flachbodenbeutel.html" data-preview-src="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp"><b>Box Pouch</b><span>Flachbodenbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="seitenfaltenbeutel.html" data-preview-src="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp"><b>Quadro-Seal-Pouch</b><span>Seitenfaltenbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="siegelrandbeutel.html" data-preview-src="assets/flachbeutel/flachbeutel-neutral.webp"><b>Siegelrandbeutel</b><span>Flachbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="rollenware.html" data-preview-src="assets/rollenware/rollenware-neutral.webp"><b>Rollenware</b><span>Folien auf Rolle</span></a></li>
+                    <li><a class="nav__sublink" href="spoutbag.html" data-preview-src="assets/nachfuellbeutel/spoutbag-neutral.webp"><b>Spoutbag</b><span>Nachfüllbeutel</span></a></li>
+                  </ul>
+                </div>
+                <!-- Vorschau wechselt beim Hover/Fokus (nav-menu.js), Verlauf wie .nav__mega-intro -->
                 <figure class="nav__preview" aria-hidden="true">
                   <img src="assets/doypack/doypack.webp" width="1086" height="1448" alt="" loading="lazy" decoding="async" data-nav-preview-img />
                   <figcaption><b data-nav-preview-title>Doypack</b><span data-nav-preview-sub>Standbodenbeutel</span></figcaption>
                 </figure>
-                <ul class="nav__sublist nav__sublist--grid">
-                  <li><a class="nav__sublink" href="doypack.html" data-preview-src="assets/doypack/doypack.webp"><b>Doypack</b><span>Standbodenbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="flachbodenbeutel.html" data-preview-src="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp"><b>Box Pouch</b><span>Flachbodenbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="seitenfaltenbeutel.html" data-preview-src="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp"><b>Quadro-Seal-Pouch</b><span>Seitenfaltenbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="siegelrandbeutel.html" data-preview-src="assets/flachbeutel/flachbeutel-neutral.webp"><b>Siegelrandbeutel</b><span>Flachbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="rollenware.html" data-preview-src="assets/rollenware/rollenware-neutral.webp"><b>Rollenware</b><span>Folien auf Rolle</span></a></li>
-                  <li><a class="nav__sublink" href="spoutbag.html" data-preview-src="assets/nachfuellbeutel/spoutbag-neutral.webp"><b>Spoutbag</b><span>Nachfüllbeutel</span></a></li>
+              </div>
+              <div class="nav__mega-foot">
+                <span class="nav__mega-foot-label" id="navMegaBeutelMehr">Passend dazu</span>
+                <ul class="nav__mega-pills" aria-labelledby="navMegaBeutelMehr">
+                  <li><a href="verpackungsloesungen.html">Verpackungslösungen im Überblick</a></li>
+                  <li><a href="hochbarrierefolien.html">Hochbarrierefolien</a></li>
+                  <li><a href="ppmr.html">PPWR &amp; Verpackung</a></li>
                 </ul>
               </div>
             </div>
@@ -261,16 +280,13 @@
             </ul>
           </div>
 
-          <div class="hero__visual" data-hero="visual">
+          <!-- data-no-tilt: kein 3D-Kippen bei Hover (setupHeroTilt in main.js), das Schweben bleibt -->
+          <div class="hero__visual" data-hero="visual" data-no-tilt>
             <div class="media media--hero" data-hero-stage>
               <div class="hero__float" data-hero-float>
-                <img src="assets/doypack/doypack-hero.webp" width="1024" height="1536" alt="TOMA Doypack Standbodenbeutel – orangefarbene Premium-Verpackung mit individueller Bedruckung" fetchpriority="high" decoding="async" data-hero-img data-lw-field="hero.image" data-lw-type="image" />
+                <img src="assets/ppwr/ppwr-hero.webp" width="1213" height="1055" alt="Flexible Verpackungen von TOMA: Standbodenbeutel in Weiß und Kraftpapier, Seitenfaltenbeutel, transparenter Spoutbag und Siegelrandbeutel" fetchpriority="high" decoding="async" data-hero-img data-lw-field="hero.image" data-lw-type="image" />
               </div>
             </div>
-            <button type="button" class="hero__badge glass hero__badge--1 is-active" data-hero="badge" data-image="assets/doypack/doypack-hero.webp" data-alt="TOMA Doypack Standbodenbeutel – orangefarbene Premium-Verpackung mit individueller Bedruckung" aria-pressed="true"><span class="dot" aria-hidden="true"></span>Doypack</button>
-            <button type="button" class="hero__badge glass hero__badge--2" data-hero="badge" data-image="assets/doypack/aromaventil.webp" data-alt="Doypack mit Aromaventil für produktschützende Barriere" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Aromaventil</button>
-            <button type="button" class="hero__badge glass hero__badge--3" data-hero="badge" data-image="assets/doypack/standbodenbeutel-ausgiesser.webp" data-alt="Doypack mit Ausgießer – Spoutbag für flüssige und pastöse Produkte" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Spoutbag</button>
-            <button type="button" class="hero__badge glass hero__badge--4" data-hero="badge" data-image="assets/doypack/sichtfenster.webp" data-alt="Doypack mit Sichtfenster – Produktinhalt auf einen Blick erkennbar" aria-pressed="false"><span class="dot" aria-hidden="true"></span>Sichtfenster</button>
           </div>
         </div>
 
@@ -282,7 +298,7 @@
     </section>
 
     <!-- ============================ BEUTELFORMEN ============================ -->
-    <!-- Bilder: Box Pouch, Seitenfaltenbeutel und Siegelrandbeutel sind Platzhalter aus dem Doypack-Bestand -->
+    <!-- Bilder: dieselben neutralen Renderings wie in der Vorschau des Verpackungsbeutel-Menüs (.nav__preview) -->
     <section class="section products stack-panel" id="produkte" style="--stack-z: 2" aria-labelledby="products-title" data-lw-section="products">
       <div class="container--wide">
         <div class="section-head section-head--center" data-reveal>
@@ -291,7 +307,7 @@
         </div>
         <div class="products__grid">
           <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/doypack/doypack-tee.webp" width="1024" height="1024" alt="TOMA-Doypack mit Tee und Kräutern" loading="lazy" decoding="async" /></div>
+            <div class="products__media"><img src="assets/doypack/doypack.webp" width="1086" height="1448" alt="Doypack / Standbodenbeutel" loading="lazy" decoding="async" /></div>
             <div class="products__body">
               <span class="products__alias">Standbodenbeutel</span>
               <h3>Doypack</h3>
@@ -300,7 +316,7 @@
             </div>
           </article>
           <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/flachbodenbeutel/flachbodenbeutel-bedruckt.webp" width="810" height="1460" alt="Bedruckter Flachbodenbeutel / Box Pouch" loading="lazy" decoding="async" /></div>
+            <div class="products__media"><img src="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp" width="813" height="1466" alt="Flachbodenbeutel / Box Pouch" loading="lazy" decoding="async" /></div>
             <div class="products__body">
               <span class="products__alias">Box Pouch</span>
               <h3>Flachbodenbeutel</h3>
@@ -309,7 +325,7 @@
             </div>
           </article>
           <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/seitenfaltenbeutel/seitenfaltenbeutel-bedruckt.webp" width="859" height="1458" alt="Bedruckter Seitenfaltenbeutel" loading="lazy" decoding="async" /></div>
+            <div class="products__media"><img src="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp" width="858" height="1457" alt="Seitenfaltenbeutel / Quad Seal Pouch" loading="lazy" decoding="async" /></div>
             <div class="products__body">
               <span class="products__alias">Quad Seal Pouch</span>
               <h3>Seitenfaltenbeutel</h3>
@@ -318,7 +334,7 @@
             </div>
           </article>
           <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/flachbeutel/flachbeutel-bedruckt.webp" width="1029" height="1380" alt="Bedruckter Siegelrandbeutel / Flachbeutel" loading="lazy" decoding="async" /></div>
+            <div class="products__media"><img src="assets/flachbeutel/flachbeutel-neutral.webp" width="1033" height="1386" alt="Siegelrandbeutel / Flachbeutel" loading="lazy" decoding="async" /></div>
             <div class="products__body">
               <span class="products__alias">Flachbeutel</span>
               <h3>Siegelrandbeutel</h3>
@@ -327,7 +343,7 @@
             </div>
           </article>
           <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/doypack/standbodenbeutel-ausgiesser.webp" width="638" height="1033" alt="Standbodenbeutel mit Ausgießer und Schraubkappe" loading="lazy" decoding="async" /></div>
+            <div class="products__media"><img src="assets/nachfuellbeutel/spoutbag-neutral.webp" width="907" height="1382" alt="Spoutbag / Nachfüllbeutel mit Ausgießer" loading="lazy" decoding="async" /></div>
             <div class="products__body">
               <span class="products__alias">Nachfüllbeutel</span>
               <h3>Spoutbag</h3>
@@ -336,7 +352,7 @@
             </div>
           </article>
           <article class="products__card" data-reveal>
-            <div class="products__media"><img src="assets/rollenware/rollenware-bedruckt.webp" width="1216" height="1389" alt="Bedruckte Rollenware – Folie auf Rolle" loading="lazy" decoding="async" /></div>
+            <div class="products__media"><img src="assets/rollenware/rollenware-neutral.webp" width="1219" height="1393" alt="Rollenware – Folie auf Rolle" loading="lazy" decoding="async" /></div>
             <div class="products__body">
               <span class="products__alias">Folien auf Rolle</span>
               <h3>Rollenware</h3>

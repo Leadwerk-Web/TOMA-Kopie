@@ -197,32 +197,23 @@
   font-size: 0.9rem; font-weight: 500; line-height: 1.35;
   color: var(--color-text);
 }
-.nav__dropdown--wide { min-width: 680px; }
 .nav__sublist--grid { grid-template-columns: 1fr 1fr; }
 
-/* Verpackungsbeutel: Bildvorschau links, wechselt beim Hover/Fokus */
-.nav__beutel {
-  display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 0.4rem;
-  padding: 0.6rem;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-  box-shadow: var(--shadow-float);
-}
-.nav__beutel .nav__sublist {
-  align-content: center;
-  padding: 0;
+/* Verpackungsbeutel: Megamenü wie Verpackungslösungen – Intro | Beutelformen | Bildvorschau
+   (wechselt beim Hover/Fokus, Verlauf wie .nav__mega-intro) */
+.nav__mega-grid.nav__mega-grid--beutel { grid-template-columns: 1.15fr 2fr 1fr; }
+.nav__mega-grid--beutel .nav__sublist {
+  align-content: start;
+  padding: 0; margin: 0 -0.8rem;
   background: none; border: 0; box-shadow: none;
 }
 .nav__preview {
   position: relative;
   margin: 0;
-  min-height: 230px;
+  min-height: 250px;
   border-radius: var(--radius-small);
   overflow: hidden;
-  background: var(--color-bg-warm);
+  background: var(--grad-section);
 }
 /* Ganzes Motiv zeigen: contain, unten Platz für die Bildunterschrift */
 .nav__preview img {
@@ -235,12 +226,11 @@
 .nav__preview figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
   display: grid; gap: 0.05rem;
-  padding: 2rem 0.9rem 0.8rem;
-  background: linear-gradient(to top, rgba(17, 23, 38, 0.72), rgba(17, 23, 38, 0));
-  color: #fff;
+  padding: 0 1rem 0.9rem;
+  color: var(--color-ink);
 }
 .nav__preview figcaption b { font-size: 0.95rem; font-weight: 700; }
-.nav__preview figcaption span { font-size: 0.78rem; opacity: 0.85; }
+.nav__preview figcaption span { font-size: 0.78rem; color: var(--color-text-muted); }
 .nav__sublink { transition: background var(--dur-fast), color var(--dur-fast); }
 .nav__sublink b { display: block; font-weight: 700; color: var(--color-ink); }
 .nav__sublink span { display: block; font-size: 0.8rem; color: var(--color-text-muted); }
@@ -637,6 +627,18 @@ html.is-stack-scroll .footer {
 .hero h1 { margin-bottom: 1.5rem; }
 .hero h1 em { font-style: normal; color: var(--color-primary); }
 .hero h1 .line { display: block; }
+/* Synonyme im Titel (Doypack ▏ Standbodenbeutel): gestalteter Trennstrich statt Satzzeichen;
+   Screenreader/Suchmaschinen lesen stattdessen ein verstecktes Komma. Der Strich hängt ohne
+   Leerzeichen am ersten Namen – passt die Zeile nicht, bricht sie nach dem Strich um */
+.hero h1 .hero__sep {
+  display: inline-block;
+  width: 0.09em; height: 0.78em;
+  margin: 0 0.08em 0 0.3em;
+  vertical-align: -0.04em;
+  border-radius: 1px;
+  background: var(--color-primary);
+}
+.hero h1 .hero__name { white-space: nowrap; }
 .hero__sub { max-width: 42ch; margin-bottom: 2.25rem; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
@@ -3261,15 +3263,16 @@ html.is-stack-scroll .faq__layout {
   position: relative;
   min-height: 150px;
   overflow: hidden;
-  background: var(--color-bg-warm);
+  background: var(--grad-section);
 }
+/* Freigestellte Renderings wie in .nav__preview: ganzes Motiv mit etwas Luft */
 .products__media img {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  inset: 0.8rem;
+  width: calc(100% - 1.6rem);
+  height: calc(100% - 1.6rem);
+  object-fit: contain;
+  object-position: center;
   transition: transform var(--dur-slow) var(--ease-out);
 }
 .products__card:hover .products__media img { transform: scale(1.05); }
@@ -3389,9 +3392,9 @@ html.is-stack-scroll #branchen .apps__visual { aspect-ratio: auto; height: min(4
 
 .footer .footer__address { margin-top: 0.75rem; }
 
-/* Niedrige Desktop-Viewports: Startseiten-Hero passt sonst nicht ins Stack-Panel */
+/* Niedrige Desktop-Viewports: Hero passt sonst nicht ins Stack-Panel (h1 auf allen Seiten gleich) */
 @media (max-height: 820px) {
-  html.is-stack-scroll[data-product="home"] .hero h1 { font-size: clamp(2.6rem, 8dvh, 4.4rem); margin-bottom: 1rem; }
+  html.is-stack-scroll .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="home"] .hero__eyebrow { margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="home"] .hero__sub { margin-bottom: 1.5rem; }
   html.is-stack-scroll .hero__trust { margin-top: 1rem; }
@@ -3421,8 +3424,11 @@ html.is-stack-scroll #branchen .apps__visual { aspect-ratio: auto; height: min(4
 
 /* Hero: breites Motiv (mehrere Beutel) statt Hochformat, H1 mit Unterzeile */
 html[data-product="ppmr"] .hero__grid { grid-template-columns: minmax(0, 52fr) minmax(0, 48fr); }
-html[data-product="ppmr"] .hero__float { aspect-ratio: 1213 / 1055; max-height: min(64svh, 640px); }
-html[data-product="ppmr"] .hero h1 { font-size: clamp(2.4rem, 4vw, 4rem); }
+/* Startseite teilt das Hero-Motiv der PPWR-Seite (Gruppe aus fünf Beutelformen, ohne Tags);
+   55 % Text, damit die Vertrauenszeile bei 1440 px einzeilig bleibt */
+html[data-product="home"] .hero__grid { grid-template-columns: minmax(0, 55fr) minmax(0, 45fr); }
+html[data-product="ppmr"] .hero__float,
+html[data-product="home"] .hero__float { aspect-ratio: 1213 / 1055; max-height: min(64svh, 640px); }
 /* Stichtage als Liste zwischen Fließtext und Buttons */
 html[data-product="ppmr"] .hero__sub { margin-bottom: 1.25rem; }
 html[data-product="ppmr"] .hero__trust--stack {
@@ -4031,7 +4037,6 @@ html.is-stack-scroll .ppwr-grid-4 .ppwr-icon svg { width: 22px; height: 22px; }
 html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
 
 @media (max-height: 820px) {
-  html.is-stack-scroll[data-product="ppmr"] .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="ppmr"] .hero__eyebrow { margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="ppmr"] .hero__sub { margin-bottom: 1.5rem; }
   html.is-stack-scroll .ppwr-checks li { padding-block: 0.45rem; font-size: 0.92rem; }
@@ -4069,7 +4074,9 @@ html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
   .ppwr-head-split > *,
   .section-head.ppwr-head-split p { grid-column: 1; grid-row: auto; }
   .section-head.ppwr-head-split p { margin-top: 1rem; }
-  html[data-product="ppmr"] .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-product="ppmr"] .hero__grid,
+  html[data-product="home"] .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-product="home"] .hero__visual { width: 100%; max-width: 600px; justify-self: center; }
   /* Infografik: Text + Beutel nebeneinander, Karten darunter zweispaltig */
   .ppwr-info__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 2rem; }
   .ppwr-info__bottom { margin-right: 0; }
@@ -4099,8 +4106,8 @@ html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
   .ppwr-band__cta { padding-left: 0; padding-top: 1.25rem; border-left: 0; border-top: 3px solid var(--color-primary); }
 }
 @media (max-width: 768px) {
-  html[data-product="ppmr"] .hero__visual { max-width: min(420px, 90vw); }
-  html[data-product="ppmr"] .hero h1 { font-size: var(--fs-h1); }
+  html[data-product="ppmr"] .hero__visual,
+  html[data-product="home"] .hero__visual { max-width: min(420px, 90vw); }
   /* Zeitstrahl senkrecht */
   .ppwr-roadmap { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
   .ppwr-roadmap::before { left: 11px; right: auto; top: 12px; bottom: 12px; width: 2px; height: auto; background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 55%, var(--color-primary-soft) 100%); }
@@ -4123,7 +4130,6 @@ html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
    (.ppwr-split, .ppwr-callout, .ppwr-hacc, .apps, .products); hier nur Ergänzungen.
    ===================================================================== */
 html[data-product="verpackungsloesungen"] .hero__grid { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
-html[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.4rem, 3.9vw, 4rem); }
 
 /* Hero: Formen-Wähler – Bühne mit der gewählten Verpackungsart (Standardbilder der
    Produktseiten) und darunter eine Leiste, in der alle sechs Formen ihren Platz haben.
@@ -4340,7 +4346,6 @@ html.is-stack-scroll .vl-photo { max-width: min(480px, 100%); }
 html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
 
 @media (max-height: 820px) {
-  html.is-stack-scroll[data-product="verpackungsloesungen"] .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="verpackungsloesungen"] .hero__eyebrow { margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="verpackungsloesungen"] .hero__sub { margin-bottom: 1.5rem; }
   html.is-stack-scroll #ueberblick h2 { font-size: clamp(1.9rem, 5.6dvh, 2.8rem); }
@@ -4389,7 +4394,6 @@ html.is-stack-scroll #nachhaltigkeit .ppwr-props li { padding: 0.6rem 1rem; }
   .vl-forms .hero__float { max-height: min(44svh, 400px); }
   .vl-forms__caption { bottom: 4%; min-width: 0; padding: 0.7rem 0.9rem 0.75rem; }
   .vl-forms__name { font-size: 1.05rem; }
-  html[data-product="verpackungsloesungen"] .hero h1 { font-size: var(--fs-h1); }
   html[data-product="verpackungsloesungen"] h2 { hyphens: auto; overflow-wrap: break-word; }
   /* Quadratische Illustration: Hinweiskarte unter statt auf dem Bild */
   .vl-photo .ppwr-photo__card { position: static; margin: 0.75rem; }
@@ -4414,7 +4418,6 @@ html[data-product="hochbarrierefolien"] {
 
 /* Hero: quadratisches Freisteller-Motiv, Vorteile als Liste über den Buttons */
 html[data-product="hochbarrierefolien"] .hero__grid { grid-template-columns: minmax(0, 54fr) minmax(0, 46fr); }
-html[data-product="hochbarrierefolien"] .hero h1 { font-size: clamp(2.6rem, 4.6vw, 4.6rem); }
 html[data-product="hochbarrierefolien"] .hero__float { aspect-ratio: 1; max-height: min(66svh, 640px); }
 html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__float { max-height: min(calc(100dvh - 12rem), 620px); }
 /* Orangener Kreis im Motiv (Optik wie .value-card__badge), Geschwister von .hero__float in
@@ -4603,7 +4606,6 @@ html.is-stack-scroll[data-product="hochbarrierefolien"] .section.stack-panel { p
 }
 
 @media (max-height: 820px) {
-  html.is-stack-scroll[data-product="hochbarrierefolien"] .hero h1 { font-size: clamp(2.3rem, 7dvh, 3.8rem); margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__eyebrow { margin-bottom: 1rem; }
   html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__sub { margin-bottom: 1rem; font-size: 1rem; }
   html.is-stack-scroll[data-product="hochbarrierefolien"] .hero__trust--stack { gap: 0.35rem; margin-bottom: 1.25rem; font-size: 0.95rem; }
@@ -4645,7 +4647,6 @@ html.is-stack-scroll[data-product="hochbarrierefolien"] .section.stack-panel { p
   .variants__grid.hb-values { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 768px) {
-  html[data-product="hochbarrierefolien"] .hero h1 { font-size: var(--fs-h1); }
   html[data-product="hochbarrierefolien"] h2 { hyphens: auto; overflow-wrap: break-word; }
   .hb-layers__panel img { aspect-ratio: 1; }
   .hb-stack__layer--outer,

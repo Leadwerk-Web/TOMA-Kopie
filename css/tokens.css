@@ -55,7 +55,7 @@
   --font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --fs-h1: clamp(2.8rem, 5.4vw, 5.4rem);
+  --fs-h1: clamp(2.4rem, 3.9vw, 4rem); /* seitenübergreifend wie Verpackungslösungen */
   --fs-h2: clamp(2rem, 3.6vw, 3.6rem);
   --fs-h3: clamp(1.3rem, 2vw, 1.75rem);
   --fs-lead: 18px;

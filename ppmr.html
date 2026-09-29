@@ -59,21 +59,40 @@
               </ul>
             </div>
           </li>
-          <li class="nav__item" data-nav-item>
+          <li class="nav__item nav__item--mega" data-nav-item>
             <button type="button" class="nav__trigger" aria-expanded="false" aria-controls="navSubBeutel">Verpackungsbeutel<svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 4.5 6 7.5l3-3"/></svg></button>
-            <div class="nav__dropdown nav__dropdown--wide" id="navSubBeutel">
-              <div class="nav__beutel">
+            <div class="nav__dropdown nav__mega" id="navSubBeutel">
+              <div class="nav__mega-grid nav__mega-grid--beutel">
+                <div class="nav__mega-intro">
+                  <span class="eyebrow">Verpackungsbeutel</span>
+                  <p class="nav__mega-title">Die passende <em>Beutelform</em> für Ihr Produkt</p>
+                  <p class="nav__mega-copy">Vom Standbodenbeutel bis zur Folie auf Rolle: Füllgut, Menge und Abfüllung entscheiden, welche Form passt. Wir beraten Sie persönlich.</p>
+                  <a class="btn btn--primary nav__mega-cta" href="#anfrage">Beratung anfragen</a>
+                </div>
+                <div class="nav__mega-col">
+                  <p class="nav__mega-heading" id="navMegaBeutel">Beutelformen</p>
+                  <p class="nav__mega-sub">Vom Standbodenbeutel bis zur Rolle</p>
+                  <ul class="nav__sublist nav__sublist--grid" aria-labelledby="navMegaBeutel">
+                    <li><a class="nav__sublink" href="doypack.html" data-preview-src="assets/doypack/doypack.webp"><b>Doypack</b><span>Standbodenbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="flachbodenbeutel.html" data-preview-src="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp"><b>Box Pouch</b><span>Flachbodenbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="seitenfaltenbeutel.html" data-preview-src="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp"><b>Quadro-Seal-Pouch</b><span>Seitenfaltenbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="siegelrandbeutel.html" data-preview-src="assets/flachbeutel/flachbeutel-neutral.webp"><b>Siegelrandbeutel</b><span>Flachbeutel</span></a></li>
+                    <li><a class="nav__sublink" href="rollenware.html" data-preview-src="assets/rollenware/rollenware-neutral.webp"><b>Rollenware</b><span>Folien auf Rolle</span></a></li>
+                    <li><a class="nav__sublink" href="spoutbag.html" data-preview-src="assets/nachfuellbeutel/spoutbag-neutral.webp"><b>Spoutbag</b><span>Nachfüllbeutel</span></a></li>
+                  </ul>
+                </div>
+                <!-- Vorschau wechselt beim Hover/Fokus (nav-menu.js), Verlauf wie .nav__mega-intro -->
                 <figure class="nav__preview" aria-hidden="true">
                   <img src="assets/doypack/doypack.webp" width="1086" height="1448" alt="" loading="lazy" decoding="async" data-nav-preview-img />
                   <figcaption><b data-nav-preview-title>Doypack</b><span data-nav-preview-sub>Standbodenbeutel</span></figcaption>
                 </figure>
-                <ul class="nav__sublist nav__sublist--grid">
-                  <li><a class="nav__sublink" href="doypack.html" data-preview-src="assets/doypack/doypack.webp"><b>Doypack</b><span>Standbodenbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="flachbodenbeutel.html" data-preview-src="assets/flachbodenbeutel/flachbodenbeutel-neutral.webp"><b>Box Pouch</b><span>Flachbodenbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="seitenfaltenbeutel.html" data-preview-src="assets/seitenfaltenbeutel/seitenfaltenbeutel-neutral.webp"><b>Quadro-Seal-Pouch</b><span>Seitenfaltenbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="siegelrandbeutel.html" data-preview-src="assets/flachbeutel/flachbeutel-neutral.webp"><b>Siegelrandbeutel</b><span>Flachbeutel</span></a></li>
-                  <li><a class="nav__sublink" href="rollenware.html" data-preview-src="assets/rollenware/rollenware-neutral.webp"><b>Rollenware</b><span>Folien auf Rolle</span></a></li>
-                  <li><a class="nav__sublink" href="spoutbag.html" data-preview-src="assets/nachfuellbeutel/spoutbag-neutral.webp"><b>Spoutbag</b><span>Nachfüllbeutel</span></a></li>
+              </div>
+              <div class="nav__mega-foot">
+                <span class="nav__mega-foot-label" id="navMegaBeutelMehr">Passend dazu</span>
+                <ul class="nav__mega-pills" aria-labelledby="navMegaBeutelMehr">
+                  <li><a href="verpackungsloesungen.html">Verpackungslösungen im Überblick</a></li>
+                  <li><a href="hochbarrierefolien.html">Hochbarrierefolien</a></li>
+                  <li><a href="ppmr.html" aria-current="page">PPWR &amp; Verpackung</a></li>
                 </ul>
               </div>
             </div>
