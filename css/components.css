@@ -3766,12 +3766,21 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
   border-radius: var(--radius-medium);
   border: 1px solid var(--color-primary-soft);
   background: var(--color-primary-tint);
-  transition: flex-grow 0.6s var(--ease-out), flex-basis 0.6s var(--ease-out), background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: flex-grow 0.8s var(--ease-soft), flex-basis 0.8s var(--ease-soft), background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 .ppwr-hacc__item.is-open,
 .ppwr-hacc:not(.is-ready) .ppwr-hacc__item { flex: 1 1 0; background: rgba(255, 255, 255, 0.9); border-color: var(--color-primary-tint); box-shadow: var(--shadow-card); }
 .ppwr-hacc__head { display: flex; flex: 1; margin: 0; font-size: inherit; }
-.ppwr-hacc__item.is-open .ppwr-hacc__head { flex: none; }
+.ppwr-hacc__item.is-open .ppwr-hacc__head,
+.ppwr-hacc__item.is-closing .ppwr-hacc__head { flex: none; }
+/* Kopf blendet beim Layoutwechsel (Leiste ↔ offen) aus und wieder ein, statt zu springen */
+.ppwr-hacc__item.is-open .ppwr-hacc__head { animation: ppwr-hacc-in 0.45s ease 0.3s both; }
+.ppwr-hacc__item:not(.is-open):not(.is-closing) .ppwr-hacc__head { animation: ppwr-hacc-title 0.4s ease 0.1s both; }
+.ppwr-hacc__item.is-closing .ppwr-hacc__head,
+.ppwr-hacc__item.is-closing .ppwr-hacc__panel { animation: ppwr-hacc-out 0.22s ease both; }
+/* Während des Wechsels behalten offener und schließender Inhalt die Endbreite (js/h-accordion.js) */
+.ppwr-hacc.is-animating .ppwr-hacc__item.is-open > *,
+.ppwr-hacc.is-animating .ppwr-hacc__item.is-closing > * { flex-shrink: 0; width: var(--hacc-open-w, auto); }
 .ppwr-hacc__trigger {
   display: flex;
   flex-direction: column;
@@ -3787,35 +3796,39 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
   text-align: left;
   cursor: pointer;
 }
-.ppwr-hacc__item:not(.is-open) .ppwr-hacc__trigger:hover { background: var(--color-primary-soft); }
+.ppwr-hacc__item:not(.is-open):not(.is-closing) .ppwr-hacc__trigger:hover { background: var(--color-primary-soft); }
 .ppwr-hacc__trigger:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -4px; }
-.ppwr-hacc__item.is-open .ppwr-hacc__trigger { flex-direction: row; padding: clamp(1.25rem, 2.5vh, 1.75rem) clamp(1.25rem, 2.4vw, 2rem) 0; cursor: default; }
+.ppwr-hacc__item.is-open .ppwr-hacc__trigger,
+.ppwr-hacc__item.is-closing .ppwr-hacc__trigger { flex-direction: row; padding: clamp(1.25rem, 2.5vh, 1.75rem) clamp(1.25rem, 2.4vw, 2rem) 0; cursor: default; }
 .ppwr-hacc__n { font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem; color: var(--color-primary); }
 .ppwr-hacc__title { font-family: var(--font-heading); font-weight: 700; line-height: 1.25; }
-.ppwr-hacc__item:not(.is-open) .ppwr-hacc__title {
+.ppwr-hacc__item:not(.is-open):not(.is-closing) .ppwr-hacc__title {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   max-height: 12rem;
   font-size: 1.02rem;
-  animation: ppwr-hacc-title 0.35s ease 0.3s both;
 }
-.ppwr-hacc__item.is-open .ppwr-hacc__title { font-size: clamp(1.2rem, 1.6vw, 1.45rem); animation: ppwr-hacc-in 0.4s ease 0.3s both; }
-.ppwr-hacc__item.is-open .ppwr-hacc__n { order: 2; margin-left: auto; }
+.ppwr-hacc__item.is-open .ppwr-hacc__title,
+.ppwr-hacc__item.is-closing .ppwr-hacc__title { font-size: clamp(1.2rem, 1.6vw, 1.45rem); }
+.ppwr-hacc__item.is-open .ppwr-hacc__n,
+.ppwr-hacc__item.is-closing .ppwr-hacc__n { order: 2; margin-left: auto; }
 .ppwr-hacc__panel {
   display: flex;
   flex-direction: column;
   flex: 1;
   min-width: 0;
   padding: 0.9rem clamp(1.25rem, 2.4vw, 2rem) clamp(1.25rem, 2.5vh, 1.75rem);
-  animation: ppwr-hacc-in 0.45s ease 0.3s both;
+  animation: ppwr-hacc-in 0.5s ease 0.38s both;
 }
 .ppwr-hacc__panel[hidden] { display: none; }
 .ppwr-hacc__intro { margin: 0 0 1.1rem; max-width: 70ch; font-size: 0.98rem; line-height: 1.5; color: var(--color-text); }
 .ppwr-hacc .ppwr-docs__list { grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); column-gap: 1.5rem; }
 @keyframes ppwr-hacc-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @keyframes ppwr-hacc-title { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ppwr-hacc-out { from { opacity: 1; } to { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .ppwr-hacc__item,
+  .ppwr-hacc__head,
   .ppwr-hacc__panel,
   .ppwr-hacc__title { transition: none !important; animation: none !important; }
 }
@@ -4117,7 +4130,7 @@ html.is-stack-scroll .faq .ppwr-legal { margin-top: 1rem; }
   .ppwr-hacc { flex-direction: column; min-height: 0; }
   .ppwr-hacc__item { flex: none !important; }
   .ppwr-hacc__item:not(.is-open) .ppwr-hacc__trigger { flex-direction: row; padding: 1rem 1.25rem; }
-  .ppwr-hacc__item:not(.is-open) .ppwr-hacc__title { writing-mode: horizontal-tb; transform: none; max-height: none; }
+  .ppwr-hacc__item:not(.is-open):not(.is-closing) .ppwr-hacc__title { writing-mode: horizontal-tb; transform: none; max-height: none; }
   .ppwr-hacc__item .ppwr-hacc__n { order: 2; margin-left: auto; }
 }
 @media (max-width: 600px) {

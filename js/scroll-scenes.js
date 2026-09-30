@@ -117,8 +117,8 @@ function revealStart(el) {
 }
 
 /* ---------------- PPWR-INFOGRAFIK (#ppwr-kompakt) ----------------
-   Auftritt beim Hineinscrollen, danach schwebende Beutelgruppe und
-   (Desktop, feiner Zeiger) leichte Tiefenverschiebung zur Maus. */
+   Auftritt beim Hineinscrollen, danach schwebende Beutelgruppe.
+   Kein Maus-Parallax – Texte, Karten und Bild reagieren nicht auf den Zeiger. */
 function ppwrInfoScene(gsap) {
   const section = document.querySelector('[data-scene="ppwr-info"]');
   if (!section) return;
@@ -166,30 +166,6 @@ function ppwrInfoScene(gsap) {
 
   // Ruhiges Schweben (eigene Eigenschaften, kollidiert nicht mit dem Auftritt)
   gsap.to(img, { yPercent: -2.5, rotation: 0.6, duration: 3.4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-
-  // Tiefenwirkung zur Maus – nur Desktop mit feinem Zeiger
-  if (mobile || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-  const layers = [
-    { el: img, x: -18, y: -12 },
-    { el: q(".ppwr-info__cards"), x: 8, y: 6 },
-    { el: q(".ppwr-info__left"), x: 5, y: 4 }
-  ].map((l) => ({
-    ...l,
-    toX: gsap.quickTo(l.el, "x", { duration: 0.9, ease: "power3.out" }),
-    toY: gsap.quickTo(l.el, "y", { duration: 0.9, ease: "power3.out" })
-  }));
-  const move = (nx, ny) => layers.forEach((l) => { l.toX(nx * l.x); l.toY(ny * l.y); });
-  const onMove = (e) => {
-    const r = section.getBoundingClientRect();
-    move(((e.clientX - r.left) / r.width) * 2 - 1, ((e.clientY - r.top) / r.height) * 2 - 1);
-  };
-  const onLeave = () => move(0, 0);
-  section.addEventListener("pointermove", onMove);
-  section.addEventListener("pointerleave", onLeave);
-  cleanups.push(() => {
-    section.removeEventListener("pointermove", onMove);
-    section.removeEventListener("pointerleave", onLeave);
-  });
 }
 
 /* ---------------- BLOB DRIFT (sehr langsam) ---------------- */
