@@ -12,9 +12,14 @@
   --color-primary-soft: #ffe9d6;
   --color-primary-tint: #fff4ea;
 
-  /* --- Sekundär (aus Marke ableitbar), für dezente Duo-Verläufe --- */
+  /* --- Zweite Akzentfarbe Blau (eingeführt auf der Hochbarriere-Seite, Siegelschicht) ---
+     Rollen: Orange = Marke & Aktion (Buttons, Links, Headline-Akzente, Icons, aktive Zustände);
+     Blau = Orientierung & Information (Nummerierungen, Checklisten-Haken, Info-Tags,
+     Hinweisboxen, Kennwerte/Daten). Kleine Schrift in Blau immer mit -hover (Kontrast). */
   --color-secondary: #2f7fc4;      /* aus Bestand-Blau #0170b9 aufgehellt */
+  --color-secondary-hover: #22649f;
   --color-secondary-soft: #e7f1fb;
+  --color-secondary-tint: #f3f8fd;
 
   /* --- Text --- */
   --color-ink: #111726;            /* dunkle Headline-Farbe */

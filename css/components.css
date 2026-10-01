@@ -458,7 +458,7 @@
 .nav__mtoggle[aria-expanded="true"] { color: var(--color-primary-hover); }
 .nav__mnum {
   font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
-  color: var(--color-primary); letter-spacing: 0.04em;
+  color: var(--color-secondary); letter-spacing: 0.04em;
 }
 .nav__msub { list-style: none; margin: 0; padding: 0.4rem 0 0.8rem 2.35rem; }
 .nav__msub ul { list-style: none; margin: 0 0 0.6rem; padding: 0; }
@@ -1539,7 +1539,7 @@ html.is-stack-scroll .gallery__grid {
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 18px;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   letter-spacing: -0.02em;
   line-height: 1;
   min-width: 1.75em;
@@ -1835,7 +1835,7 @@ html.is-stack-scroll .spout__text .eyebrow { margin-bottom: 0.35rem; }
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 18px;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   letter-spacing: -0.02em;
   line-height: 1;
   min-width: 1.75em;
@@ -1916,7 +1916,7 @@ html.is-stack-scroll .material__text .eyebrow { margin-bottom: 0.35rem; }
 .apps__content h3 { margin-bottom: 1rem; }
 .apps__content p { color: var(--color-text); margin-bottom: 1.5rem; font-size: var(--fs-body); line-height: 1.55; }
 .apps__meta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.apps__meta span { font-size: 0.78rem; padding: 0.4rem 0.8rem; border-radius: var(--radius-pill); background: var(--color-primary-tint); border: 1px solid var(--color-primary-soft); color: var(--color-primary-hover); font-weight: 600; }
+.apps__meta span { font-size: 0.78rem; padding: 0.4rem 0.8rem; border-radius: var(--radius-pill); background: var(--color-secondary-tint); border: 1px solid var(--color-secondary-soft); color: var(--color-secondary-hover); font-weight: 600; }
 .apps__visual { position: relative; aspect-ratio: 5/4; border-radius: var(--radius-medium); overflow: hidden; background: var(--color-bg-soft); display: grid; place-items: center; }
 .apps__img { position: absolute; inset: 0; }
 .apps__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -2024,7 +2024,7 @@ html.is-stack-scroll .config__steps { padding-bottom: 0; }
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--color-primary-hover);
+  color: var(--color-secondary-hover);
   flex-shrink: 0;
 }
 .config__step h3 {
@@ -2096,8 +2096,8 @@ html.is-stack-scroll .config__steps { padding-bottom: 0; }
   margin: 0;
   padding: 0.7rem 0.9rem;
   border-radius: var(--radius-small);
-  background: var(--color-primary-tint);
-  border: 1px solid var(--color-primary-soft);
+  background: var(--color-secondary-tint);
+  border: 1px solid var(--color-secondary-soft);
   font-size: 0.84rem;
   color: var(--color-text);
   line-height: 1.4;
@@ -2460,7 +2460,7 @@ html.is-stack-scroll .alt-compare__table td { padding-block: 0.6rem; }
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 2vw, 1.75rem);
   font-weight: 800;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   line-height: 1;
 }
 .variants__icon {
@@ -2490,8 +2490,8 @@ html.is-stack-scroll .alt-compare__table td { padding-block: 0.6rem; }
   font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.04em;
-  background: var(--color-bg-soft);
-  color: var(--color-text);
+  background: var(--color-secondary-soft);
+  color: var(--color-secondary-hover);
 }
 .variants__tag--accent {
   background: var(--color-primary-soft);
@@ -2790,7 +2790,7 @@ html.is-stack-scroll .faq__layout {
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 0.95rem;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   letter-spacing: -0.02em;
   line-height: 1.4;
   min-width: 1.6em;
@@ -3228,7 +3228,7 @@ html.is-stack-scroll .faq__layout {
   height: 18px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--color-primary-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d96c0e' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat;
+  background: var(--color-secondary-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322649f' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat;
 }
 .hero__trust b { color: var(--color-ink); font-weight: 700; }
 
@@ -3263,7 +3263,8 @@ html.is-stack-scroll .faq__layout {
   position: relative;
   min-height: 150px;
   overflow: hidden;
-  background: var(--grad-section);
+  /* kühler Blau-Verlauf als Gegenpol zu den orangen Renderings (zweite Akzentfarbe) */
+  background: linear-gradient(160deg, var(--color-secondary-tint) 0%, color-mix(in srgb, var(--color-secondary) 18%, #fff) 100%);
 }
 /* Freigestellte Renderings wie in .nav__preview: ganzes Motiv mit etwas Luft */
 .products__media img {
@@ -3288,7 +3289,7 @@ html.is-stack-scroll .faq__layout {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-primary-hover);
+  color: var(--color-secondary-hover);
 }
 .products__card h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); margin: 0; }
 .products__card p {
@@ -3348,7 +3349,7 @@ html.is-stack-scroll #branchen .apps__visual { aspect-ratio: auto; height: min(4
   font-size: clamp(1.4rem, 2vw, 1.75rem);
   font-weight: 800;
   line-height: 1;
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 .process__step h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); margin: 0; }
 .process__step p { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--color-text); }
@@ -3508,7 +3509,7 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
   height: 22px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--color-primary-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d96c0e' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 13px no-repeat;
+  background: var(--color-secondary-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322649f' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 13px no-repeat;
 }
 /* Ruhige Variante: ohne Kästen, nur Haken */
 .ppwr-checks--plain { gap: 0.7rem; }
@@ -3629,7 +3630,7 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 .ppwr-roadmap__stop--scope .ppwr-roadmap__date { color: var(--color-ink); }
 .ppwr-roadmap h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); margin: 0 0 0.25rem; }
@@ -3800,7 +3801,7 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
 .ppwr-hacc__trigger:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -4px; }
 .ppwr-hacc__item.is-open .ppwr-hacc__trigger,
 .ppwr-hacc__item.is-closing .ppwr-hacc__trigger { flex-direction: row; padding: clamp(1.25rem, 2.5vh, 1.75rem) clamp(1.25rem, 2.4vw, 2rem) 0; cursor: default; }
-.ppwr-hacc__n { font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem; color: var(--color-primary); }
+.ppwr-hacc__n { font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem; color: var(--color-secondary); }
 .ppwr-hacc__title { font-family: var(--font-heading); font-weight: 700; line-height: 1.25; }
 .ppwr-hacc__item:not(.is-open):not(.is-closing) .ppwr-hacc__title {
   writing-mode: vertical-rl;
@@ -3833,7 +3834,7 @@ html[data-product="ppmr"] .hero__trust--stack li::before { width: 24px; height: 
   .ppwr-hacc__title { transition: none !important; animation: none !important; }
 }
 .ppwr-docs__list { display: grid; gap: 0.85rem; margin: 0 0 1.25rem; padding: 1.1rem 0 0; list-style: none; border-top: 1px solid var(--color-primary-tint); }
-.ppwr-docs__list li { padding-left: 0.9rem; border-left: 2px solid var(--color-primary); }
+.ppwr-docs__list li { padding-left: 0.9rem; border-left: 2px solid var(--color-secondary); }
 .ppwr-docs__list b { display: block; font-size: 0.98rem; font-weight: 700; line-height: 1.35; color: var(--color-ink); }
 .ppwr-docs__list span { display: block; margin-top: 0.15rem; font-size: 0.88rem; line-height: 1.45; color: var(--color-text); }
 .ppwr-docs__link { margin-top: auto; align-self: flex-start; }
@@ -3968,11 +3969,11 @@ html.js-motion .ppwr-info:not(.is-in) .ppwr-info__icon { transition: none; }
 .ppwr-ways__tag {
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  background: var(--color-primary-tint);
+  background: var(--color-secondary-soft);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--color-primary-hover);
+  color: var(--color-secondary-hover);
   white-space: nowrap;
 }
 .ppwr-ways__item h3 { margin: 0 0 0.5rem; font-size: clamp(1.15rem, 1.5vw, 1.35rem); }
@@ -4225,7 +4226,7 @@ html.is-stack-scroll .vl-forms .hero__float { max-height: min(calc(100dvh - 20re
   border-bottom: 1px solid var(--color-border);
   font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--color-ink);
 }
-.vl-ov__n { flex: none; min-width: 1.75rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; color: var(--color-primary); }
+.vl-ov__n { flex: none; min-width: 1.75rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; color: var(--color-secondary); }
 html.is-stack-scroll #ueberblick .vl-ov__head { margin-bottom: clamp(0.75rem, 2.5dvh, 1.75rem); }
 html.is-stack-scroll #ueberblick .vl-ov__figure img { width: auto; max-width: 100%; max-height: calc(100dvh - 24rem); margin-inline: auto; }
 
@@ -4488,7 +4489,7 @@ html[data-product="hochbarrierefolien"] .hero__trust--stack li::before { width: 
 .hb-note { padding: clamp(1.25rem, 2.4vw, 1.75rem); border-radius: var(--radius-medium); }
 .hb-note__tag {
   display: inline-block; margin-bottom: 0.75rem; padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-pill); background: var(--color-primary-soft); color: var(--color-primary-hover);
+  border-radius: var(--radius-pill); background: var(--color-secondary-soft); color: var(--color-secondary-hover);
   font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.04em;
 }
 .hb-note h3 { margin-bottom: 0.5rem; font-size: clamp(1.15rem, 1.5vw, 1.35rem); }
@@ -4511,19 +4512,19 @@ html[data-product="hochbarrierefolien"] .hero__trust--stack li::before { width: 
 html.is-stack-scroll .hb-layers__panel { width: min(100%, calc((100dvh - 23rem) * 2.87)); margin-inline: auto; }
 html.is-stack-scroll #folienaufbau .section-head { margin-bottom: clamp(1rem, 2.5vh, 1.75rem); }
 
-/* Barrierewerte: zwei Karten mit Kürzel in hellem Orange */
+/* Barrierewerte: zwei Karten mit Kürzel in hellem Blau (Kennwerte = zweite Akzentfarbe) */
 .variants__grid.hb-values { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1120px; margin-inline: auto; }
 .hb-value__abbr {
   font-family: var(--font-heading); font-weight: 800; line-height: 1; letter-spacing: -0.03em;
   font-size: clamp(2.2rem, 3.6vw, 3.4rem);
-  color: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  color: color-mix(in srgb, var(--color-secondary) 40%, #fff);
 }
 .hb-value h3 { margin-bottom: 0.6rem; font-size: clamp(1.3rem, 1.9vw, 1.7rem); }
 .hb-value p { font-size: var(--fs-body); line-height: 1.55; }
 .hb-value .hb-value__note {
   margin-top: 1rem; padding: 0.8rem 1rem;
-  border-radius: var(--radius-small); border-left: 3px solid var(--color-primary);
-  background: var(--color-primary-tint); font-size: 0.95rem;
+  border-radius: var(--radius-small); border-left: 3px solid var(--color-secondary);
+  background: var(--color-secondary-tint); font-size: 0.95rem;
 }
 .hb-value__note b { color: var(--color-ink); }
 
@@ -4562,7 +4563,7 @@ html.is-stack-scroll #verpackungen .vl-carousel .value-card__media { height: cla
   background: #fff; border: 1px solid var(--color-border); box-shadow: 0 10px 24px -18px rgba(17, 23, 38, 0.3);
   font-size: 0.95rem; color: var(--color-text);
 }
-.hb-measure__list b { color: var(--color-primary-hover); }
+.hb-measure__list b { color: var(--color-secondary-hover); }
 .hb-checklist {
   min-width: 0;
   padding: clamp(1.35rem, 2.6vw, 2rem);
